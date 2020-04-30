@@ -74,7 +74,7 @@
   </div>
 </div>
 <a href="<?php echo URLROOT_ADMIN; ?>/Menu_admins/addLogo" type="button" class="btn btn-primary">Add</a>
-<a href="<?php echo URLROOT_ADMIN; ?>/Menu_admins/updateLogo" type="button" class="btn btn-secondary">Change</a>
+<a href="<?php echo URLROOT_ADMIN; ?>/Menu_admins/editLogo/<?php echo $data['logo']->id ?? '';?>" type="button" class="btn btn-secondary">Change</a>
 
 <form action="<?php echo URLROOT;?>/Menu_admins/deleteLogo/<?php echo $data['logo']->id ?? ''?>" method="POST">        
   <input type="hidden" name="delete_image" value="<?php echo $data['logo']->img_name ?? ''?>">

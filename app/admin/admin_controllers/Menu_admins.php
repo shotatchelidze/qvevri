@@ -83,11 +83,12 @@ class Menu_admins extends Controller {
             }
         // Get      
         } else {
+            
             $this->view('Menu_admins/addLogo');
         }
     }
 
-    public function updateLogo(){
+    public function editLogo($id){
         
         // check for posts
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -95,6 +96,7 @@ class Menu_admins extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             
             $data = [
+                'id' => $id,
                 'img_name' => $_FILES['image']['name'],
                 'en_title' => trim($_POST['en_title']),
                 'en_subtitle' => trim($_POST['en_subtitle']),
@@ -109,31 +111,53 @@ class Menu_admins extends Controller {
             $image_name = $target_dir . $data['img_name'];
             if(file_exists($image_name)){
                 if(unlink($image_name)){
-                // if did not deleted logo from folder    
+                // If did not deleted logo from folder    
                 } else {
                     die('Something went wrong, refresh page and try again');
                 }
-            } 
+            // If image does not exist in folder    
+            } else {
+                die('Something went wrong, refresh page and try again');
+            }
 
             $image = add_image("1200");
 
             if($image === true){
-                if($this->logoAdminModel->addLogo($data)){
-                    flash('logo_added_success','Logo Added Successfuly');
+                if($this->logoAdminModel->editLogo($data)){
+                    flash('logo_added_success','Logo Updated Successfuly');
                     redirect('Menu_admins');
                 } else {
-                    flash('logo_added_fail','Fail Add Logo', 'alert alert-danger');
+                    flash('logo_added_fail','Fail Update Logo', 'alert alert-danger');
                     redirect('Menu_admins');
                 }
             // Load page with errors    
             } else {
                 $data = array_merge($data, $image);
 
-                $this->view('Menu_admins/AddLogo', $data);
+                $this->view('Menu_admins', $data);
             }
         // Get request    
         } else {
+            // Check id
+            if(empty($id)){
+                redirect('Menu_admins');
+            }
+            // Get exist logo from model
+            $logo = $this->logoAdminModel->getLogoById($id);
+            
+            $data = [
+                'id' => $logo->id,
+                'img_name' => $logo->img_name,
+                'en_title' => $logo->en_title,
+                'en_subtitle' => $logo->en_subtitle,
+                'ge_title' => $logo->ge_title,
+                'ge_subtitle' => $logo->ge_subtitle,
+                'ru_title' => $logo->ru_title,
+                'ru_subtitle' => $logo->ru_subtitle,
+                'page' => $logo->page
+            ];
 
+            $this->view('Menu_admins/editLogo', $data);
         }    
     }
 
