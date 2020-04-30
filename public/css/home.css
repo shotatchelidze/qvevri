@@ -1,0 +1,1391 @@
+@font-face {
+  font-family: "BPG Excelsior";
+  src: url("hinted-BPGExcelsior.eot");
+  src: url("hinted-BPGExcelsior.eot?#iefix") format("embedded-opentype"),
+    url("hinted-BPGExcelsior.woff2") format("woff2"), url("hinted-BPGExcelsior.woff") format("woff"),
+    url("hinted-BPGExcelsior.svg#BPGExcelsior") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #fff;
+}
+.topnavbar {
+  opacity: 0.8;
+}
+.logo-top {
+  width: 79px;
+  height: 74px;
+}
+.logo-text-top {
+  display: block;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  font-size: 0.75rem;
+  font-family: "Ubuntu", sans-serif;
+}
+.nav-items {
+  font-size: 1.125rem;
+  font-family: "Ubuntu", sans-serif;
+}
+.left-nav,
+.right-nav {
+  margin-top: 80px;
+}
+.left-nav .nav-item:first-child {
+  margin-right: 22px;
+}
+.right-nav .nav-item:last-child {
+  margin-left: 22px;
+}
+.left-nav .nav-item:not(:first-child) {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+.right-nav .nav-item:not(:last-child) {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+.nav-items,
+.logo-text-top {
+  color: #e6ab66;
+}
+.container {
+  position: relative;
+}
+.searchlan {
+  position: absolute;
+  right: 1.21%;
+  top: -6%;
+}
+.searchlan-list {
+  list-style: none;
+}
+.search-hover {
+  background: url("../img/Search.png") no-repeat left;
+  outline: none;
+  background-size: 22px;
+  background-position: 13px;
+  width: 41px;
+  height: 41px;
+  padding: 20px;
+  transition: all 0.5s;
+  margin-right: 5px;
+}
+.search-hover:hover {
+  width: 250px;
+  padding-left: 50px;
+  color: #e7e7e7;
+  background-color: #656565;
+  margin-right: -5px;
+}
+.search-hover::-webkit-input-placeholder {
+  color: transparent;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover::-moz-placeholder {
+  color: transparent;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:-ms-input-placeholder {
+  color: transparent;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:-moz-placeholder {
+  color: transparent;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:hover::-webkit-input-placeholder {
+  color: #b1b1b1;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:hover::-moz-placeholder {
+  color: #b1b1b1;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:hover:-ms-input-placeholder {
+  color: #b1b1b1;
+  font-family: "Ubuntu", sans-serif;
+}
+.search-hover:hover:-moz-placeholder {
+  color: #b1b1b1;
+  font-family: "Ubuntu", sans-serif;
+}
+.lanbtn {
+  background-color: #000;
+  color: #e6ab66;
+  border-radius: 0;
+  padding: 0;
+  height: 41px;
+  width: 56px;
+}
+.en,
+.ru {
+  font-family: verdana, arial;
+}
+.ge {
+  font-family: "BPG Excelsior";
+}
+.dropdown-menu {
+  border-radius: 0;
+  min-width: 4rem;
+}
+.home-section {
+  min-height: 970px;
+  border-bottom: #e6ab66 7px solid;
+}
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.carousel-inner {
+  height: 970px;
+}
+.item {
+  height: 970px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item-one {
+  background-image: url("../img/Dark-red-wine.png");
+}
+.item-two {
+  background-image: url("../img/DSC_1315.png");
+}
+.item-three {
+  background-image: url("../img/DSC_1342.png");
+}
+.home-inner {
+  bottom: 210px;
+}
+.home-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  padding-left: 10px;
+  line-height: normal;
+}
+.home-title {
+  font-size: 36px;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.home-text {
+  font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 0px;
+  margin-left: 25px;
+}
+.homebtn {
+  font-size: 24px;
+  color: #e6ab66;
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.first-section {
+  background-color: #f2f2f2;
+  padding-top: 146px;
+  padding-bottom: 192px;
+}
+.twinshotel {
+  height: 457px;
+  background-image: url("../img/DSC_1315.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.twinshotel-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+  background-image: url("../img/LOGO_ge\ copy\ 2.png");
+}
+.media-body > h1 {
+  margin-left: 24px;
+  margin-top: 60px;
+  font-size: 36px;
+  color: #3a3a3a;
+  font-family: "Ubuntu", sans-serif;
+}
+.media-body > p {
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-right: 125px;
+  line-height: 1.3;
+  font-size: 16px;
+  color: #404040;
+  font-family: "Ubuntu", sans-serif;
+}
+.media-body > button {
+  margin-left: 15px;
+}
+.mediabtn {
+  font-size: 24px;
+  color: #e6ab66;
+  font-family: "Ubuntu", sans-serif;
+}
+.icon-bg {
+  margin-top: 55px;
+  margin-left: 69px;
+  width: 74px;
+  height: 74px;
+  background-color: #c08c41;
+  text-align: center;
+  padding: 17px 0;
+}
+.media-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.museum {
+  margin-top: 106px;
+  height: 457px;
+  background-image: url("../img/Layer\ 75.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.museum-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+}
+.restaurant {
+  height: 510px;
+  background-image: url("../img/3.png");
+  background-position: left;
+  background-repeat: repeat-x;
+}
+.restaurant-media {
+  margin-top: -26px;
+  height: 562px;
+  background: #e6ab66;
+  background-image: url("../img/LOGO_ge\ copy.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 57px;
+}
+.restaurant-media-body > h1 {
+  margin-left: 0;
+  margin-top: 66px;
+  font-size: 36px;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+}
+.restaurant-media-body > p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 37px;
+  padding: 0 120px 0 120px;
+  line-height: 1.3;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+}
+.restaurant-media-body > button {
+  margin-left: 0;
+  margin-top: 50px;
+}
+.restaurantbtn {
+  font-size: 24px;
+  color: #fff;
+  border: 3px solid #fdb95d;
+  border-radius: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.second-section {
+  margin-top: 200px;
+  margin-bottom: 192px;
+}
+.activity {
+  height: 457px;
+  background-image: url("../img/DSC_5350.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.activity-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+}
+.activity-media > .icon-bg {
+  padding: 10px 0;
+}
+.activity-media .media-body button {
+  margin-top: 30px;
+}
+.activity-lists {
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 18px;
+  color: #000;
+  font-family: "Ubuntu", sans-serif;
+  list-style: none;
+  padding-left: 25px;
+}
+.activity-lists li p {
+  margin-bottom: 0;
+}
+.wineshop {
+  margin-top: 107px;
+  height: 457px;
+  background-image: url("../img/wine.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.wineshop-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+  background-image: url("../img/LOGO_ge\ copy\ 2.png");
+}
+.napareuli {
+  height: 510px;
+  background-image: url("../img/j.png");
+  background-position: right;
+  background-repeat: repeat-x;
+}
+.napareuli-media {
+  margin-top: -26px;
+  height: 562px;
+  background: #e6ab66;
+  background-image: url("../img/ico1.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 114px;
+}
+.napareuli-media-body > h1 {
+  margin-left: 0;
+  margin-top: 66px;
+  font-size: 36px;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+}
+.napareuli-media-body > p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 84px;
+  margin-bottom: 0;
+  padding: 0 120px 0 120px;
+  line-height: 1.3;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+}
+.napareuli-media-body > button {
+  margin-left: 0;
+  margin-top: 45px;
+}
+.napareulibtn {
+  font-size: 24px;
+  color: #fff;
+  border: 3px solid #fdb95d;
+  border-radius: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.news {
+  margin-top: 85px;
+  margin-bottom: 100px;
+}
+.newslogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news-text {
+  text-align: center;
+}
+.card-body {
+  padding: 0;
+  padding-top: 10px;
+}
+.news-text {
+  font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+  color: #fdb95d;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.news-date-text {
+  font-size: 22px;
+  color: #fdb95d;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+}
+.news-card-title {
+  font-size: 22px;
+  color: #000;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+}
+.news-card-text {
+  font-size: 16px;
+  color: #444444;
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+}
+.newsbtn {
+  font-size: 18px;
+  color: #fdb95d;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.news-card {
+  border: none;
+}
+.map {
+  height: 185px;
+  background-image: url("../img/Layer\ 78.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.map-media-body {
+  height: 200px;
+  background-color: #fff;
+}
+.map-media {
+  margin-top: -15px;
+}
+.map-media > .media-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.map-media-body > p {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fdb95d;
+  display: table;
+  font-weight: bold;
+}
+.map-icon-holder {
+  margin-left: auto;
+  margin-right: auto;
+  width: 292px;
+}
+.map-icon-1,
+.map-icon-3 {
+  width: 23px;
+  height: 29px;
+  margin-top: 50px;
+}
+.map-icon-2 {
+  width: 111px;
+  height: 105px;
+  margin-top: 40px;
+}
+.map-icon-3,
+.map-icon-2 {
+  margin-left: 63px;
+}
+.about-us {
+  background-color: #e7e7e7;
+  padding-bottom: 95px;
+}
+.about-header {
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
+  color: #3a3a3a;
+}
+.about-us-sub {
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  color: #656565;
+  margin-top: 20px;
+  padding-right: 50px;
+}
+.about-us-sub > span {
+  margin-top: 18px;
+  display: block;
+}
+.about-us-header,
+.contact-us-header {
+  margin-top: 140px;
+}
+.your-request-header {
+  margin-top: 65px;
+  margin-bottom: 30px;
+}
+.request-label-text {
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  color: #656565;
+}
+.request-input {
+  border: none;
+  border-radius: 0;
+  background-color: #d2d2d2;
+  height: 24px;
+}
+.requests-input {
+  border: none;
+  border-radius: 0;
+  background-color: #d2d2d2;
+  height: 42px;
+}
+.requestbtn {
+  border-radius: 0;
+  margin-top: 15px;
+  background-color: #e6ab66;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  padding: 0;
+  width: 249px;
+  height: 42px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  border: none;
+}
+.follow-us-header {
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-left: 64px;
+  float: left;
+}
+.follow-us-list {
+  list-style: none;
+  padding-right: 44px;
+  float: right;
+}
+.fa-facebook-f,
+.fa-linkedin-in,
+.fa-instagram,
+.fa-youtube {
+  color: #b1b1b1;
+}
+.fa-twitter {
+  color: #fff;
+}
+.follow-us-list-item {
+  display: inline-block;
+}
+.follow-us-list-item:not(:first-child) {
+  padding-left: 20px;
+}
+.iconcircle {
+  background: #f1f1f1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.iconcircle2 {
+  background: #fdb95d;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.contact-us-header {
+  padding-left: 70px;
+}
+.contact-us-list {
+  list-style: none;
+}
+.contact-us-list-item p {
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #656565;
+  font-family: "Ubuntu", sans-serif;
+}
+.contact-us-list-item span {
+  padding-top: 3px;
+}
+.footer {
+  height: 122px;
+  background-color: #000;
+}
+.navbar-brand-bottom img {
+  width: 46px;
+  height: 43px;
+}
+.logo-text-bottom {
+  display: block;
+  font-size: 0.55rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #e6ab66;
+  padding-top: 2px;
+}
+.botnavtext {
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  opacity: 0.8;
+}
+.bottom-nav {
+  padding-right: 120px;
+  z-index: 11;
+}
+.bottom-nav li {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+.footer-hr {
+  border-top: 1px #404040 solid;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.copyrighttxt {
+  font-size: 12px;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 0;
+  opacity: 0.8;
+  padding-top: 10px;
+}
+.creator {
+  position: absolute;
+  bottom: 0%;
+  right: 9%;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+.creator span {
+  padding-left: 10px;
+}
+.digitallogo {
+  padding-bottom: 3px;
+}
+.scrollbtn {
+  width: 81px;
+  height: 81px;
+  background-color: #000;
+  padding: 0;
+  position: absolute;
+  right: 8%;
+  bottom: 60px;
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  border-radius: 0;
+  z-index: 10;
+}
+.scrollbtn:focus,
+.scrollbtn:active:focus,
+.scrollbtn.active:focus,
+.scrollbtn.focus,
+.scrollbtn:active.focus,
+.scrollbtn.active.focus {
+  outline: none;
+  box-shadow: none;
+}
+.scrollbtnarrow {
+  color: #fff;
+  position: absolute;
+  padding-top: 11px;
+  padding-left: 30px;
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.header-news {
+  min-height: 365px;
+  background-image: url("../img/sef_slideshow_autumn_0651.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.header-news-dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 358px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header-news-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 155px;
+}
+.header-news-text {
+  font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+  color: #fdb95d;
+  text-align: center;
+}
+.news-ge-newssection {
+  border-bottom: #e6ab66 7px solid;
+}
+.news-ge-newssection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.news-ge-newssection-main-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  padding-top: 11px;
+}
+.news-ge-newssection-main-textmain {
+  color: #fdb95d;
+  padding-right: 10px;
+}
+.news-ge-newssection-main-next {
+  padding-right: 10px;
+}
+.news-ge-newssection-main-textsub {
+  color: #000;
+}
+.news-ge-newssection-news {
+  background-color: #f2f2f2;
+  padding-top: 54px;
+  padding-bottom: 82px;
+}
+.news-ge-newssection-news .container .row:not(:last-child) {
+  padding-bottom: 54px;
+}
+.news-ge-newssection-news .container .row .col-md-4 .news-card {
+  background-color: #f2f2f2;
+}
+.news-ge-newssection-pagination {
+  height: 138px;
+  background-color: #fff;
+}
+.news-ge-pagination {
+  list-style: none;
+  margin-top: 32px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.news-ge-pagination-item {
+  display: inline-block;
+  width: 49px;
+  height: 49px;
+  background-color: #f2f2f2;
+}
+.news-ge-pagination-item {
+  margin-right: -4px;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 14px;
+}
+.news-ge-pagination-item:not(:last-child) {
+  border-right: 1px solid #d2d2d2;
+}
+.news-ge-pagination-item-active {
+  background-color: #e6ab66;
+}
+.news-ge-pagination-link {
+  color: #999999;
+}
+.news-ge-pagination-link-active {
+  color: #fff;
+}
+.header-single-news {
+  min-height: 365px;
+  background-image: url("../img/DSC_1342.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.single-news-ge-newssection {
+  border-bottom: #e6ab66 7px solid;
+}
+.single-news-ge-newssection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.single-news-ge-newssection-main-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  padding-top: 11px;
+}
+.single-news-ge-newssection-main-textmain {
+  color: #e6ab66;
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-next {
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-textsub {
+  color: #e6ab66;
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-textsub-sub {
+  color: #000;
+}
+.single-news-ge-newssection-news {
+  background-color: #f2f2f2;
+  padding-top: 44px;
+  padding-bottom: 73px;
+}
+.single-news-ge-article {
+  margin-top: 46px;
+  margin-bottom: 77px;
+}
+.single-news-ge-article-text {
+  color: #000;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+}
+.single-news-ge-article-text span {
+  display: block;
+}
+.single-news-ge-article-text span:not(:first-child) {
+  margin-top: 30px;
+}
+.news-picture-col {
+  height: 192px;
+}
+.news-picture-col img {
+  width: 100%;
+  height: 100%;
+}
+.single-news-ge-newssection-sub {
+  height: 116px;
+}
+.single-news-ge-newssection-sub-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  padding-top: 40px;
+  color: #e6ab66;
+}
+.single-news-ge-newssection-sub-text span {
+  margin-right: 10px;
+}
+.single-news-card {
+  background-color: #e6ab66;
+}
+.single-news-card-header {
+  padding: 0;
+  overflow: hidden;
+}
+.single-news-card-title {
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  margin-top: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+.single-news-card-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .home-section {
+    min-height: 850px;
+  }
+  .carousel-inner {
+    height: 850px;
+  }
+  .item {
+    height: 850px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .home-section {
+    min-height: 750px;
+  }
+  .carousel-inner {
+    height: 750px;
+  }
+  .item {
+    height: 750px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .nav-items {
+    font-size: 1rem;
+  }
+  .left-nav .nav-item:first-child {
+    margin-right: 10px;
+  }
+  .right-nav .nav-item:last-child {
+    margin-left: 10px;
+  }
+  .left-nav .nav-item:not(:first-child) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .right-nav .nav-item:not(:last-child) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .searchlan {
+    right: 1.5%;
+  }
+  .home-section {
+    min-height: 710px;
+  }
+  .carousel-inner {
+    height: 710px;
+  }
+  .item {
+    height: 710px;
+  }
+  .home-title {
+    font-size: 30px;
+  }
+  .home-text {
+    font-size: 24px;
+  }
+  .homebtn {
+    font-size: 20px;
+  }
+  .home-inner {
+    bottom: 180px;
+  }
+  .first-section {
+    padding-top: 100px;
+    padding-bottom: 140px;
+  }
+  .twinshotel {
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .twinshotel-media {
+    height: 311px;
+    background-position-x: -150px;
+    background-position-y: -80px;
+  }
+  .media-body > h1 {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 32px;
+  }
+  .media-body > p {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 40px;
+    line-height: 1.3;
+    font-size: 15px;
+  }
+  .media-body > button {
+    margin-left: 10px;
+  }
+  .mediabtn {
+    font-size: 20px;
+  }
+  .icon-bg {
+    margin-top: 25px;
+    margin-left: 39px;
+  }
+  .museum {
+    margin-top: 90px;
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .museum-media {
+    height: 311px;
+  }
+  .restaurant {
+    height: 450px;
+  }
+  .restaurant-media {
+    height: 502px;
+  }
+  .restaurant-media-body > h1 {
+    margin-top: 44px;
+    font-size: 32px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant-media-body > p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 37px;
+    padding: 0 90px 0 90px;
+    font-size: 16px;
+  }
+  .second-section {
+    margin-top: 150px;
+    margin-bottom: 140px;
+  }
+  .activity {
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .activity-media {
+    height: 311px;
+  }
+  .activity-media .media-body button {
+    margin-top: 25px;
+  }
+  .wineshop {
+    margin-top: 90px;
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .wineshop-media {
+    height: 311px;
+    background-position-x: -150px;
+    background-position-y: -80px;
+  }
+  .napareuli {
+    height: 450px;
+  }
+  .napareuli-media {
+    height: 502px;
+    background-position-y: 74px;
+  }
+  .napareuli-media-body > h1 {
+    margin-left: 0;
+    margin-top: 44px;
+    font-size: 32px;
+  }
+  .napareuli-media-body > p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 37px;
+    padding: 0 90px 0 90px;
+    font-size: 16px;
+  }
+  .news {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .map-media-body > p {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .follow-us-header {
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-left: 20px;
+  }
+  .follow-us-list {
+    list-style: none;
+    padding-right: 20px;
+  }
+  .follow-us-list-item:not(:first-child) {
+    padding-left: 12px;
+  }
+  .copyrighttxt {
+    padding-top: 8px;
+  }
+  .bottom-nav {
+    padding-right: 40px;
+  }
+  .botnavtext {
+    font-size: 14px;
+  }
+  .bottom-nav li {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .nav-items {
+    font-size: 1.125rem;
+    font-family: "Ubuntu", sans-serif;
+  }
+  .left-nav,
+  .right-nav {
+    margin-top: 0;
+  }
+  .left-nav .nav-item:first-child {
+    margin-right: 0;
+  }
+  .right-nav .nav-item:last-child {
+    margin-left: 0;
+  }
+  .left-nav .nav-item:not(:first-child) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .right-nav .nav-item:not(:last-child) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .logo-top,
+  .logo-text-top {
+    display: none;
+  }
+  .searchlan {
+    right: 2.1%;
+    top: -24.5%;
+  }
+  .search-hover {
+    height: 45px;
+  }
+  .lanbtn {
+    height: 45px;
+  }
+  .home-section {
+    min-height: 650px;
+  }
+  .carousel-inner {
+    height: 650px;
+  }
+  .item {
+    height: 650px;
+  }
+  .home-inner {
+    bottom: 240px;
+  }
+  .first-section {
+    padding-top: 70px;
+    padding-bottom: 110px;
+  }
+  .twinshotel {
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .twinshotel-media {
+    margin-top: 10px;
+    height: 295px;
+    background-position-x: -235px;
+    background-position-y: -100px;
+  }
+  .media-body > h1 {
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 26px;
+  }
+  .media-body > p {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 40px;
+    line-height: 1.2;
+    font-size: 15px;
+  }
+  .media-body > button {
+    margin-left: 10px;
+  }
+  .mediabtn {
+    font-size: 18px;
+  }
+  .icon-bg {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .museum {
+    margin-top: 70px;
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .museum-media {
+    margin-top: 10px;
+    height: 295px;
+  }
+  .restaurant-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .second-section {
+    margin-top: 110px;
+    margin-bottom: 100px;
+  }
+  .activity {
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .activity-media {
+    margin-top: 10px;
+    height: 295px;
+  }
+  .activity-media .media-body button {
+    margin-top: 25px;
+  }
+  .wineshop {
+    margin-top: 70px;
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .wineshop-media {
+    margin-top: 10px;
+    height: 295px;
+    background-position-x: -235px;
+    background-position-y: -100px;
+  }
+  .napareuli-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .map-media-body > p {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .about-us {
+    padding-bottom: 30px;
+  }
+  .about-us-sub {
+    margin-top: 0;
+    padding-right: 0;
+  }
+  .about-us-sub > span {
+    margin-top: 15px;
+  }
+  .about-us-header,
+  .contact-us-header {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .your-request-header {
+    margin-top: 35px;
+  }
+  .contact-us-header {
+    padding-left: 0;
+  }
+  .contact-us-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .contact-us-list-item p {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #656565;
+    font-family: "Ubuntu", sans-serif;
+  }
+  .contact-us-list-item span {
+    padding-top: 3px;
+  }
+  .footer {
+    display: none;
+  }
+  .news-picture-col {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .searchlan {
+    right: 2.6%;
+    top: -24.5%;
+  }
+  .home-section {
+    min-height: 600px;
+  }
+  .carousel-inner {
+    height: 600px;
+  }
+  .item {
+    height: 600px;
+  }
+  .home-inner {
+    bottom: 190px;
+  }
+  .twinshotel {
+    background-image: none;
+  }
+  .twinshotel-media {
+    background-position-x: -170px;
+  }
+  .museum {
+    background-image: none;
+  }
+  .restaurant-media {
+    background-size: 280px 263px;
+  }
+  .restaurant-media-body > p {
+    padding: 0 70px 0 70px;
+  }
+  .restaurant-media-body > button {
+    margin-top: 20px;
+  }
+  .activity {
+    background-image: none;
+  }
+  .activity-lists {
+    margin-top: 5px;
+    padding-left: 10px;
+  }
+  .wineshop {
+    background-image: none;
+  }
+  .wineshop-media {
+    background-position-x: -170px;
+  }
+  .napareuli-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > button {
+    margin-top: 20px;
+  }
+  .news-card {
+    margin-bottom: 30px;
+  }
+  .follow-us-header {
+    margin-bottom: 0;
+    padding-top: 8px;
+    float: none;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .follow-us-list {
+    list-style: none;
+    float: none;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .follow-us-list li {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .follow-us-list-item:not(:first-child) {
+    padding-left: 0;
+  }
+  .single-news-card-header {
+    display: none;
+  }
+  .single-news-card-text {
+    padding-bottom: 20px;
+  }
+}

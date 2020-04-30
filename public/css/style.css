@@ -1,0 +1,223 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+.bg {
+  height: 100%;
+}
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.carousel-inner {
+  height: 100%;
+}
+.item {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.item-one {
+  background-image: url("../img/Dark-red-wine.png");
+}
+.item-two {
+  background-image: url("../img/DSC_1315.png");
+}
+.item-three {
+  background-image: url("../img/DSC_1342.png");
+}
+.dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.logorow {
+  margin-top: 363px;
+}
+.block1:hover > .logoblock1,
+.block4:hover > .logoblock4 {
+  margin-top: 0;
+  height: 144px;
+  transition: all 0.25s;
+}
+.block2:hover > .logoblock2,
+.block3:hover > .logoblock3 {
+  margin-top: 0;
+  height: 163px;
+  transition: all 0.25s;
+}
+.block1,
+.block2,
+.block3,
+.block4 {
+  height: 375px;
+}
+.logo {
+  margin-top: 11px;
+  width: auto;
+}
+.logo1 {
+  height: 129px;
+}
+.logo2 {
+  height: 148px;
+}
+span {
+  display: block;
+}
+h1,
+p {
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  font-size: 1.5rem;
+}
+.header1 {
+  margin-top: 41px;
+}
+.header2 {
+  margin-top: 22px;
+}
+p {
+  color: #e6ab66;
+  font-size: 1.5rem;
+  margin-top: 48px;
+}
+a:link,
+a:visited {
+  color: white;
+}
+a {
+  font-size: 1.125rem;
+  font-family: verdana, sans-serif;
+  font-weight: 500;
+}
+.nav-language {
+  margin-bottom: 86px;
+}
+.nav-media {
+  margin-bottom: 15px;
+}
+.logo-bg {
+  width: 38px;
+  height: 38px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.logo-bg2 {
+  width: 38px;
+  height: 38px;
+  background-color: #e6ab66;
+  border-radius: 50%;
+}
+.fa-facebook-f,
+.fa-linkedin-in,
+.fa-instagram,
+.fa-youtube {
+  color: #e6ab66;
+}
+.fa-twitter {
+  color: #000;
+}
+.iconcircle {
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.iconcircle2 {
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.icon-center {
+  position: relative;
+}
+.icon-list > li {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+@media only screen and (max-width: 1680px) {
+  .logorow {
+    margin-top: 35.6vh;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .logorow {
+    margin-top: 32.6vh;
+  }
+  .logo1 {
+    height: 115px;
+  }
+  .logo2 {
+    height: 134px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .logorow {
+    margin-top: 26vh;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .logorow {
+    margin-top: 12vh;
+  }
+  p {
+    display: none;
+  }
+  .block1,
+  .block2 {
+    padding-bottom: 50px;
+  }
+  .block1,
+  .block2,
+  .block3,
+  .block4 {
+    height: 275px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .logorow {
+    margin-top: 10vh;
+  }
+  .logo1 {
+    height: 90px;
+  }
+  .logo2 {
+    height: 109px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  .mobile {
+    width: 50%;
+  }
+  .block1:hover > .logoblock1,
+  .block4:hover > .logoblock4 {
+    height: 110px;
+  }
+  .block2:hover > .logoblock2,
+  .block3:hover > .logoblock3 {
+    height: 129px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .logorow {
+    margin-top: 9vh;
+  }
+  .logo1 {
+    height: 80px;
+  }
+  .logo2 {
+    height: 99px;
+  }
+  .mobile {
+    width: 50%;
+  }
+}

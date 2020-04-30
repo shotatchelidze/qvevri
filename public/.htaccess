@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+
+RewriteBase /qvevri/
+
+# empty url -> redirect to en/
+RewriteCond %{QUERY_STRING} !lang=(en|ge|ru)
+RewriteRule ^$ en/ [R=302,L]
+
+# url is ONLY '/en' or '/de' -> redirect to /en/ or /de/ (adding slash)
+RewriteRule ^(en|ge|ru)$  $1/ [R=302,L]
+
+# now all urls have en/ de/ -> parse them
+RewriteRule ^(en|ge|ru)/(.*)$  $2?lang=$1&%{query_STRING} [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule  ^(.*)$  index.php?url=$1 [QSA,L] 
+
+</IfModule>

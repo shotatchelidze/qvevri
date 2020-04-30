@@ -1,0 +1,1648 @@
+@font-face {
+  font-family: "BPG Excelsior";
+  src: url("hinted-BPGExcelsior.eot");
+  src: url("hinted-BPGExcelsior.eot?#iefix") format("embedded-opentype"),
+    url("hinted-BPGExcelsior.woff2") format("woff2"), url("hinted-BPGExcelsior.woff") format("woff"),
+    url("hinted-BPGExcelsior.svg#BPGExcelsior") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  src: url("BPGExcelsiorCapsDejaVu2010.eot");
+  src: url("BPGExcelsiorCapsDejaVu2010.eot?#iefix") format("embedded-opentype"),
+    url("BPGExcelsiorCapsDejaVu2010.woff2") format("woff2"), url("BPGExcelsiorCapsDejaVu2010.woff") format("woff"),
+    url("BPGExcelsiorCapsDejaVu2010.ttf") format("truetype"),
+    url("BPGExcelsiorCapsDejaVu2010.svg#BPGExcelsiorCapsDejaVu2010") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* mtavari gverdi */
+body {
+  background-color: #fff;
+}
+/* iwyeba navbari */
+.topnavbar {
+  opacity: 0.8;
+}
+.logo-top {
+  width: 79px;
+  height: 74px;
+}
+.logo-text-top {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 10px;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+}
+.logo-text-top > span {
+  display: block;
+}
+.nav-items {
+  font-size: 1.125rem;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+}
+.left-nav,
+.right-nav {
+  margin-top: 80px;
+}
+.left-nav .nav-item:first-child {
+  margin-right: 18px;
+}
+.right-nav .nav-item:last-child {
+  margin-left: 11px;
+}
+.left-nav .nav-item:not(:first-child) {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+.right-nav .nav-item:not(:last-child) {
+  margin-left: 11px;
+  margin-right: 11px;
+}
+.nav-items,
+.logo-text-top {
+  color: #e6ab66;
+}
+.container {
+  position: relative;
+}
+.searchlan {
+  position: absolute;
+  right: 1.21%;
+  top: -6.2%;
+}
+.searchlan-list {
+  list-style: none;
+}
+.search-hover {
+  background: url("../img/Search.png") no-repeat left;
+  outline: none;
+  background-size: 22px;
+  background-position: 13px;
+  width: 41px;
+  height: 41px;
+  padding: 20px;
+  transition: all 0.5s;
+  margin-right: 5px;
+}
+.search-hover:hover {
+  width: 250px;
+  padding-left: 50px;
+  color: #e7e7e7;
+  background-color: #656565;
+  margin-right: -5px;
+}
+.search-hover::-webkit-input-placeholder {
+  color: transparent;
+  font-family: "BPG Excelsior";
+}
+.search-hover::-moz-placeholder {
+  color: transparent;
+  font-family: "BPG Excelsior";
+}
+.search-hover:-ms-input-placeholder {
+  color: transparent;
+  font-family: "BPG Excelsior";
+}
+.search-hover:-moz-placeholder {
+  color: transparent;
+  font-family: "BPG Excelsior";
+}
+.search-hover:hover::-webkit-input-placeholder {
+  color: #b1b1b1;
+  font-family: "BPG Excelsior";
+}
+.search-hover:hover::-moz-placeholder {
+  color: #b1b1b1;
+  font-family: "BPG Excelsior";
+}
+.search-hover:hover:-ms-input-placeholder {
+  color: #b1b1b1;
+  font-family: "BPG Excelsior";
+}
+.search-hover:hover:-moz-placeholder {
+  color: #b1b1b1;
+  font-family: "BPG Excelsior";
+}
+.lanbtn {
+  background-color: #000;
+  color: #e6ab66;
+  border-radius: 0;
+  padding: 0;
+  height: 41px;
+  width: 56px;
+}
+.en,
+.ru {
+  font-family: verdana, arial;
+}
+.ge {
+  font-family: "BPG Excelsior";
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  min-width: 4rem;
+}
+/* iwyeba header galeria sadac aris */
+.home-section {
+  min-height: 970px;
+  border-bottom: #e6ab66 7px solid;
+}
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.carousel-inner {
+  height: 970px;
+}
+.item {
+  height: 970px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item-one {
+  background-image: url("../img/Dark-red-wine.png");
+}
+.item-two {
+  background-image: url("../img/DSC_1315.png");
+}
+.item-three {
+  background-image: url("../img/DSC_1342.png");
+}
+.home-inner {
+  bottom: 210px;
+}
+.home-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  padding-left: 10px;
+  line-height: normal;
+}
+.home-title {
+  font-size: 32px;
+  font-family: "BPG Excelsior";
+  margin-left: 25px;
+  margin-top: 10px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+}
+.home-text {
+  font-size: 24px;
+  font-family: "BPG Excelsior";
+  margin-bottom: 0px;
+  padding-bottom: 7px;
+  margin-left: 25px;
+}
+.homebtn {
+  font-size: 22px;
+  color: #e6ab66;
+  font-family: "BPG Excelsior";
+  padding: 0;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+/* pirveli seccia */
+.first-section {
+  background-color: #f2f2f2;
+  padding-top: 146px;
+  padding-bottom: 192px;
+}
+.twinshotel {
+  height: 457px;
+  background-image: url("../img/DSC_1376.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.twinshotel-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+  background-image: url("../img/LOGO_ge\ copy\ 2.png");
+}
+.media-body > h1 {
+  margin-left: 24px;
+  margin-top: 60px;
+  font-size: 36px;
+  color: #3a3a3a;
+  font-family: "BPG Excelsior";
+}
+.media-body > p {
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-right: 125px;
+  line-height: 1.3;
+  font-size: 16px;
+  color: #404040;
+  font-family: "BPG Excelsior";
+}
+.media-body > button {
+  margin-left: 15px;
+}
+.mediabtn {
+  font-size: 24px;
+  color: #e6ab66;
+  font-family: "BPG Excelsior";
+}
+.icon-bg {
+  margin-top: 55px;
+  margin-left: 69px;
+  width: 74px;
+  height: 74px;
+  background-color: #c08c41;
+  text-align: center;
+  padding: 17px 0;
+}
+.media-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.museum {
+  margin-top: 106px;
+  height: 457px;
+  background-image: url("../img/Layer\ 75.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.museum-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+}
+.restaurant {
+  height: 510px;
+  background-image: url("../img/3.png");
+  background-position: left;
+  background-repeat: repeat-x;
+}
+.restaurant-media {
+  margin-top: -26px;
+  height: 562px;
+  background: #e6ab66;
+  background-image: url("../img/LOGO_ge\ copy.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 57px;
+}
+.restaurant-media-body > h1 {
+  margin-left: 0;
+  margin-top: 66px;
+  font-size: 36px;
+  color: #fff;
+  font-family: "BPG Excelsior";
+}
+.restaurant-media-body > p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 37px;
+  padding: 0 120px 0 120px;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #fff;
+  font-family: "BPG Excelsior";
+}
+.restaurant-media-body > button {
+  margin-left: 0;
+  margin-top: 50px;
+}
+.restaurantbtn {
+  font-size: 24px;
+  color: #fff;
+  border: 3px solid #fdb95d;
+  border-radius: 0;
+  font-family: "BPG Excelsior";
+}
+.second-section {
+  margin-top: 200px;
+  margin-bottom: 192px;
+}
+.activity {
+  height: 457px;
+  background-image: url("../img/DSC_5350.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.activity-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+}
+.activity-media > .icon-bg {
+  padding: 10px 0;
+}
+.activity-media .media-body button {
+  margin-top: 30px;
+}
+.activity-lists {
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 18px;
+  color: #000;
+  font-family: "BPG Excelsior";
+  list-style: none;
+  padding-left: 25px;
+}
+.activity-lists li p {
+  margin-bottom: 0;
+}
+.wineshop {
+  margin-top: 107px;
+  height: 457px;
+  background-image: url("../img/wine.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 652px 457px;
+}
+.wineshop-media {
+  margin-top: 30px;
+  height: 398px;
+  background: #fff;
+  background-image: url("../img/LOGO_ge\ copy\ 2.png");
+}
+.napareuli {
+  height: 510px;
+  background-image: url("../img/j.png");
+  background-position: right;
+  background-repeat: repeat-x;
+}
+.napareuli-media {
+  margin-top: -26px;
+  height: 562px;
+  background: #e6ab66;
+  background-image: url("../img/ico1.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 114px;
+}
+.napareuli-media-body > h1 {
+  margin-left: 0;
+  margin-top: 66px;
+  font-size: 36px;
+  color: #fff;
+  font-family: "BPG Excelsior";
+}
+.napareuli-media-body > p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 84px;
+  margin-bottom: 0;
+  padding: 0 120px 0 120px;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #fff;
+  font-family: "BPG Excelsior";
+}
+.napareuli-media-body > button {
+  margin-left: 0;
+  margin-top: 45px;
+}
+.napareulibtn {
+  font-size: 24px;
+  color: #fff;
+  border: 3px solid #fdb95d;
+  border-radius: 0;
+  font-family: "BPG Excelsior";
+}
+.news {
+  margin-top: 85px;
+  margin-bottom: 100px;
+}
+.newslogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news-text {
+  text-align: center;
+}
+.card-body {
+  padding: 0;
+  padding-top: 10px;
+}
+.news-text {
+  font-size: 30px;
+  font-family: "BPG Excelsior";
+  color: #fdb95d;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.news-date-text {
+  font-size: 22px;
+  color: #fdb95d;
+  text-align: left;
+  font-family: "BPG Excelsior";
+}
+.news-card-title {
+  font-size: 22px;
+  color: #000;
+  text-align: left;
+  font-family: "BPG Excelsior";
+}
+.news-card-text {
+  font-size: 16px;
+  color: #444444;
+  text-align: left;
+  font-family: "BPG Excelsior";
+}
+.newsbtn {
+  font-size: 18px;
+  color: #fdb95d;
+  padding: 0;
+  font-family: "BPG Excelsior";
+}
+.news-card {
+  border: none;
+}
+.map {
+  height: 185px;
+  background-image: url("../img/Layer\ 78.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.map-media-body {
+  height: 200px;
+  background-color: #fff;
+}
+.map-media {
+  margin-top: -15px;
+}
+.map-media > .media-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.map-media-body > p {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fdb95d;
+  display: table;
+  font-weight: bold;
+  text-align: center;
+}
+.map-media-body p span {
+  display: block;
+}
+.map-icon-holder {
+  margin-left: auto;
+  margin-right: auto;
+  width: 292px;
+}
+.map-icon-1,
+.map-icon-3 {
+  width: 23px;
+  height: 29px;
+  margin-top: 50px;
+}
+.map-icon-2 {
+  width: 111px;
+  height: 105px;
+  margin-top: 40px;
+}
+.map-icon-3,
+.map-icon-2 {
+  margin-left: 63px;
+}
+.about-us {
+  background-color: #e7e7e7;
+  padding-bottom: 95px;
+}
+.about-header {
+  font-size: 20px;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  color: #3a3a3a;
+}
+.about-us-sub {
+  font-size: 14px;
+  font-family: "BPG Excelsior";
+  color: #656565;
+  margin-top: 20px;
+  padding-right: 50px;
+}
+.about-us-sub > span {
+  margin-top: 18px;
+  display: block;
+}
+.about-us-header,
+.contact-us-header {
+  margin-top: 140px;
+}
+.your-request-header {
+  margin-top: 65px;
+  margin-bottom: 30px;
+}
+.request-label-text {
+  font-size: 14px;
+  font-family: "BPG Excelsior";
+  color: #656565;
+}
+.request-input {
+  border: none;
+  border-radius: 0;
+  background-color: #d2d2d2;
+  height: 24px;
+}
+.requests-input {
+  border: none;
+  border-radius: 0;
+  background-color: #d2d2d2;
+  height: 42px;
+}
+.requestbtn {
+  border-radius: 0;
+  margin-top: 15px;
+  background-color: #e6ab66;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  font-size: 18px;
+  padding: 0;
+  width: 249px;
+  height: 42px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  border: none;
+}
+.follow-us-header {
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-left: 10px;
+  float: left;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+}
+.follow-us-list {
+  list-style: none;
+  padding-right: 24px;
+  float: right;
+}
+.fa-facebook-f,
+.fa-linkedin-in,
+.fa-instagram,
+.fa-youtube {
+  color: #b1b1b1;
+}
+.fa-twitter {
+  color: #fff;
+}
+.follow-us-list-item {
+  display: inline-block;
+}
+.follow-us-list-item:not(:first-child) {
+  padding-left: 20px;
+}
+.iconcircle {
+  background: #f1f1f1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.iconcircle2 {
+  background: #fdb95d;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 11px;
+}
+.contact-us-header {
+  padding-left: 70px;
+}
+.contact-us-list {
+  list-style: none;
+}
+.contact-us-list-item p {
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #656565;
+  font-family: "BPG Excelsior";
+}
+.contact-us-list-item span {
+  padding-top: 3px;
+}
+.footer {
+  height: 122px;
+  background-color: #000;
+}
+.navbar-brand-bottom img {
+  width: 46px;
+  height: 43px;
+}
+.logo-text-bottom {
+  display: block;
+  font-size: 0.55rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #e6ab66;
+  padding-top: 2px;
+}
+.botnavtext {
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  opacity: 0.8;
+}
+.bottom-nav {
+  padding-right: 40px;
+  z-index: 11;
+}
+.bottom-nav li {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+.footer-hr {
+  border-top: 1px #404040 solid;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.copyrighttxt {
+  font-size: 12px;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 0;
+  opacity: 0.8;
+  padding-top: 10px;
+}
+.creator {
+  position: absolute;
+  bottom: 0%;
+  right: 9%;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+.creator span {
+  padding-left: 10px;
+}
+.digitallogo {
+  padding-bottom: 3px;
+}
+.scrollbtn {
+  width: 81px;
+  height: 81px;
+  background-color: #000;
+  padding: 0;
+  position: absolute;
+  right: 8%;
+  bottom: 60px;
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  border-radius: 0;
+  z-index: 10;
+}
+.scrollbtn:focus,
+.scrollbtn:active:focus,
+.scrollbtn.active:focus,
+.scrollbtn.focus,
+.scrollbtn:active.focus,
+.scrollbtn.active.focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.scrollbtnarrow {
+  color: #fff;
+  position: absolute;
+  padding-top: 11px;
+  padding-left: 30px;
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* iwyeba news gverdi */
+.header-news {
+  min-height: 365px;
+  background-image: url("../img/sef_slideshow_autumn_0651.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.header-news-dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 358px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header-news-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 155px;
+}
+.header-news-text {
+  font-size: 30px;
+  font-family: "BPG Excelsior";
+  color: #fff;
+  text-align: center;
+}
+.news-ge-newssection {
+  border-bottom: #e6ab66 7px solid;
+}
+.news-ge-newssection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.news-ge-newssection-main-text {
+  font-family: "BPG Excelsior";
+  font-size: 16px;
+  padding-top: 11px;
+}
+.news-ge-newssection-main-textmain {
+  color: #fdb95d;
+  padding-right: 10px;
+}
+.news-ge-newssection-main-next {
+  padding-right: 10px;
+}
+.news-ge-newssection-main-textsub {
+  color: #000;
+}
+.news-ge-newssection-news {
+  background-color: #f2f2f2;
+  padding-top: 54px;
+  padding-bottom: 82px;
+}
+.news-ge-newssection-news .container .row:not(:last-child) {
+  padding-bottom: 54px;
+}
+.news-ge-newssection-news .container .row .col-md-4 .news-card {
+  background-color: #f2f2f2;
+}
+.news-ge-newssection-pagination {
+  height: 138px;
+  background-color: #fff;
+}
+.news-ge-pagination {
+  list-style: none;
+  margin-top: 32px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.news-ge-pagination-item {
+  display: inline-block;
+  width: 49px;
+  height: 49px;
+  background-color: #f2f2f2;
+}
+.news-ge-pagination-item {
+  margin-right: -4px;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 14px;
+}
+.news-ge-pagination-item:not(:last-child) {
+  border-right: 1px solid #d2d2d2;
+}
+.news-ge-pagination-item-active {
+  background-color: #e6ab66;
+}
+.news-ge-pagination-link {
+  color: #999999;
+}
+.news-ge-pagination-link-active {
+  color: #fff;
+}
+.header-single-news {
+  min-height: 365px;
+  background-image: url("../img/DSC_1342.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.single-news-ge-newssection {
+  border-bottom: #e6ab66 7px solid;
+}
+.single-news-ge-newssection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.single-news-ge-newssection-main-text {
+  font-family: "BPG Excelsior";
+  font-size: 16px;
+  padding-top: 11px;
+}
+.single-news-ge-newssection-main-textmain {
+  color: #e6ab66;
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-next {
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-textsub {
+  color: #e6ab66;
+  padding-right: 10px;
+}
+.single-news-ge-newssection-main-textsub-sub {
+  color: #000;
+}
+.single-news-ge-newssection-news {
+  background-color: #f2f2f2;
+  padding-top: 44px;
+  padding-bottom: 73px;
+}
+.single-news-ge-article {
+  margin-top: 46px;
+  margin-bottom: 77px;
+}
+.single-news-ge-article-text {
+  color: #000;
+  font-size: 16px;
+  font-family: "BPG Excelsior";
+}
+.single-news-ge-article-text span {
+  display: block;
+}
+.single-news-ge-article-text span:not(:first-child) {
+  margin-top: 30px;
+}
+.news-picture-col {
+  height: 192px;
+}
+.news-picture-col img {
+  width: 100%;
+  height: 100%;
+}
+.single-news-ge-newssection-sub {
+  height: 116px;
+}
+.single-news-ge-newssection-sub-text {
+  font-family: "BPG Excelsior";
+  font-size: 16px;
+  padding-top: 40px;
+  color: #e6ab66;
+}
+.single-news-ge-newssection-sub-text span {
+  margin-right: 10px;
+}
+.single-news-card {
+  background-color: #e6ab66;
+}
+.single-news-card-header {
+  padding: 0;
+  overflow: hidden;
+}
+.single-news-card-title {
+  color: #fff;
+  font-family: "BPG Excelsior";
+  font-size: 20px;
+  margin-top: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+.single-news-card-text {
+  font-family: "BPG Excelsior";
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+.header-contact {
+  min-height: 365px;
+  background-image: url("../img/home2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.header-contact-dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 358px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header-contact-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 200px;
+}
+.header-contact-text {
+  font-size: 30px;
+  padding-top: 30px;
+  font-family: "BPG Excelsior";
+  color: #fff;
+  text-align: center;
+}
+.contact-ge-contactsection {
+  border-bottom: #e6ab66 7px solid;
+}
+.contact-ge-contactsection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.contact-ge-contactsection-main-text {
+  font-family: "BPG Excelsior";
+  font-size: 16px;
+  padding-top: 11px;
+}
+.contact-ge-contactsection-main-textmain {
+  color: #fdb95d;
+  padding-right: 10px;
+}
+.contact-ge-contactsection-main-next {
+  padding-right: 10px;
+}
+.contact-ge-contactsection-main-textsub {
+  color: #000;
+}
+.contact-ge-contactsection-contact {
+  background-color: #f2f2f2;
+  padding-top: 33px;
+  padding-bottom: 155px;
+}
+.frame {
+  height: 400px;
+  width: 100%;
+  border: 1px solid #d6d6d6;
+}
+.contact-info {
+  margin-top: 75px;
+}
+.form-group-contact-name,
+.form-group-contact-email,
+.form-group-contact-phone,
+.form-group-contact-text,
+.form-group-contact-textarea,
+.form-group-contact-code {
+  margin-bottom: 26px;
+}
+.form-control-contact {
+  padding: 0 0 0 15px;
+  height: 50px;
+}
+.form-control-contact-2 {
+  padding: 0 0 120px 15px;
+  height: 170px;
+}
+.form-control::-webkit-input-placeholder {
+  font-family: "BPG Excelsior";
+  font-size: 14px;
+  color: #656565;
+}
+.form-control:-ms-input-placeholder {
+  font-family: "BPG Excelsior";
+  font-size: 14px;
+  color: #656565;
+}
+.form-control:-moz-placeholder {
+  font-family: "BPG Excelsior";
+  font-size: 14px;
+  color: #656565;
+}
+.form-control::-moz-placeholder {
+  font-family: "BPG Excelsior";
+  font-size: 14px;
+  color: #656565;
+}
+.contactbtn {
+  border-radius: 0;
+  background-color: #e6ab66;
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  font-size: 18px;
+  padding: 6px 0 0 0;
+  height: 40px;
+  display: block;
+  border: none;
+  margin-bottom: 0;
+}
+.contact-info-tbilisi .divider-one,
+.contact-info-tbilisi .divider-two {
+  margin-top: 0;
+  margin-left: 40px;
+}
+.contact-info-tbilisi .divider-one {
+  margin-bottom: 12px;
+}
+.contact-info-tbilisi .divider-two {
+  margin-bottom: 27px;
+}
+.contact-info-napareuli .divider-one {
+  margin-top: 77px;
+  margin-left: 40px;
+}
+.contact-info-napareuli .divider-one {
+  margin-bottom: 12px;
+}
+.contact-info-napareuli .divider-two {
+  margin-top: 0;
+  margin-bottom: 27px;
+  margin-left: 40px;
+}
+.contact-info-header {
+  font-family: "BPG Excelsior Caps DejaVu 2010";
+  margin-left: 40px;
+  font-size: 20px;
+  color: #3a3a3a;
+}
+.contact-info-tbilisi-list,
+.contact-info-napareuli-list {
+  list-style: none;
+}
+.contact-info-tbilisi-list-item:not(:last-child),
+.contact-info-napareuli-list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.contact-info-tbilisi-list-item span,
+.contact-info-napareuli-list-item span {
+  color: #e6ab66;
+  margin-right: 23px;
+  margin-top: 4px;
+}
+.contact-info-tbilisi-list-item p,
+.contact-info-napareuli-list-item p {
+  color: #656565;
+  font-size: 16px;
+}
+.contact-info-tbilisi-list-text-1,
+.contact-info-tbilisi-list-text-2,
+.contact-info-napareuli-list-text-1,
+.contact-info-napareuli-list-text-2 {
+  font-family: "Ubuntu", sans-serif;
+}
+.contact-info-tbilisi-list-text-3,
+.contact-info-napareuli-list-text-3 {
+  font-family: "BPG Excelsior";
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .home-section {
+    min-height: 850px;
+  }
+  .carousel-inner {
+    height: 850px;
+  }
+  .item {
+    height: 850px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .home-section {
+    min-height: 750px;
+  }
+  .carousel-inner {
+    height: 750px;
+  }
+  .item {
+    height: 750px;
+  }
+  .botnavtext {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .nav-items {
+    font-size: 1rem;
+  }
+  .left-nav .nav-item:first-child {
+    margin-right: 13px;
+  }
+  .right-nav .nav-item:last-child {
+    margin-left: 7px;
+  }
+  .left-nav .nav-item:not(:first-child) {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  .right-nav .nav-item:not(:last-child) {
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  .searchlan {
+    right: 1.5%;
+    top: -6.5%;
+  }
+  .home-section {
+    min-height: 710px;
+  }
+  .carousel-inner {
+    height: 710px;
+  }
+  .item {
+    height: 710px;
+  }
+  .home-title {
+    font-size: 26px;
+  }
+  .home-text {
+    font-size: 20px;
+  }
+  .homebtn {
+    font-size: 18px;
+  }
+  .home-inner {
+    bottom: 180px;
+  }
+  .first-section {
+    padding-top: 100px;
+    padding-bottom: 140px;
+  }
+  .twinshotel {
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .twinshotel-media {
+    height: 311px;
+    background-position-x: -150px;
+    background-position-y: -80px;
+  }
+  .media-body > h1 {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 32px;
+  }
+  .media-body > p {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 40px;
+    line-height: 1.3;
+    font-size: 15px;
+  }
+  .media-body > button {
+    margin-left: 10px;
+  }
+  .mediabtn {
+    font-size: 20px;
+  }
+  .icon-bg {
+    margin-top: 25px;
+    margin-left: 39px;
+  }
+  .museum {
+    margin-top: 90px;
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .museum-media {
+    height: 311px;
+  }
+  .restaurant {
+    height: 450px;
+  }
+  .restaurant-media {
+    height: 502px;
+  }
+  .restaurant-media-body > h1 {
+    margin-top: 44px;
+    font-size: 32px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant-media-body > p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 37px;
+    padding: 0 75px 0 75px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .second-section {
+    margin-top: 150px;
+    margin-bottom: 140px;
+  }
+  .activity {
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .activity-media {
+    height: 311px;
+  }
+  .activity-lists {
+    margin-top: 25px;
+    font-size: 16px;
+    padding-left: 16px;
+  }
+  .activity-media .media-body button {
+    margin-top: 25px;
+  }
+  .wineshop {
+    margin-top: 90px;
+    height: 371px;
+    background-size: 530px 371px;
+  }
+  .wineshop-media {
+    height: 311px;
+    background-position-x: -150px;
+    background-position-y: -80px;
+  }
+  .napareuli {
+    height: 450px;
+  }
+  .napareuli-media {
+    height: 502px;
+    background-position-y: 74px;
+  }
+  .napareuli-media-body > h1 {
+    margin-left: 0;
+    margin-top: 44px;
+    font-size: 32px;
+  }
+  .napareuli-media-body > p {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 37px;
+    padding: 0 90px 0 90px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .news {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .map-media-body > p {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .follow-us-header {
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-left: 0px;
+    font-size: 17px;
+  }
+  .about-us-header,
+  .contact-us-header {
+    font-size: 17px;
+  }
+  .follow-us-list {
+    list-style: none;
+    padding-right: 0px;
+  }
+  .follow-us-list-item:not(:first-child) {
+    padding-left: 10px;
+  }
+  .copyrighttxt {
+    padding-top: 8px;
+  }
+  .bottom-nav {
+    padding-right: 0px;
+  }
+  .botnavtext {
+    font-size: 13px;
+  }
+  .bottom-nav li {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .nav-items {
+    font-size: 1.125rem;
+  }
+  .left-nav,
+  .right-nav {
+    margin-top: 0;
+  }
+  .left-nav .nav-item:first-child {
+    margin-right: 0;
+  }
+  .right-nav .nav-item:last-child {
+    margin-left: 0;
+  }
+  .left-nav .nav-item:not(:first-child) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .right-nav .nav-item:not(:last-child) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .logo-top,
+  .logo-text-top {
+    display: none;
+  }
+  .searchlan {
+    right: 2.1%;
+    top: -25.5%;
+  }
+  .search-hover {
+    height: 46px;
+  }
+  .lanbtn {
+    height: 46px;
+  }
+  .home-section {
+    min-height: 650px;
+  }
+  .carousel-inner {
+    height: 650px;
+  }
+  .item {
+    height: 650px;
+  }
+  .home-title {
+    font-size: 22px;
+  }
+  .home-text {
+    font-size: 17px;
+  }
+  .homebtn {
+    font-size: 16px;
+  }
+  .home-inner {
+    bottom: 200px;
+  }
+  .first-section {
+    padding-top: 70px;
+    padding-bottom: 110px;
+  }
+  .twinshotel {
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .twinshotel-media {
+    margin-top: 10px;
+    height: 295px;
+    background-position-x: -235px;
+    background-position-y: -100px;
+  }
+  .media-body > h1 {
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 26px;
+  }
+  .media-body > p {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 40px;
+    line-height: 1.2;
+    font-size: 15px;
+  }
+  .media-body > button {
+    margin-left: 10px;
+  }
+  .mediabtn {
+    font-size: 18px;
+  }
+  .icon-bg {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .museum {
+    margin-top: 70px;
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .museum-media {
+    margin-top: 10px;
+    height: 295px;
+  }
+  .restaurant-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.6;
+  }
+  .second-section {
+    margin-top: 110px;
+    margin-bottom: 100px;
+  }
+  .activity {
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .activity-media {
+    margin-top: 10px;
+    height: 295px;
+  }
+  .activity-lists {
+    margin-top: 18px;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  .activity-media .media-body button {
+    margin-top: 25px;
+  }
+  .wineshop {
+    margin-top: 70px;
+    height: 315px;
+    background-size: 450px 315px;
+  }
+  .wineshop-media {
+    margin-top: 10px;
+    height: 295px;
+    background-position-x: -235px;
+    background-position-y: -100px;
+  }
+  .napareuli-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.4;
+  }
+  .map-media-body > p {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .about-us {
+    padding-bottom: 30px;
+  }
+  .about-us-sub {
+    margin-top: 0;
+    padding-right: 0;
+  }
+  .about-us-sub > span {
+    margin-top: 15px;
+  }
+  .about-us-header,
+  .contact-us-header {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .your-request-header {
+    margin-top: 35px;
+  }
+  .contact-us-header {
+    padding-left: 0;
+  }
+  .contact-us-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .contact-us-list-item p {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #656565;
+    font-family: "Ubuntu", sans-serif;
+  }
+  .contact-us-list-item span {
+    padding-top: 3px;
+  }
+  .footer {
+    display: none;
+  }
+  .news-picture-col {
+    margin-bottom: 20px;
+  }
+  .contact-info-tbilisi .divider-one {
+    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .contact-info-tbilisi .divider-two {
+    margin-bottom: 27px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .contact-info-napareuli .divider-one {
+    margin-top: 77px;
+    margin-left: 0;
+  }
+  .contact-info-napareuli .divider-one {
+    margin-bottom: 12px;
+  }
+  .contact-info-napareuli .divider-two {
+    margin-top: 0;
+    margin-bottom: 27px;
+    margin-left: 0;
+  }
+  .contact-info-header {
+    margin-left: 0;
+    font-size: 20px;
+    color: #3a3a3a;
+  }
+  .contact-info-tbilisi ul,
+  .contact-info-napareuli ul {
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .searchlan {
+    right: 2.6%;
+  }
+  .home-section {
+    min-height: 600px;
+  }
+  .carousel-inner {
+    height: 600px;
+  }
+  .item {
+    height: 600px;
+  }
+  .home-inner {
+    bottom: 190px;
+  }
+  .twinshotel {
+    background-image: none;
+  }
+  .twinshotel-media {
+    background-position-x: -170px;
+  }
+  .museum {
+    background-image: none;
+  }
+  .restaurant-media {
+    background-size: 280px 263px;
+  }
+  .restaurant-media-body > p {
+    padding: 0 70px 0 70px;
+  }
+  .restaurant-media-body > button {
+    margin-top: 20px;
+  }
+  .activity {
+    background-image: none;
+  }
+  .activity-lists {
+    margin-top: 5px;
+    padding-left: 12px;
+  }
+  .wineshop {
+    background-image: none;
+  }
+  .wineshop-media {
+    background-position-x: -170px;
+  }
+  .napareuli-media-body > h1 {
+    margin-top: 30px;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > p {
+    margin-top: 26px;
+    padding: 0 70px 0 70px;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .napareuli-media-body > button {
+    margin-top: 20px;
+  }
+  .news-card {
+    margin-bottom: 30px;
+  }
+  .follow-us-header {
+    margin-bottom: 0;
+    padding-top: 8px;
+    float: none;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .follow-us-list {
+    list-style: none;
+    float: none;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .follow-us-list li {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .follow-us-list-item:not(:first-child) {
+    padding-left: 0;
+  }
+  .single-news-card-header {
+    display: none;
+  }
+  .single-news-card-text {
+    padding-bottom: 20px;
+  }
+}
