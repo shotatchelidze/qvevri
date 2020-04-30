@@ -1,0 +1,165 @@
+<?php 
+class Logo_admins extends Controller {
+    
+    public function __construct(){
+        
+        if(!isLoggedIn()){
+            redirect_admin('admins');
+        }
+
+        $this->logoAdminModel = $this->model('Logo_admin');
+    }
+
+    public function index(){
+        $logos = $this->logoAdminModel->getLogos();
+
+        $data = [
+            'logos' => $logos
+        ];
+
+        $this->view('logo_admins/index',$data);
+    }
+
+    public function addLogo(){
+        
+        // check for posts
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            $data = [
+                'img_name' => $_FILES['image']['name'],
+                'en_title' => trim($_POST['en_title']),
+                'en_subtitle' => trim($_POST['en_subtitle']),
+                'ge_title' => trim($_POST['ge_title']),
+                'ge_subtitle' => trim($_POST['ge_subtitle']),
+                'ru_title' => trim($_POST['ru_title']),
+                'ru_subtitle' => trim($_POST['ru_subtitle']),
+                'page' => $_POST['page']
+            ];
+
+            $image = add_image("1200");
+
+            if($image === true){
+                if($this->logoAdminModel->addLogo($data)){
+                    flash('logo_added_success','Logo Added Successfuly');
+                    redirect_admin('Logo_admins/addLogo');
+                } else {
+                    flash('logo_added_fail','Fail Add Logo', 'alert alert-danger');
+                    redirect_admin('Logo_admins/addLogo');
+                }
+            // Load page with errors    
+            } else {
+                $data = array_merge($data, $image);
+
+                $this->view('Logo_admins/AddLogo', $data);
+            }
+        // Get      
+        } else {
+            
+            $this->view('Logo_admins/addLogo');
+        }
+    }
+
+    public function editLogo($id){
+        
+        // check for posts
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            $data = [
+                'id' => $id,
+                'img_name' => $_FILES['image']['name'],
+                'en_title' => trim($_POST['en_title']),
+                'en_subtitle' => trim($_POST['en_subtitle']),
+                'ge_title' => trim($_POST['ge_title']),
+                'ge_subtitle' => trim($_POST['ge_subtitle']),
+                'ru_title' => trim($_POST['ru_title']),
+                'ru_subtitle' => trim($_POST['ru_subtitle']),
+                'page' => $_POST['page']
+            ];
+
+            $target_dir = dirname(__FILE__, 4) . "/public/img/";
+            $image_name = $target_dir . $data['img_name'];
+            if(file_exists($image_name)){
+                if(unlink($image_name)){
+                // If did not deleted logo from folder    
+                } else {
+                    die('Something went wrong, refresh page and try again');
+                }
+            // If image does not exist in folder    
+            } else {
+                die('Something went wrong, refresh page and try again');
+            }
+
+            $image = add_image("1200");
+
+            if($image === true){
+                if($this->logoAdminModel->editLogo($data)){
+                    flash('logo_added_success','Logo Updated Successfuly');
+                    redirect_admin('Logo_admins/editLogo');
+                } else {
+                    flash('logo_added_fail','Fail Update Logo', 'alert alert-danger');
+                    redirect_admin('Logo_admins/editLogo');
+                }
+            // Load page with errors    
+            } else {
+                $data = array_merge($data, $image);
+
+                $this->view('Menu_admins', $data);
+            }
+        // Get request    
+        } else {
+            // Check id
+            if(empty($id)){
+                redirect_admin('Menu_admins');
+            }
+            // Get exist logo from model
+            $logo = $this->logoAdminModel->getLogoById($id);
+            
+            $data = [
+                'id' => $logo->id,
+                'img_name' => $logo->img_name,
+                'en_title' => $logo->en_title,
+                'en_subtitle' => $logo->en_subtitle,
+                'ge_title' => $logo->ge_title,
+                'ge_subtitle' => $logo->ge_subtitle,
+                'ru_title' => $logo->ru_title,
+                'ru_subtitle' => $logo->ru_subtitle,
+                'page' => $logo->page
+            ];
+
+            $this->view('Menu_admins/editLogo', $data);
+        }    
+    }
+
+    public function deleteLogo($id){
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $target_dir = dirname(__FILE__, 4) . "/public/img/";
+            $image_name = $target_dir.$_POST['delete_image'];
+            if(file_exists($image_name)){
+                if(unlink($image_name)){
+                // If did not deletid    
+                } else {
+                    die('Something went wrong refresh page and try again');
+                }
+            } else {
+                flash('image_delete_fail','logo does not exist','alert alert-danger');
+                redirect_admin('Logo_admins');
+            }
+
+            if($this->logoAdminModel->deleteLogo($id)){
+                flash('image_deleted','logo successfuly deleted');
+                redirect_admin('Logo_admins');
+            } else {
+                flash('image_delete_fail','logo did not deleted','alert alert-danger');
+                redirect_admin('Logo_admins');
+            }
+        }
+        
+    }
+
+    
+}

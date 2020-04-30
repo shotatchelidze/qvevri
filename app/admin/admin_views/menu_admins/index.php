@@ -2,10 +2,10 @@
 <h3>Menu</h3>
 <?php flash('changed_success')?>
 <?php flash('changed_fail')?>
-<?php flash('logo_added_success')?>
-<?php flash('logo_added_fail')?>
-<?php flash('image_deleted')?>
-<?php flash('image_delete_fail')?>
+<?php //flash('logo_added_success')?>
+<?php //flash('logo_added_fail')?>
+<?php //flash('image_deleted')?>
+<?php //flash('image_delete_fail')?>
 
 <!-- menu -->
 <form action="<?php echo URLROOT_ADMIN; ?>/Menu_admins/changeMenu" method="POST" enctype="multipart/form-data">
@@ -73,10 +73,10 @@
     </ul>
   </div>
 </div>
-<a href="<?php echo URLROOT_ADMIN; ?>/Menu_admins/addLogo" type="button" class="btn btn-primary">Add</a>
-<a href="<?php echo URLROOT_ADMIN; ?>/Menu_admins/editLogo/<?php echo $data['logo']->id ?? '';?>" type="button" class="btn btn-secondary">Change</a>
+<a href="<?php echo URLROOT_ADMIN; ?>/Logo_admins/addLogo" type="button" class="btn btn-primary">Add</a>
+<a href="<?php echo URLROOT_ADMIN; ?>/Logo_admins/editLogo/<?php echo $data['logo']->id ?? '';?>" type="button" class="btn btn-secondary">Change</a>
 
-<form action="<?php echo URLROOT;?>/Menu_admins/deleteLogo/<?php echo $data['logo']->id ?? ''?>" method="POST">        
+<form action="<?php echo URLROOT;?>/Logo_admins/deleteLogo/<?php echo $data['logo']->id ?? ''?>" method="POST">        
   <input type="hidden" name="delete_image" value="<?php echo $data['logo']->img_name ?? ''?>">
   <button type="submit" class="btn btn-danger">Delete</button>
 </form>

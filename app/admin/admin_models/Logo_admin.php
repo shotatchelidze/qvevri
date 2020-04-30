@@ -7,12 +7,25 @@ class Logo_admin{
         $this->db = new Database;
     }
 
-    public function getLogo(){
+    public function getLogos(){
+        $this->db->query('SELECT * FROM logos');
+
+        $result = $this->db->resultSet();
+        return $result;
+    }
+
+    public function getLogoForMenu(){
         $this->db->query("SELECT * FROM logos WHERE page = 'menu' ");
         
         $result = $this->db->single();
+        return $result;   
+    }
+
+    public function getLogoForIndex(){
+        $this->db->query("SELECT * FROM logos WHERE page = 'index' ");
+
+        $result = $this->db->resultSet();
         return $result;
-        
     }
 
     public function addLogo($data){

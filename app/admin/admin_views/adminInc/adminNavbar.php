@@ -4,13 +4,19 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
               <li>
-	              <a href="<?php echo URLROOT;?>/Menu_admins">Menu</a>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Menu_admins">Menu</a>
+              </li>
+              <li>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Logo_admins">Logo By Pages</a>
+	            </li>
+              <li>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Index_admins">Index</a>
 	            </li>
 	          <li class="active">
-              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Home 1</a>
+                    <a href="#">Index</a>
                 </li>
                 <li>
                     <a href="#">Home 2</a>

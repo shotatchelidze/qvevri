@@ -65,6 +65,9 @@ function add_image($max_resolution)
                 } else {
                     die('Something went wrong Please refresh Page and try again');
                 }
+            } else {
+                // Everything is ok
+                $uploadOk = true;
             }
         // If did not uploaded         
         } else{
