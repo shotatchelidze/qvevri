@@ -11,6 +11,9 @@
               </li>
               <li>
 	              <a href="<?php echo URLROOT_ADMIN;?>/ImageBg_admins">Background Images by Pages</a>
+              </li>
+              <li>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Section_admins">Home Page Section</a>
 	            </li>
               <li>
 	              <a href="<?php echo URLROOT_ADMIN;?>/Index_admins">Index</a>

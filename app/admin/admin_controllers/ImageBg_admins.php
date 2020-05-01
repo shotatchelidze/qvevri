@@ -33,7 +33,10 @@ class ImageBg_admins extends Controller
                 'page_name' => $_POST['page']
             ];
 
-            $image = add_image("1200");
+            $target_dir = dirname(__FILE__, 4) . "/public/img/";
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $temp_name = $_FILES['image']['tmp_name'];
+            $image = add_image($target_file, $temp_name, "1200");
 
             if ($image === true) {
                 if ($this->imageBgAdminModel->addImageBg($data)) {
@@ -81,8 +84,10 @@ class ImageBg_admins extends Controller
             } else {
                 die('Something went wrong, refresh page and try again');
             }
-
-            $image = add_image("1200");
+            
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $temp_name = $_FILES['image']['tmp_name'];
+            $image = add_image($target_file, $temp_name, "1200");
 
             if ($image === true) {
                 if ($this->imageBgAdminModel->editImageBg($data)) {

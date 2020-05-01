@@ -19,43 +19,44 @@ class Index_admins extends Controller{
         $this->view('index_admins/index',$data);
     }
 
-    public function addLogo(){
-         // check for posts
-         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    // public function addLogo(){
+    //      // check for posts
+    //      if($_SERVER['REQUEST_METHOD'] == 'POST'){
             
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    //         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             
-            $data = [
-                'img_name' => $_FILES['image']['name'],
-                'en_title' => trim($_POST['en_title']),
-                'en_subtitle' => trim($_POST['en_subtitle']),
-                'ge_title' => trim($_POST['ge_title']),
-                'ge_subtitle' => trim($_POST['ge_subtitle']),
-                'ru_title' => trim($_POST['ru_title']),
-                'ru_subtitle' => trim($_POST['ru_subtitle']),
-                'page' => $_POST['page']
-            ];
+    //         $data = [
+    //             'img_name' => $_FILES['image']['name'],
+    //             'en_title' => trim($_POST['en_title']),
+    //             'en_subtitle' => trim($_POST['en_subtitle']),
+    //             'ge_title' => trim($_POST['ge_title']),
+    //             'ge_subtitle' => trim($_POST['ge_subtitle']),
+    //             'ru_title' => trim($_POST['ru_title']),
+    //             'ru_subtitle' => trim($_POST['ru_subtitle']),
+    //             'page' => $_POST['page']
+    //         ];
+    //         $target_dir = dirname(__FILE__, 4) . "/public/img/";
+    //         $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    //         $image = add_image($target_file, "1200");
 
-            $image = add_image("1200");
+    //         if($image === true){
+    //             if($this->logoAdminModel->addLogo($data)){
+    //                 flash('logo_added_success','Logo Added Successfuly');
+    //                 redirect_admin('Index_admins');
+    //             } else {
+    //                 flash('logo_added_fail','Fail Add Logo', 'alert alert-danger');
+    //                 redirect_admin('Index_admins');
+    //             }
+    //         // Load page with errors    
+    //         } else {
+    //             $data = array_merge($data, $image);
 
-            if($image === true){
-                if($this->logoAdminModel->addLogo($data)){
-                    flash('logo_added_success','Logo Added Successfuly');
-                    redirect_admin('Index_admins');
-                } else {
-                    flash('logo_added_fail','Fail Add Logo', 'alert alert-danger');
-                    redirect_admin('Index_admins');
-                }
-            // Load page with errors    
-            } else {
-                $data = array_merge($data, $image);
-
-                $this->view('Index_admins/AddLogo', $data);
-            }
-        // Get      
-        } else {
+    //             $this->view('Index_admins/AddLogo', $data);
+    //         }
+    //     // Get      
+    //     } else {
             
-            $this->view('Index_admins/addLogo');
-        }
-    }
+    //         $this->view('Index_admins/addLogo');
+    //     }
+    // }
 }

@@ -38,7 +38,10 @@ class Logo_admins extends Controller {
                 'page' => $_POST['page']
             ];
 
-            $image = add_image("1200");
+            $target_dir = dirname(__FILE__, 4) . "/public/img/";
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $temp_name = $_FILES['image']['tmp_name'];
+            $image = add_image($target_file, $temp_name, "1200");
 
             if($image === true){
                 if($this->logoAdminModel->addLogo($data)){
@@ -57,7 +60,18 @@ class Logo_admins extends Controller {
         // Get      
         } else {
             
-            $this->view('Logo_admins/addLogo');
+            $data = [
+                'img_name' => '',
+                'en_title' => '',
+                'en_subtitle' => '',
+                'ge_title' => '',
+                'ge_subtitle' => '',
+                'ru_title' => '',
+                'ru_subtitle' => '',
+                'page' => ''
+            ];
+            
+            $this->view('Logo_admins/addLogo',$data);
         }
     }
 
@@ -92,8 +106,10 @@ class Logo_admins extends Controller {
             } else {
                 die('Something went wrong, refresh page and try again');
             }
-
-            $image = add_image("1200");
+            
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $temp_name = $_FILES['image']['tmp_name'];
+            $image = add_image($target_file, $temp_name, "1200");
 
             if($image === true){
                 if($this->logoAdminModel->editLogo($data)){

@@ -1,35 +1,32 @@
 <?php
-function add_image($max_resolution)
+function add_image($target_file, $temp_name, $max_resolution)
 {
     $uploadOk = false;
 
-    $image = [
-        'img_name' => $_FILES['image']['name'],
+    $image_err = [
         'img_fake_err' => '',
         'img_exist_err' => '',
         'img_ext_err' => ''
     ];
 
-    $target_dir = dirname(__FILE__, 3) . "/public/img/";
-    $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
-    $check_size = getimagesize($_FILES["image"]["tmp_name"]);
+    $check_size = getimagesize($temp_name);
     if ($check_size == false) {
-        $image['img_fake_err'] = "File is not an image.";
+        $image_err['img_fake_err'] = "File is not an image.";
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        $image['img_exist_err'] = 'File is already exist change name';
+        $image_err['img_exist_err'] = 'File is already exist change name';
     }
     // Allow certain file formats
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        $image['img_ext_err'] = "Sorry, only JPG, JPEG & PNG files are allowed.";
+        $image_err['img_ext_err'] = "Sorry, only JPG, JPEG & PNG files are allowed.";
     }
     //  Chech errors
-    if (empty($image['img_fake_err']) && empty($image['img_exist_err']) && empty($image['img_ext_err'])) {
+    if (empty($image_err['img_fake_err']) && empty($image_err['img_exist_err']) && empty($image_err['img_ext_err'])) {
         // Upload image in folder
-        if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
+        if(move_uploaded_file($temp_name, $target_file)){
             // Check image size
             if ($check_size[0] > $max_resolution || $check_size[1] > $max_resolution) {
                 if ($imageFileType == 'png') {
@@ -78,6 +75,6 @@ function add_image($max_resolution)
     if($uploadOk){
         return true;
     } else {
-        return $image;
+        return $image_err;
     }
 }
