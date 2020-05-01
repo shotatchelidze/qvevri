@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2020 at 05:32 PM
+-- Generation Time: May 02, 2020 at 01:30 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -113,6 +113,32 @@ INSERT INTO `menus` (`id`, `en_title`, `ge_title`, `ru_title`) VALUES
 (7, 'lake', 'ტბა', ''),
 (8, 'contact', 'კონტაკქოs', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sections`
+--
+
+CREATE TABLE `sections` (
+  `id` int(11) NOT NULL,
+  `img_name` varchar(255) NOT NULL,
+  `bg_img_name` varchar(255) NOT NULL,
+  `icon_img_name` varchar(255) NOT NULL,
+  `en_title` varchar(255) NOT NULL,
+  `en_text` text NOT NULL,
+  `ge_title` varchar(255) NOT NULL,
+  `ge_text` text NOT NULL,
+  `ru_title` varchar(255) NOT NULL,
+  `ru_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sections`
+--
+
+INSERT INTO `sections` (`id`, `img_name`, `bg_img_name`, `icon_img_name`, `en_title`, `en_text`, `ge_title`, `ge_text`, `ru_title`, `ru_text`) VALUES
+(1, 'images (1).jpg', 'photo-1532767153582-b1a0e5145009.jpg', 'images.jpg', 'aa', 'aa', 'aa', 'aa', 'aaa', 'aaa');
+
 --
 -- Indexes for dumped tables
 --
@@ -136,6 +162,12 @@ ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sections`
+--
+ALTER TABLE `sections`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -156,6 +188,12 @@ ALTER TABLE `logos`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `sections`
+--
+ALTER TABLE `sections`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
