@@ -46,7 +46,7 @@
                 <textarea class="form-control" rows="1" name="ru_subtitle"><?php echo $data['ru_subtitle']; ?></textarea>
             </div>
             <!-- <input type="hidden" name="page" value="menu"> -->
-            <!-- gasasworebelia editis dros page ze unda gamochndes ra page ic iyo archeuli -->
+            <!-- gasasworebelia editis dros selectshi shi unda gamochndes ra page ic iyo archeuli -->
             <label for="cars">Choose a page:</label>
             <select name="page" id="page">
                 <option value="menu">menu</option>

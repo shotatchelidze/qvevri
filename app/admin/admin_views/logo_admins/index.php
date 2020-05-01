@@ -44,7 +44,7 @@
             </ul>
         </div>
     </div>
-    <a href="<?php echo URLROOT_ADMIN; ?>/Logo_admins/editLogo/<?php echo $logo->id ?? ''; ?>" type="button" class="btn btn-secondary">Change</a>
+    <a href="<?php echo URLROOT_ADMIN; ?>/Logo_admins/editLogo/<?php echo $logo->id ?? ''; ?>" type="button" class="btn btn-secondary">Edit</a>
 
     <form action="<?php echo URLROOT; ?>/Logo_admins/deleteLogo/<?php echo $logo->id ?? '' ?>" method="POST">
         <input type="hidden" name="delete_image" value="<?php echo $logo->img_name ?? '' ?>">

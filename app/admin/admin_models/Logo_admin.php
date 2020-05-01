@@ -11,22 +11,16 @@ class Logo_admin{
         $this->db->query('SELECT * FROM logos');
 
         $result = $this->db->resultSet();
-        return $result;
+        return $result; 
     }
 
-    public function getLogoForMenu(){
-        $this->db->query("SELECT * FROM logos WHERE page = 'menu' ");
+    public function getLogoForPages($page){
+        $this->db->query("SELECT * FROM logos WHERE page = '$page' ");
         
         $result = $this->db->single();
         return $result;   
     }
 
-    public function getLogoForIndex(){
-        $this->db->query("SELECT * FROM logos WHERE page = 'index' ");
-
-        $result = $this->db->resultSet();
-        return $result;
-    }
 
     public function addLogo($data){
         $arr = implode(",", array_keys($data));

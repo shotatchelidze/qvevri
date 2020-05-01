@@ -13,7 +13,7 @@ class Menu_admins extends Controller {
 
     public function index(){
         $menu = $this->menuAdminModel->getMenu();
-        $logo = $this->logoAdminModel->getLogoForMenu();
+        $logo = $this->logoAdminModel->getLogoForPages("menu");
         
         $data = [
            'menu' => $menu,

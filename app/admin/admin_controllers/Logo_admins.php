@@ -107,19 +107,23 @@ class Logo_admins extends Controller {
             } else {
                 $data = array_merge($data, $image);
 
-                $this->view('Menu_admins', $data);
+                $this->view('Logo_admins', $data);
             }
         // Get request    
         } else {
             // Check id
             if(empty($id)){
-                redirect_admin('Menu_admins');
+                redirect_admin('Logo_admins');
             }
             // Get exist logo from model
             $logo = $this->logoAdminModel->getLogoById($id);
+            // If logo does not exist
+            if($logo === false){
+                die('Something went wrong reload page and try again');
+            }
             
             $data = [
-                'id' => $logo->id,
+                'id' => $id,
                 'img_name' => $logo->img_name,
                 'en_title' => $logo->en_title,
                 'en_subtitle' => $logo->en_subtitle,
@@ -130,7 +134,7 @@ class Logo_admins extends Controller {
                 'page' => $logo->page
             ];
 
-            $this->view('Menu_admins/editLogo', $data);
+            $this->view('Logo_admins/editLogo', $data);
         }    
     }
 
