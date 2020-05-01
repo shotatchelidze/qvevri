@@ -7,7 +7,10 @@
 	              <a href="<?php echo URLROOT_ADMIN;?>/Menu_admins">Menu</a>
               </li>
               <li>
-	              <a href="<?php echo URLROOT_ADMIN;?>/Logo_admins">Logo By Pages</a>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Logo_admins">Logos By Pages</a>
+              </li>
+              <li>
+	              <a href="<?php echo URLROOT_ADMIN;?>/ImageBg_admins">Background Images by Pages</a>
 	            </li>
               <li>
 	              <a href="<?php echo URLROOT_ADMIN;?>/Index_admins">Index</a>
@@ -68,12 +71,12 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-primary" href="<?php echo URLROOT;?>/admins/logout">Logout</a>
+            <a class="btn btn-primary" href="<?php echo URLROOT_ADMIN;?>/admins/logout">Logout</a>
           </li>
       </ul>
       <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-primary" href="<?php echo URLROOT;?>/Menu_admins/changePassword">Change Password</a>
+            <a class="btn btn-primary" href="<?php echo URLROOT_ADMIN;?>/Menu_admins/changePassword">Change Password</a>
           </li>
       </ul>
           <div class="container-fluid">

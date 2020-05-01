@@ -63,7 +63,7 @@ class Logo_admins extends Controller {
 
     public function editLogo($id){
         
-        // check for posts
+        // check for post request
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -98,16 +98,16 @@ class Logo_admins extends Controller {
             if($image === true){
                 if($this->logoAdminModel->editLogo($data)){
                     flash('logo_added_success','Logo Updated Successfuly');
-                    redirect_admin('Logo_admins/editLogo');
+                    redirect_admin('Logo_admins/editLogo',$id);
                 } else {
                     flash('logo_added_fail','Fail Update Logo', 'alert alert-danger');
-                    redirect_admin('Logo_admins/editLogo');
+                    redirect_admin('Logo_admins/editLogo',$id);
                 }
             // Load page with errors    
             } else {
                 $data = array_merge($data, $image);
 
-                $this->view('Logo_admins', $data);
+                $this->view('Logo_admins/editLogo', $data);
             }
         // Get request    
         } else {
