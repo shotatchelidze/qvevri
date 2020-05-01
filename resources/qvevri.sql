@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2020 at 12:26 PM
+-- Generation Time: May 01, 2020 at 05:32 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -43,50 +43,22 @@ INSERT INTO `admins` (`email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `descriptions`
+-- Table structure for table `imagebgs`
 --
 
-CREATE TABLE `descriptions` (
+CREATE TABLE `imagebgs` (
   `id` int(11) NOT NULL,
-  `en_title` varchar(50) NOT NULL,
-  `ge_title` varchar(50) NOT NULL,
-  `ru_title` varchar(50) NOT NULL,
-  `en_subtitle` varchar(50) NOT NULL,
-  `ge_subtitle` varchar(50) NOT NULL,
-  `ru_subtitle` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `images`
---
-
-CREATE TABLE `images` (
-  `id` int(11) NOT NULL,
-  `img_name` varchar(10) NOT NULL,
-  `page_name` varchar(10) NOT NULL,
-  `type` varchar(10) NOT NULL,
-  `descriptions_id` int(11) NOT NULL
+  `image_name` varchar(255) NOT NULL,
+  `page_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `images`
+-- Dumping data for table `imagebgs`
 --
 
-INSERT INTO `images` (`id`, `img_name`, `page_name`, `type`, `descriptions_id`) VALUES
-(7, '1.jpeg', 'menu', 'logo', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `image_descriptions`
---
-
-CREATE TABLE `image_descriptions` (
-  `images_id` int(11) NOT NULL,
-  `descriptions_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `imagebgs` (`id`, `image_name`, `page_name`) VALUES
+(2, 'eso1907a.jpg', 'index'),
+(3, 'download.jpg', 'news');
 
 -- --------------------------------------------------------
 
@@ -105,6 +77,14 @@ CREATE TABLE `logos` (
   `ru_subtitle` varchar(255) NOT NULL,
   `page` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `logos`
+--
+
+INSERT INTO `logos` (`id`, `img_name`, `en_title`, `ge_title`, `ru_title`, `en_subtitle`, `ge_subtitle`, `ru_subtitle`, `page`) VALUES
+(9, 'asatvirtisurati.png', 'asdas', 'dasdas', 'asdasd', 'dadsa', 'dasdasd', 'asd', 'index'),
+(11, '1.jpeg', 'adasd', 'sdasdsad', 'sdasdas', 'asdasda', 'asdasda', 'dasdasdads', 'menu');
 
 -- --------------------------------------------------------
 
@@ -138,24 +118,10 @@ INSERT INTO `menus` (`id`, `en_title`, `ge_title`, `ru_title`) VALUES
 --
 
 --
--- Indexes for table `descriptions`
+-- Indexes for table `imagebgs`
 --
-ALTER TABLE `descriptions`
+ALTER TABLE `imagebgs`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `descriptions_id` (`descriptions_id`);
-
---
--- Indexes for table `image_descriptions`
---
-ALTER TABLE `image_descriptions`
-  ADD PRIMARY KEY (`images_id`,`descriptions_id`),
-  ADD KEY `descriptions_id` (`descriptions_id`);
 
 --
 -- Indexes for table `logos`
@@ -174,44 +140,22 @@ ALTER TABLE `menus`
 --
 
 --
--- AUTO_INCREMENT for table `descriptions`
+-- AUTO_INCREMENT for table `imagebgs`
 --
-ALTER TABLE `descriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `images`
---
-ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `imagebgs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `descriptions`
---
-ALTER TABLE `descriptions`
-  ADD CONSTRAINT `descriptions_ibfk_1` FOREIGN KEY (`id`) REFERENCES `images` (`descriptions_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `image_descriptions`
---
-ALTER TABLE `image_descriptions`
-  ADD CONSTRAINT `image_descriptions_ibfk_1` FOREIGN KEY (`descriptions_id`) REFERENCES `descriptions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
