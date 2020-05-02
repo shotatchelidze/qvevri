@@ -21,6 +21,25 @@ class Logo_admin{
         return $result;   
     }
 
+    public function getLogoById($id){
+        $this->db->query('SELECT * FROM logos WHERE id = :id');
+        // Bind value
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
+
+    public function getLogoImageNameById($id){
+        $this->db->query('SELECT logos.img_name FROM logos WHERE id = :id');
+        // Bind value
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+        return $row;
+    }
+
 
     public function addLogo($data){
         $arr = implode(",", array_keys($data));
@@ -39,15 +58,7 @@ class Logo_admin{
         }
     }
 
-    public function getLogoById($id){
-        $this->db->query('SELECT * FROM logos WHERE id = :id');
-        // Bind value
-        $this->db->bind(':id', $id);
-
-        $row = $this->db->single();
-
-        return $row;
-    }
+    
 
     public function editLogo($data){
         $this->db->query('UPDATE logos SET  img_name = :img_name, en_title = :en_title, en_subtitle = :en_subtitle, ge_title = :ge_title, ge_subtitle = :ge_subtitle,

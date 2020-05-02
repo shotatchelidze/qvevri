@@ -25,6 +25,15 @@ class ImageBg_admin
         return $row;
     }
 
+    public function getImageBgNameById($id){
+        $this->db->query('SELECT imageBgs.image_name FROM imageBgs WHERE id = :id');
+        // Bind value
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+        return $row;
+    }
+
     public function addImageBg($data)
     {
         $arr = implode(",", array_keys($data));

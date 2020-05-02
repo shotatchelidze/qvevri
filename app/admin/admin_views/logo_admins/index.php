@@ -32,7 +32,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?php echo $logo->ge_title;?></li>
-                <li class="list-group-item"><?php echo $logo->ge_title;?></li>
+                <li class="list-group-item"><?php echo $logo->ge_subtitle;?></li>
             </ul>
         </div>
         <div class="card" style="width: 18rem;">
@@ -41,7 +41,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?php echo $logo->ru_title; ?></li>
-                <li class="list-group-item"><?php echo $logo->ru_title ;?></li>
+                <li class="list-group-item"><?php echo $logo->ru_subtitle ;?></li>
             </ul>
         </div>
     </div>

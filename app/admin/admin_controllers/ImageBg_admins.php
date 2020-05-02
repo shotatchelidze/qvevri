@@ -61,9 +61,14 @@ class ImageBg_admins extends Controller
 
     public function editImageBg($id)
     {
+        // Check id is actual number
+        if (!is_numeric($id)) {
+            redirect_admin('Section_admins');
+        }
+
         // check for post request
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            
+
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
@@ -73,18 +78,25 @@ class ImageBg_admins extends Controller
             ];
 
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            $image_name = $target_dir . $data['image_name'];
-            if (file_exists($image_name)) {
-                if (unlink($image_name)) {
-                    // If did not deleted logo from folder    
-                } else {
-                    die('Something went wrong, refresh page and try again');
-                }
-                // If image does not exist in folder    
-            } else {
-                die('Something went wrong, refresh page and try again');
+            // First, delete existing image from folder
+            // Get existing image name from DB
+            $image_name_obj = $this->logoAdminModel->getImageBgNameById($id);
+            // Check id is correct or not
+            if ($image_name_obj === false) {
+                die('images does not exist reload page');
             }
-            
+            // Check image empty or not
+            if ($image_name_obj->image_name !== '') {
+                $image_name = $target_dir . $image_name_obj->image_name;
+                if (file_exists($image_name)) {
+                    if (!(unlink($image_name))) {
+                        die('Something went wrong reload page');
+                    }
+                } else {
+                    die('image does not exist');
+                }
+            }
+
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
             $temp_name = $_FILES['image']['tmp_name'];
             $image = add_image($target_file, $temp_name, "1200");
@@ -92,11 +104,10 @@ class ImageBg_admins extends Controller
             if ($image === true) {
                 if ($this->imageBgAdminModel->editImageBg($data)) {
                     flash('ImageBg_edit_success', 'Background Image Updated Successfuly');
-                    // gadarectirdes index ze da flash mesijic iyos indexze
-                    redirect_admin('ImageBg_admins/editImageBg',$id);
+                    redirect_admin('ImageBg_admins/editImageBg', $id);
                 } else {
                     flash('ImageBg_edit_fail', 'Fail Updated Background Image', 'alert alert-danger');
-                    redirect_admin('ImageBg_admins/editImageBg',$id);
+                    redirect_admin('ImageBg_admins/editImageBg', $id);
                 }
                 // Load page with errors    
             } else {
@@ -104,12 +115,9 @@ class ImageBg_admins extends Controller
 
                 $this->view('ImageBg_admins/editImageBg', $data_err);
             }
-        // For Get request    
+            // For Get request    
         } else {
-            // Check id
-            if (empty($id)) {
-                redirect_admin('ImageBg_admins');
-            }
+            
             // Get exist logo from model
             $imageBg = $this->imageBgAdminModel->getImageBgById($id);
             // If logo does not exist
@@ -119,38 +127,37 @@ class ImageBg_admins extends Controller
 
             $data = [
                 'id' => $id,
-                'image_name' => $imageBg->image_name,
-                'page_name' => $imageBg->page_name
+                'image_name' => $imageBg->image_name ?? '',
+                'page_name' => $imageBg->page_name ?? ''
             ];
 
             $this->view('ImageBg_admins/editImageBg', $data);
         }
     }
 
-    public function deleteImageBg($id){
-
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    public function deleteImageBg($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            $image_name = $target_dir.$_POST['delete_image'];
-            if(file_exists($image_name)){
-                if(unlink($image_name)){
-                // If did not deletid    
+            $image_name = $target_dir . $_POST['delete_image'];
+            if (file_exists($image_name)) {
+                if (unlink($image_name)) {
+                    // If did not deletid    
                 } else {
                     die('Something went wrong refresh page and try again');
                 }
             } else {
-                flash('image_delete_fail','background image does not exist','alert alert-danger');
+                flash('image_delete_fail', 'background image does not exist', 'alert alert-danger');
                 redirect_admin('ImageBg_admins');
             }
 
-            if($this->imageBgAdminModel->deleteImageBg($id)){
-                flash('image_deleted','background image successfuly deleted');
+            if ($this->imageBgAdminModel->deleteImageBg($id)) {
+                flash('image_deleted', 'background image successfuly deleted');
                 redirect_admin('ImageBg_admins');
             } else {
-                flash('image_delete_fail','background image did not deleted','alert alert-danger');
+                flash('image_delete_fail', 'background image did not deleted', 'alert alert-danger');
                 redirect_admin('ImageBg_admins');
             }
         }
-        
     }
 }

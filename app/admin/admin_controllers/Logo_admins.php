@@ -76,7 +76,11 @@ class Logo_admins extends Controller {
     }
 
     public function editLogo($id){
-        
+        // Check id is actual number
+        if (!is_numeric($id)) {
+            redirect_admin('Section_admins');
+        }
+
         // check for post request
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             
@@ -95,16 +99,21 @@ class Logo_admins extends Controller {
             ];
 
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            $image_name = $target_dir . $data['img_name'];
-            if(file_exists($image_name)){
-                if(unlink($image_name)){
-                // If did not deleted logo from folder    
-                } else {
-                    die('Something went wrong, refresh page and try again');
-                }
-            // If image does not exist in folder    
-            } else {
-                die('Something went wrong, refresh page and try again');
+            // First, delete existing image from folder
+            // Get existing image name from DB
+            $image_name_obj = $this->logoAdminModel->getLogoImageNameById($id);
+            // Check id is correct or not
+            if ($image_name_obj === false) {
+                die('images does not exist reload page');
+            }
+            // Check image empty or not
+            if ($image_name_obj->img_name !== '') {
+                $image_name = $target_dir . $image_name_obj->img_name;
+                if (file_exists($image_name)) {
+                    if (!(unlink($image_name))) {
+                        die('Something went wrong reload page');
+                    }
+                } else {die('image does not exist');}
             }
             
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -127,10 +136,6 @@ class Logo_admins extends Controller {
             }
         // Get request    
         } else {
-            // Check id
-            if(empty($id)){
-                redirect_admin('Logo_admins');
-            }
             // Get exist logo from model
             $logo = $this->logoAdminModel->getLogoById($id);
             // If logo does not exist
@@ -140,14 +145,14 @@ class Logo_admins extends Controller {
             
             $data = [
                 'id' => $id,
-                'img_name' => $logo->img_name,
-                'en_title' => $logo->en_title,
-                'en_subtitle' => $logo->en_subtitle,
-                'ge_title' => $logo->ge_title,
-                'ge_subtitle' => $logo->ge_subtitle,
-                'ru_title' => $logo->ru_title,
-                'ru_subtitle' => $logo->ru_subtitle,
-                'page' => $logo->page
+                'img_name' => $logo->img_name ?? '',
+                'en_title' => $logo->en_title ?? '',
+                'en_subtitle' => $logo->en_subtitle ?? '',
+                'ge_title' => $logo->ge_title ?? '',
+                'ge_subtitle' => $logo->ge_subtitle ?? '',
+                'ru_title' => $logo->ru_title ?? '',
+                'ru_subtitle' => $logo->ru_subtitle ?? '',
+                'page' => $logo->page ?? ''
             ];
 
             $this->view('Logo_admins/editLogo', $data);
@@ -158,12 +163,10 @@ class Logo_admins extends Controller {
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            $image_name = $target_dir.$_POST['delete_image'];
-            if(file_exists($image_name)){
-                if(unlink($image_name)){
-                // If did not deletid    
-                } else {
-                    die('Something went wrong refresh page and try again');
+            $image_path = $target_dir.$_POST['delete_image'];
+            if(file_exists($image_path)){
+                if(!unlink($image_path)){
+                    die('Something went wrong refresh page and try again'); 
                 }
             } else {
                 flash('image_delete_fail','logo does not exist','alert alert-danger');
@@ -178,7 +181,6 @@ class Logo_admins extends Controller {
                 redirect_admin('Logo_admins');
             }
         }
-        
     }
 
     
