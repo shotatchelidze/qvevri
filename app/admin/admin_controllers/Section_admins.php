@@ -96,7 +96,6 @@ class Section_admins extends Controller
                     $data_err['bg_image_ext_err'] = $bg_image['img_ext_err'];
                 }
             }
-
             // if no error 
             if (!array_filter($data_err)) {
                 // Try add

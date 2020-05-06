@@ -80,4 +80,9 @@
     public function rowCount(){
       return $this->stmt->rowCount();
     }
+
+    // // Get count
+    // public function columnCount(){
+    //   return $this->stmt->fetchColumn();
+    // }
   }

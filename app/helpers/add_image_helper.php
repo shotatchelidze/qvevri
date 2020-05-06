@@ -17,7 +17,7 @@ function add_image($target_file, $temp_name, $max_resolution)
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        $image_err['img_exist_err'] = 'File is already exist change name';
+        $image_err['img_exist_err'] = "Image is already exist change name";
     }
     // Allow certain file formats
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {

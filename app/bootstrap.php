@@ -7,6 +7,7 @@
   require_once 'helpers/session_helper.php';
   require_once 'helpers/language_helper.php';
   require_once 'helpers/add_image_helper.php';
+  require_once 'helpers/date_helper.php';
   
   
   // Autoload Core Libraries

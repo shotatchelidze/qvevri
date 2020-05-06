@@ -11,19 +11,20 @@ class Admins extends Controller{
             $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
             $data = [
-                'email' => trim($_POST['email']),
+                'email' => filter_var(trim($_POST['email']),FILTER_VALIDATE_EMAIL),
                 'password'=> trim($_POST['password']),
                 'email_err' => '',
                 'password_err' => ''
             ];
-
+            
             // Validate Email
-            if(empty($data['email'])){
+            if(empty($data['email']) || $data['email'] === false){
                 $data['email_err'] = 'Please enter email';
                     // Check for admin/email
             } elseif(!$this->adminModel->findAdminByEmail($data['email'])){
                 $data['email_err'] = 'Email is incorrect';
             }
+
             // Validate Password
             if(empty($data['password'])){
                 $data['password_err'] = 'Please enter password';
@@ -61,8 +62,6 @@ class Admins extends Controller{
             $this->view('admins/index', $data);
         }
     }
-
-
 
     public function createAdminSession($admin){
         $_SESSION['admin_email'] = $admin->email;

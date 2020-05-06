@@ -20,14 +20,13 @@ class ImageBg_admins extends Controller
 
         $this->view('ImageBg_admins/index', $data);
     }
-
+    // Add background image
     public function addImageBg()
     {
         // check for posts
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && is_uploaded_file($_FILES['image']['tmp_name'])) {
 
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+            die(var_dump(isset($_POST['image']['name'])));
             $data = [
                 'image_name' => $_FILES['image']['name'],
                 'page_name' => $_POST['page']
