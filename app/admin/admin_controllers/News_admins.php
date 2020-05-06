@@ -38,7 +38,9 @@ class News_admins extends Controller
         // determine the sql LIMIT starting number for the results on the displaying page
         $this_page_first_result = ($page - 1) * $results_per_page;
 
-        $news = $this->newsAdminModel->getNews($this_page_first_result, $results_per_page);
+        if(isset($_GET['language'])) $language = $_GET['language']; else $language='en';
+
+        $news = $this->newsAdminModel->getNews($this_page_first_result, $results_per_page, $language);
         $news_count = count($news);
 
         $data = [

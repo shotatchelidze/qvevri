@@ -26,12 +26,17 @@
     </select>
     <button type="submit" class="btn btn-success">Save</button>
 </form>
+<?php if(isset($_GET["page"])) $separator='?page=' . $_GET["page"] . '&'; else $separator='?'; ?>
+<a href="<?php echo $separator;?>language=en">EN</a><br />
+<a href="<?php echo $separator;?>language=ge">GE</a><br />
+<a href="<?php echo $separator;?>language=ru">RU</a><br />
+
 
 <!-- start for -->
 <?php for ($i = 0; $i < $data['news_count']; $i++) : ?>
 
 
-    <a class="button btn btn-secondary" href="<?php echo URLROOT_ADMIN; ?>/News_admins/add_news_imgs?news_id=<?php echo $data['news'][$i]->news_id; ?>">Add Image</a>
+    <a class="button btn btn-secondary" href="<?php echo URLROOT_ADMIN; ?>/News_admins/add_news_imgs?news_id=<?php echo $data['news'][$i]->id; ?>">Add Image</a>
 
 
     <!-- add news imgs -->
@@ -51,7 +56,7 @@
             </div>
             <button type="submit" class="btn btn-success">Upload Image</button>
         </div>
-        <input type="hidden" name="news_id" value="<?php echo $data['news'][$i]->news_id; ?>" />
+        <input type="hidden" name="news_id" value="<?php echo $data['news'][$i]->id; ?>" />
     </form>
 
 
@@ -59,7 +64,9 @@
 
 
     <div class="card" style="width: 18rem;">
+        <?php if($data['news'][$i]->news_img_name != '') : ?>
         <img class="card-img-top" src="<?php echo URLROOT_ADMIN ?>/public/img/<?php echo $data['news'][$i]->news_img_name; ?>" alt="News">
+        <?php endif; ?>
     </div>
 
 
@@ -98,11 +105,11 @@
         </div>
     </div>
     <!-- shesascorebeli -->
-    <a href="<?php echo URLROOT_ADMIN; ?>/News_admins/editNews/<?php echo $data['news'][$i]->news_id; ?>" type="button" class="btn btn-secondary">Edit</a>
+    <a href="<?php echo URLROOT_ADMIN; ?>/News_admins/editNews/<?php echo $data['news'][$i]->id; ?>" type="button" class="btn btn-secondary">Edit</a>
     <!-- shesascorebeli -->
 
     <!-- Delete news  -->
-    <form action="<?php echo URLROOT; ?>/News_admins/deleteNews/<?php echo $data['news'][$i]->news_id; ?>" method="POST">
+    <form action="<?php echo URLROOT; ?>/News_admins/deleteNews/<?php echo $data['news'][$i]->id; ?>" method="POST">
         <input type="hidden" name="delete_image" value="<?php echo $data['news'][$i]->news_img_name; ?>">
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
@@ -110,20 +117,18 @@
     <!-- სხვანაირად როგორ შეიძლება ბაზიდან წამოღების დროს reference table(მშობელ table)_ში ჩაიწეროს indexed table(შვილი table) _ ის მონაცემები დაკავშირებული id ებით -->
     <!-- მაგალითად წამოვიღო ბაზიდან news table_ის ერთი ჩანაწერი და news_imgs table იდან მიებას ის ჩანაწერები რომლის user_id იქნება ტოლი id_ის -->
     <!-- news_imgs images -->
-    <?php foreach ($data['news'] as $news) : ?>
-        <?php if ($news->news_imgs_news_id == $data['news'][$i]->news_id) : ?>
+    <?php foreach ( $data['news'][$i]->images as $image) : ?>
             <div class="card-group col-md-2">
                 <div class="card " style="width: 18rem;">
-                    <img class="card-img-top" src="<?php echo URLROOT_ADMIN; ?>/public/img/<?php echo $news->news_imgs_img_name; ?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo URLROOT_ADMIN; ?>/public/img/<?php echo $image->img_name; ?>" alt="Card image cap">
                     <div class="card-body">
-                        <form action="<?php echo URLROOT_ADMIN; ?>/news_admins/deleteNewsImgs/<?php echo $news->news_imgs_id; ?>" method="POST">
-                            <input type="hidden" name="delete_image" value="<?php echo $news->news_imgs_img_name; ?>">
+                        <form action="<?php echo URLROOT_ADMIN; ?>/news_admins/deleteNewsImgs/<?php echo $image->id; ?>" method="POST">
+                            <input type="hidden" name="delete_image" value="<?php echo $image->img_name; ?>">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
     <?php endforeach; ?>
 
 

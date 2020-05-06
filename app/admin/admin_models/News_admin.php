@@ -9,26 +9,31 @@ class News_admin
     }
     
 
-    public function getNews($this_page_first_result, $results_per_page)
+    public function getNews($this_page_first_result, $results_per_page, $language='en')
     {
-        $this->db->query("SELECT *, 
-                        news.id as news_id,
-                        news.news_img_name as news_img_name,
-                        news_imgs.id as news_imgs_id,
-                        news_imgs.news_id as news_imgs_news_id,
-                        news_imgs.img_name as news_imgs_img_name 
+        $this->db->query("SELECT *
                         FROM news
-                        LEFT JOIN news_imgs
-                        ON news.id = news_imgs.news_id
+                        where language=:language
                         ORDER BY news.created_at DESC
                         LIMIT :this_page_first_result, :results_per_page
                         ");
 
         $this->db->bind(':this_page_first_result', $this_page_first_result);
         $this->db->bind(':results_per_page', $results_per_page);
+        $this->db->bind(':language', $language);
         // $this->db->execute();
 
         $result = $this->db->resultSet();
+
+        foreach($result as $r) :
+            $this->db->query("SELECT *
+            from news_imgs where news_id = :news_id");
+            $this->db->bind(':news_id', $r->id);
+            $img_result = $this->db->resultSet();
+            $r->images = $img_result;
+        endforeach;
+
+        // var_dump($result); die();
         return $result;
     }
 
