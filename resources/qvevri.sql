@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2020 at 07:31 PM
+-- Generation Time: May 18, 2020 at 05:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -68,23 +68,31 @@ INSERT INTO `imagebgs` (`id`, `image_name`, `page_name`) VALUES
 
 CREATE TABLE `logos` (
   `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
   `img_name` varchar(255) NOT NULL,
-  `en_title` varchar(255) NOT NULL,
-  `ge_title` varchar(255) NOT NULL,
-  `ru_title` varchar(255) NOT NULL,
-  `en_subtitle` varchar(255) NOT NULL,
-  `ge_subtitle` varchar(255) NOT NULL,
-  `ru_subtitle` varchar(255) NOT NULL,
-  `page` varchar(20) NOT NULL
+  `title` varchar(255) NOT NULL,
+  `subtitle` varchar(255) NOT NULL,
+  `page` varchar(20) NOT NULL,
+  `language` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `logos`
 --
 
-INSERT INTO `logos` (`id`, `img_name`, `en_title`, `ge_title`, `ru_title`, `en_subtitle`, `ge_subtitle`, `ru_subtitle`, `page`) VALUES
-(9, 'asatvirtisurati.png', 'asdas', 'dasdas', 'asdasd', 'dadsa', 'dasdasd', 'asd', 'menu'),
-(11, '1.jpeg', 'adasd', 'sdasdsad', 'sdasdas', 'asdasda', 'asdasda', 'dasdasdads', 'menu');
+INSERT INTO `logos` (`id`, `item_id`, `img_name`, `title`, `subtitle`, `page`, `language`) VALUES
+(54, 54, 'LOGO_ge.png', 'Twins Wine Cellar', 'Kakheti-Everything\r\nIn One Space', 'welcome', 'en'),
+(55, 54, 'LOGO_ge.png', 'ტყუპების ღვინის მარანი', 'კახეთი-ყველაფერი\r\nერთ სივრცეში', 'welcome', 'ge'),
+(56, 54, 'LOGO_ge.png', 'Винный погреб Твинс', 'Кахетия-все\r\nВ одном пространстве', 'welcome', 'ru'),
+(57, 57, 'logohistory.png', 'Our History', 'Family Of\r\nGamtkitsulashvili', 'welcome', 'en'),
+(58, 57, 'logohistory.png', 'ჩვენი ისტორია', 'ოჯახი\r\nგამყრწულაშვილი', 'welcome', 'ge'),
+(59, 57, 'logohistory.png', 'Наша история', 'Семья О\r\nGamtkitsulashvili', 'welcome', 'ru'),
+(60, 60, 'logo2.png', 'Blog', 'Qvevri\r\nAnd Qvevri Wine', 'welcome', 'en'),
+(61, 60, 'logo2.png', 'ბლოგი', 'ქვევრი\r\nდა ქვევრის ღვინო', 'welcome', 'ge'),
+(62, 60, 'logo2.png', 'Блог', 'Qvevri\r\nИ вино квеври', 'welcome', 'ru'),
+(63, 63, 'LOGO1.png', 'Twins Wine House', 'Ancient Art\r\nOf Wine Making', 'welcome', 'en'),
+(64, 63, 'LOGO1.png', 'ტყუპების ღვინის სახლი', 'უძველესი ხელოვნება\r\nღვინის წარმოების', 'welcome', 'ge'),
+(65, 63, 'LOGO1.png', 'Винный Дом Близнецов', 'Древнее искусство\r\nВиноделия', 'welcome', 'ru');
 
 -- --------------------------------------------------------
 
@@ -94,24 +102,40 @@ INSERT INTO `logos` (`id`, `img_name`, `en_title`, `ge_title`, `ru_title`, `en_s
 
 CREATE TABLE `menus` (
   `id` int(11) NOT NULL,
-  `en_title` varchar(20) NOT NULL,
-  `ge_title` varchar(50) NOT NULL,
-  `ru_title` varchar(50) NOT NULL
+  `item_id` int(11) NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `language` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `menus`
 --
 
-INSERT INTO `menus` (`id`, `en_title`, `ge_title`, `ru_title`) VALUES
-(1, 'HOM12', 'მთავარ', ''),
-(2, 'HOTE1', 'სასტუმრ', ''),
-(3, 'MUSEUM', 'მუზემუმო', ''),
-(4, 'RESTAURANT', 'რესტორ', ''),
-(5, 'activity', 'აქტივითი', ''),
-(6, 'wine shop', 'ღვინის მაღაზოა', ''),
-(7, 'lake', 'ტბა', ''),
-(8, 'contact', 'კონტაკქოs', '');
+INSERT INTO `menus` (`id`, `item_id`, `title`, `language`) VALUES
+(1, 1, 'HOME3', 'en'),
+(2, 1, 'მთავარი3', 'ge'),
+(3, 1, '', 'ru'),
+(4, 4, 'Hotel', 'en'),
+(5, 4, 'ჰოტელი', 'ge'),
+(6, 4, '', 'ru'),
+(7, 7, 'Museum', 'en'),
+(8, 7, 'მუზეუმი', 'ge'),
+(9, 7, '', 'ru'),
+(10, 10, 'restaurant', 'en'),
+(11, 10, 'რესტორანი', 'ge'),
+(12, 10, '', 'ru'),
+(13, 13, 'activity', 'en'),
+(14, 13, 'აქტივითი', 'ge'),
+(15, 13, '', 'ru'),
+(16, 16, 'wineshop', 'en'),
+(17, 16, 'ღვინი მაღაზია', 'ge'),
+(18, 16, '', 'ru'),
+(19, 19, 'lake', 'en'),
+(20, 19, 'ტბა', 'ge'),
+(21, 19, '', 'ru'),
+(22, 22, 'contact', 'en'),
+(23, 22, 'კონტაკქტი', 'ge'),
+(24, 22, '', 'ru');
 
 -- --------------------------------------------------------
 
@@ -123,15 +147,9 @@ CREATE TABLE `news` (
   `id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `news_img_name` varchar(255) NOT NULL,
-  `en_title` varchar(255) NOT NULL,
-  `en_subtitle` varchar(255) NOT NULL,
-  `en_text` text NOT NULL,
-  `ge_title` varchar(255) NOT NULL,
-  `ge_subtitle` varchar(255) NOT NULL,
-  `ge_text` text NOT NULL,
-  `ru_title` varchar(255) NOT NULL,
-  `ru_subtitle` varchar(255) NOT NULL,
-  `ru_text` text NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `subtitle` varchar(255) NOT NULL,
+  `text` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `language` varchar(2) NOT NULL DEFAULT 'en'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -140,16 +158,13 @@ CREATE TABLE `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `item_id`, `news_img_name`, `en_title`, `en_subtitle`, `en_text`, `ge_title`, `ge_subtitle`, `ge_text`, `ru_title`, `ru_subtitle`, `ru_text`, `created_at`, `language`) VALUES
-(5, 5, 'news_table.jpg', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', '', '2020-05-04 18:30:48', 'en'),
-(6, 6, '', 'News/Blogs2', 'News/Blogs2', '2News/Blogs2', 'News/Blogs2', 'News/Blogs2', '', '', 'News/Blogs2', 'News/Blogs2', '2020-05-05 19:04:42', 'en'),
-(7, 7, '', 'News/Blogs3', 'News/Blogs3', 's/Blogs3', 'Ns/Blogs3', 's/Blogs3', 's/Blogs3', 's/Blogs3', 's/Blogs3', '', '2020-05-05 19:05:03', 'en'),
-(8, 8, '', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', 'ws/Blogs4', '', '2020-05-05 19:05:19', 'en'),
-(9, 9, '', 's/Blogs5', 's/Blogs5', 's/Blogs5', 's/Blogs5s/Blogs5', 's/Blogs5', 's/Blogs5', 's/Blogs5', '', '', '2020-05-05 19:05:30', 'en'),
-(10, 10, '', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', 'ews/Blog6', '', '2020-05-05 19:05:45', 'en'),
-(11, 11, 'a3.jpg', '', '', '', '', '', '', '', '', '', '2020-05-06 00:35:54', 'en'),
-(12, 12, 'eso1907a.jpg', '', '', '', '', '', '', '', '', '', '2020-05-06 00:37:02', 'en'),
-(13, 5, 'news_table.jpg', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', 'News/Blogs', '', '2020-05-04 18:30:48', 'ge');
+INSERT INTO `news` (`id`, `item_id`, `news_img_name`, `title`, `subtitle`, `text`, `created_at`, `language`) VALUES
+(14, 14, '', 'English Title:', 'English Subtitle:', 'English Text:', '2020-05-10 23:44:16', 'en'),
+(15, 14, '', 'Georgian Title:', 'Georgian Subtitle:', 'Georgian Text:', '2020-05-10 23:44:16', 'ge'),
+(16, 14, '', 'Russian Title:', 'Russian Subtitle:', 'Russian Text:', '2020-05-10 23:44:16', 'ru'),
+(17, 17, '', 'English Title:2', 'English Subtitle:2', 'English Text:2', '2020-05-10 23:45:28', 'en'),
+(18, 17, '', 'Georgian Title:2', 'Georgian Subtitle:2', 'Georgian Text:2', '2020-05-10 23:45:28', 'ge'),
+(19, 17, '', 'Russian Title:2', 'Russian Subtitle:2', 'Russian Text:2', '2020-05-10 23:45:28', 'ru');
 
 -- --------------------------------------------------------
 
@@ -163,15 +178,68 @@ CREATE TABLE `news_imgs` (
   `img_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `news_imgs`
+-- Table structure for table `paginations`
 --
 
-INSERT INTO `news_imgs` (`id`, `news_id`, `img_name`) VALUES
-(9, 5, 'newsImgstable.png'),
-(10, 10, '1 - Copy - Copy.jpeg'),
-(11, 10, 'dowssssnload.jpg'),
-(12, 12, 'a3.jpg');
+CREATE TABLE `paginations` (
+  `id` int(11) NOT NULL,
+  `result_per_page` smallint(1) NOT NULL,
+  `page_name` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `paginations`
+--
+
+INSERT INTO `paginations` (`id`, `result_per_page`, `page_name`) VALUES
+(2, 10, 'news'),
+(3, 15, 'products');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `img_name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `serial_number` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `language` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `item_id`, `product_name`, `img_name`, `title`, `text`, `quantity`, `serial_number`, `created_at`, `language`) VALUES
+(4, 4, 'adad', '', 'ad', 'ada', 126111, 'wqeqwe', '2020-05-16 23:44:01', 'en'),
+(5, 4, 'asdasd', '', 'dasd', '222', 126111, 'wqeqwe', '2020-05-16 23:44:01', 'ge'),
+(6, 4, 'ad', '', 'ds', 'asdad', 126111, 'wqeqwe', '2020-05-16 23:44:01', 'ru'),
+(7, 7, 'ss', '1.jpeg', 'asdasd', 'asdasd', 2, 'ww', '2020-05-17 20:50:33', 'en'),
+(8, 7, 'adasd', '1.jpeg', 'asd', 'adas', 2, 'ww', '2020-05-17 20:50:33', 'ge'),
+(9, 7, 'das', '1.jpeg', 'dad', 'asd', 2, 'ww', '2020-05-17 20:50:33', 'ru'),
+(10, 10, 'dasd', '1.jpeg', 'asd', 'sd', 2, 'ds', '2020-05-17 20:50:49', 'en'),
+(11, 10, '', '1.jpeg', 'dasd', 'asd', 2, 'ds', '2020-05-17 20:50:49', 'ge'),
+(12, 10, 'asd', '1.jpeg', 'dasd', 'asd', 2, 'ds', '2020-05-17 20:50:49', 'ru'),
+(13, 13, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:42', 'en'),
+(14, 13, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:42', 'ge'),
+(15, 13, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:43', 'ru'),
+(16, 16, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:43', 'en'),
+(17, 16, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:43', 'ge'),
+(18, 16, '', '1.jpeg', '', '', 0, '', '2020-05-17 20:54:43', 'ru'),
+(19, 19, '', '', 'ada', 'da', 0, '', '2020-05-17 20:56:09', 'en'),
+(20, 19, 'sd', '', '', 'asd', 0, '', '2020-05-17 20:56:09', 'ge'),
+(21, 19, '', '', '', '', 0, '', '2020-05-17 20:56:09', 'ru');
 
 -- --------------------------------------------------------
 
@@ -181,23 +249,26 @@ INSERT INTO `news_imgs` (`id`, `news_id`, `img_name`) VALUES
 
 CREATE TABLE `sections` (
   `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
   `img_name` varchar(255) NOT NULL,
   `bg_img_name` varchar(255) NOT NULL,
   `icon_img_name` varchar(255) NOT NULL,
-  `en_title` varchar(255) NOT NULL,
-  `en_text` text NOT NULL,
-  `ge_title` varchar(255) NOT NULL,
-  `ge_text` text NOT NULL,
-  `ru_title` varchar(255) NOT NULL,
-  `ru_text` text NOT NULL
+  `title` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `language` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sections`
 --
 
-INSERT INTO `sections` (`id`, `img_name`, `bg_img_name`, `icon_img_name`, `en_title`, `en_text`, `ge_title`, `ge_text`, `ru_title`, `ru_text`) VALUES
-(9, 'images (1).jpg', '', 'images.jpg', 'Section', 'Section', 'Section', 'Section', 'Section', 'Section');
+INSERT INTO `sections` (`id`, `item_id`, `img_name`, `bg_img_name`, `icon_img_name`, `title`, `text`, `language`) VALUES
+(13, 13, '1.jpeg', '', '', 'adasdasdd2', 'asdasdds2', 'en'),
+(14, 13, '1.jpeg', '', '', 'qweqweeqw2', 'addsd2', 'ge'),
+(15, 13, '1.jpeg', '', '', 'adasd2', 'adasddas2', 'ru'),
+(16, 16, '', '', '', 'adasdasdd3', 'asdasdds2', 'en'),
+(17, 16, '', '', '', 'qweqweeqw3', 'addsd2', 'ge'),
+(18, 16, '', '', '', 'adasd3', 'adasddas2', 'ru');
 
 --
 -- Indexes for dumped tables
@@ -235,6 +306,18 @@ ALTER TABLE `news_imgs`
   ADD KEY `news_id` (`news_id`);
 
 --
+-- Indexes for table `paginations`
+--
+ALTER TABLE `paginations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sections`
 --
 ALTER TABLE `sections`
@@ -254,31 +337,43 @@ ALTER TABLE `imagebgs`
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `news_imgs`
 --
 ALTER TABLE `news_imgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `paginations`
+--
+ALTER TABLE `paginations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
