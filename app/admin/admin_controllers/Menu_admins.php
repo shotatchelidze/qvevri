@@ -6,18 +6,18 @@ class Menu_admins extends Controller {
         if(!isLoggedIn()){
             redirect_admin('admins');
         }
-        
+        getAdminLanguage();
+        getLanguage();
+
         $this->menuAdminModel = $this->model('Menu_admin');
-        $this->logoAdminModel = $this->model('Logo_admin');
     }
 
     public function index(){
+        // ენა რადგან არის კონსტანტა გადაცემის მაგივრად პირდაპირ query ში ვწერ
         $menu = $this->menuAdminModel->getMenu();
-        $logo = $this->logoAdminModel->getLogoForPages("menu");
-        
+
         $data = [
-           'menu' => $menu,
-           'logo' => $logo
+           'menu' => $menu
         ];
             
         $this->view('menu_admins/index', $data);    
@@ -25,18 +25,16 @@ class Menu_admins extends Controller {
     }
 
     public function changeMenu(){
+        
         // Check for post
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            // Array in array
             $data = [
                 'id' => $_POST['id'],
-                'en_title' => array_map('trim', $_POST['en_title']),
-                'ge_title' => array_map('trim', $_POST['ge_title']),
-                'ru_title' => array_map('trim', $_POST['ru_title'])
+                'title' => array_map('trim',$_POST['title'])
             ];
+                    
             // try update menu
             if($this->menuAdminModel->updateMenu($data)){
                 flash('changed_success','changed successfully');

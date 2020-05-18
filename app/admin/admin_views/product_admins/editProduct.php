@@ -1,10 +1,10 @@
 <?php require APPROOT . '/admin/admin_views/adminInc/adminHeader.php'; ?>
 
-<h2>Edit News/Blogs</h2>
-<?php flash('news_updated_success') ?>
-<?php flash('news_updated_fail') ?>
+<h2>Edit Product</h2>
+<?php flash('product_updated_success') ?>
+<?php flash('product_updated_fail') ?>
 
-<form action="<?php echo URLROOT_ADMIN; ?>/News_admins/editNews/<?php echo $data[0]['item_id'];?>" method="POST" enctype="multipart/form-data">
+<form action="<?php echo URLROOT_ADMIN; ?>/Product_admins/editProduct/<?php echo $data[0]['item_id'];?>" method="POST" enctype="multipart/form-data">
     <div class="container">
         <div class="col-md-6">
             <div class="form-group">
@@ -19,15 +19,22 @@
                 </div>
                 <img id='img-upload' />
             </div>
-
+            <div class="form-group">
+                <label for="serial_number">Serial Number:</label>
+                <textarea class="form-control" rows="1" name="serial_number"><?php echo $data[0]['serial_number']; ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <textarea class="form-control" rows="1" name="quantity"><?php echo $data[0]['quantity'];?></textarea>
+            </div>
             <?php $i = 0; foreach (LANG_ARR as $lang => $language) : ?>
+            <div class="form-group">
+                <label for="<?php echo $lang;?>_product_name"><?php echo $language;?> Product Name:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_product_name"><?php echo $data[$i]["$lang".'_product_name']?></textarea>
+            </div>
             <div class="form-group">
                 <label for="title"><?php echo $language;?> Title:</label>
                 <textarea class="form-control" rows="1" name="<?php echo $lang;?>_title"><?php echo $data[$i]["$lang".'_title']?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title"><?php echo $language;?> Subtitle:</label>
-                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_subtitle"><?php echo $data[$i]["$lang".'_subtitle']?></textarea>
             </div>
             <div class="form-group">
                 <label for="title"><?php echo $language;?> Text:</label>

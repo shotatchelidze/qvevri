@@ -9,18 +9,19 @@ class Section_admin{
     }
 
     public function getSections(){
-        $this->db->query('SELECT * FROM sections');
+        $this->db->query('SELECT * FROM sections WHERE language = :language');
+        $this->db->bind(':language', LANG);
 
         $result = $this->db->resultSet();
         return $result;
     }
 
-    public function getSectionById($id){
-        $this->db->query('SELECT * FROM sections WHERE id = :id');
+    public function getSectionById($item_id){
+        $this->db->query('SELECT * FROM sections WHERE item_id = :item_id');
         // Bind
-        $this->db->bind(':id', $id);
+        $this->db->bind(':item_id', $item_id);
 
-        $row = $this->db->single();
+        $row = $this->db->resultSet();
         return $row;
     }
 
@@ -34,47 +35,61 @@ class Section_admin{
     }
 
     public function addSection($data){
-        $arr = implode(",", array_keys($data));
-        $ArrVal = (':'.implode(", :", array_keys($data)));
-
-        $this->db->query("INSERT INTO sections ($arr) VALUES ($ArrVal)");
-
-        foreach($data as $key => $value){
-            $this->db->bind(":$key", $value);
+        $insertOk = true;
+        $i = 0;
+        foreach(LANG_ARR as $lang => $language){
+            $this->db->query("INSERT INTO sections (img_name, bg_img_name, icon_img_name, title, text, language) 
+                                VALUES (:img_name, :bg_img_name, :icon_img_name, :title, :text, :language)");
+            $this->db->bind(':img_name', $data['img_name']);
+            $this->db->bind(':bg_img_name', $data['bg_img_name']);                    
+            $this->db->bind(':icon_img_name', $data['icon_img_name']);                    
+            $this->db->bind(':title', $data["$lang".'_title']);                    
+            $this->db->bind(':text', $data["$lang".'_text']);                    
+            $this->db->bind(':language', $lang);                    
+            if(!$this->db->execute()){
+                $insertOk = false;
+            break;
+            }
+            // ბოლოს დამატებულის id 
+            $this->db->query('SELECT max(id) FROM sections');
+            $result = $this->db->singleColumn();
+            // $result არის ბოლოს დამატებული section_ის id და $result-$i ხდება ერთიდაიგივე $item_id_ის მინიჭება
+            $this->db->query("UPDATE sections SET item_id = $result-$i WHERE id = $result");
+            if (!$this->db->execute()) {
+                $insertOk = false;
+                break;
+            }
+            $i++;
         }
-
-        if($this->db->execute()){
-            return true;
-        } else {
-            return false;
-        }
+        return $insertOk;
     }
 
-    public function editSection($data){
-        $this->db->query('UPDATE sections SET img_name = :img_name, bg_img_name = :bg_img_name, icon_img_name = :icon_img_name,
-        en_title = :en_title, en_text = :en_text, ge_title = :ge_title, ge_text = :ge_text, ru_title = :ru_title, ru_text = :ru_text');
+    public function updateSection($data){
+        $updateOk = true;
+        $i = 0;
+        foreach(LANG_ARR as $lang => $language){
+            $this->db->query('UPDATE sections SET img_name = :img_name, bg_img_name = :bg_img_name, icon_img_name = :icon_img_name,
+                            title = :title, text = :text WHERE id = :id');
+            $this->db->bind(':img_name',$data[$i]['img_name']);
+            $this->db->bind(':bg_img_name',$data[$i]['bg_img_name']);                    
+            $this->db->bind(':icon_img_name',$data[$i]['icon_img_name']);                    
+            $this->db->bind(':title',$data[$i]["$lang".'_title']);
+            $this->db->bind(':text',$data[$i]["$lang".'_text']);
+            $this->db->bind(':id',$data[$i]["$lang".'_id']);                   
 
-        $this->db->bind(':img_name', $data['img_name']);
-        $this->db->bind(':bg_img_name', $data['bg_img_name']);
-        $this->db->bind(':icon_img_name', $data['icon_img_name']);
-        $this->db->bind(':en_title', $data['en_title']);
-        $this->db->bind(':en_text', $data['en_text']);
-        $this->db->bind(':ge_title', $data['ge_title']);
-        $this->db->bind(':ge_text', $data['ge_text']);
-        $this->db->bind(':ru_title', $data['ru_title']);
-        $this->db->bind(':ru_text', $data['ru_text']);
-
-        if($this->db->execute()){
-            return true;
-        } else {
-            return false;
+            if(!$this->db->execute()){
+                $updateOk = false;
+            break;
+            }
+            $i++;
         }
+        return $updateOk;
     }
 
-    public function deleteSection($id){
-        $this->db->query('DELETE FROM sections WHERE id = :id');
+    public function deleteSection($item_id){
+        $this->db->query('DELETE FROM sections WHERE item_id = :item_id');
         // Bind value
-        $this->db->bind(':id',$id);
+        $this->db->bind(':item_id',$item_id);
         // Execute
         if($this->db->execute()){
             return true;

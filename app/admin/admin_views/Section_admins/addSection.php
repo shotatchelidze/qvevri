@@ -55,32 +55,16 @@
             <span class="text-danger"><?php echo $data['bg_image_exist_err'] ?? '' ?></span>
             <span class="text-danger"><?php echo $data['bg_image_ext_err'] ?? '' ?></span>
 
-
+            <?php foreach(LANG_ARR as $lang => $language) : ?>
             <div class="form-group">
-                <label for="title">Section English Title:</label>
-                <textarea class="form-control" rows="1" name="en_title"><?php echo $data['en_title']; ?></textarea>
+                <label for="title">Section <?php echo $language;?> Title:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_title"><?php echo $data["$lang".'_title'] ?? ''; ?></textarea>
             </div>
             <div class="form-group">
-                <label for="title">Section English Text:</label>
-                <textarea class="form-control" rows="1" name="en_text"><?php echo $data['en_text']; ?></textarea>
+                <label for="title">Section <?php echo $language;?> Text:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_text"><?php echo $data["$lang".'_text'] ?? ''; ?></textarea>
             </div>
-            <div class="form-group">
-                <label for="title">Section Georgian Title:</label>
-                <textarea class="form-control" rows="1" name="ge_title"><?php echo $data['ge_title']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Section Georgian Text:</label>
-                <textarea class="form-control" rows="1" name="ge_text"><?php echo $data['ge_text']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Section Russian Title:</label>
-                <textarea class="form-control" rows="1" name="ru_title"><?php echo $data['ru_title']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Section Russian Text:</label>
-                <textarea class="form-control" rows="1" name="ru_text"><?php echo $data['ru_text']; ?></textarea>
-            </div>
-
+            <?php endforeach;?>
 
             <button type="submit" class="btn btn-success">Submit</button>
         </div>

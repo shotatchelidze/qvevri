@@ -26,7 +26,6 @@ class ImageBg_admins extends Controller
         // check for posts
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && is_uploaded_file($_FILES['image']['tmp_name'])) {
 
-            die(var_dump(isset($_POST['image']['name'])));
             $data = [
                 'image_name' => $_FILES['image']['name'],
                 'page_name' => $_POST['page']
@@ -77,30 +76,30 @@ class ImageBg_admins extends Controller
             ];
 
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            // First, delete existing image from folder
-            // Get existing image name from DB
-            $image_name_obj = $this->logoAdminModel->getImageBgNameById($id);
-            // Check id is correct or not
-            if ($image_name_obj === false) {
-                die('images does not exist reload page');
-            }
-            // Check image empty or not
-            if ($image_name_obj->image_name !== '') {
-                $image_name = $target_dir . $image_name_obj->image_name;
-                if (file_exists($image_name)) {
-                    if (!(unlink($image_name))) {
-                        die('Something went wrong reload page');
-                    }
-                } else {
-                    die('image does not exist');
-                }
-            }
-
+            
             $target_file = $target_dir . basename($_FILES["image"]["name"]);
             $temp_name = $_FILES['image']['tmp_name'];
             $image = add_image($target_file, $temp_name, "1200");
 
             if ($image === true) {
+                // შემოწმდეს თუ არსებობდა სურათი და წაიშალოს fodler_იდან
+                $image_name_obj = $this->logoAdminModel->getImageBgNameById($id);
+                // Check id is correct or not
+                if ($image_name_obj === false) {
+                    die('images does not exist reload page');
+                }
+
+                if ($image_name_obj->image_name !== '') {
+                    $image_name = $target_dir . $image_name_obj->image_name;
+                    if (file_exists($image_name)) {
+                        if (!(unlink($image_name))) {
+                            die('Something went wrong reload page');
+                        }
+                    } else {
+                        die('image does not exist');
+                    }   
+                }
+
                 if ($this->imageBgAdminModel->editImageBg($data)) {
                     flash('ImageBg_edit_success', 'Background Image Updated Successfuly');
                     redirect_admin('ImageBg_admins/editImageBg', $id);
@@ -126,8 +125,8 @@ class ImageBg_admins extends Controller
 
             $data = [
                 'id' => $id,
-                'image_name' => $imageBg->image_name ?? '',
-                'page_name' => $imageBg->page_name ?? ''
+                'image_name' => $imageBg->image_name,
+                'page_name' => $imageBg->page_name 
             ];
 
             $this->view('ImageBg_admins/editImageBg', $data);

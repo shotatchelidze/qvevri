@@ -20,3 +20,13 @@ function getLanguage(){
     }
 }
 
+function getAdminLanguage(){
+
+    define("LANG_ARR", ["en" => "English", "ge" => "Georgian", "ru" => "Russian"]);
+    // $lang_arr = ['en' => 'English','ge' => 'Georgian','ru' => 'Russian'];
+    // if(isset($_GET['language'])) $language = $_GET['language']; else $language='en';
+    
+}
+
+
+

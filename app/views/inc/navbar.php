@@ -7,16 +7,16 @@
       <div class="navbar-collapse collapse navbarcollapse">
         <ul class="nav navbar-nav left-nav">
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][0]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][0]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][1]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][1]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][2]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][2]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][3]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][3]->title;?></a>
           </li>
         </ul>
       </div>
@@ -25,16 +25,16 @@
       <div class="navbar-collapse collapse navbarcollapse">
         <ul class="nav navbar-nav right-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][4]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][4]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][5]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][5]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][6]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][6]->title;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][7]->menuTitle;?></a>
+            <a class="nav-link text-uppercase nav-items" href="#"><?php echo $data['menu'][7]->title;?></a>
           </li>
         </ul>
       </div>

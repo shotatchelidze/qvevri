@@ -7,15 +7,25 @@ class Menu_admin{
     }
 
     public function getMenu(){
-        $this->db->query('SELECT *
-                            FROM menus 
-                        ');
+        $this->db->query('SELECT * FROM menus WHERE language = :language');
+        $this->db->bind(':language', LANG);
         $result = $this->db->resultSet();
-
         return $result;                
     }
 
-    
+    public function updateMenu($data){
+        $execute = true;
+        for($i = 0; $i < count($data['id']); $i++){
+            $this->db->query('UPDATE menus SET title = :title WHERE id = :id');
+            $this->db->bind(':title', $data['title'][$i]);
+            $this->db->bind(':id', $data['id'][$i]);
+            if(!$this->db->execute()){
+                $execute = false;
+            break;
+            }
+        }
+        return $execute;
+    }
 
     public function updateAdminPassword($data){
         $this->db->query('UPDATE admins SET password = :new_pass');
@@ -25,38 +35,6 @@ class Menu_admin{
         if($this->db->execute()){
             return true;
         } else {
-            return false;
-        }
-    }
-
-
-    
-    public function updateMenu($data){
-        $execute = false;
-        $elementSize = sizeof($data['id']);
-
-        for($i = 0; $i < $elementSize; $i++){
-            $id = $data['id'][$i];
-            $en_title = $data['en_title'][$i];
-            $ge_title = $data['ge_title'][$i];
-            $ru_title = $data['ru_title'][$i];
-            
-            $this->db->query('UPDATE menus SET en_title = :en_title, ge_title = :ge_title, ru_title = :ru_title WHERE id = :id');
-            // Bind Value
-            $this->db->bind(':id', $id);
-            $this->db->bind(':en_title',$en_title);
-            $this->db->bind(':ge_title',$ge_title);
-            $this->db->bind(':ru_title',$ru_title);
-            // execute statement
-            $execute = $this->db->execute();
-            if($execute === false){
-                break;
-            }
-        }
-
-        if($execute){
-            return true;
-        }else{
             return false;
         }
     }

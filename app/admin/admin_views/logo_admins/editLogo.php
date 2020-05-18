@@ -1,10 +1,10 @@
 <?php require APPROOT . '/admin/admin_views/adminInc/adminHeader.php'; ?>
 <h2>Edit Logo</h2>
 
-<?php flash('logo_added_success') ?>
-<?php flash('logo_added_fail') ?>
+<?php flash('logo_added_success'); ?>
+<?php flash('logo_added_fail');?>
 
-<form action="<?php echo URLROOT; ?>/Logo_admins/editLogo/<?php echo $data['id']; ?>" method="POST" enctype="multipart/form-data">
+<form action="<?php echo URLROOT; ?>/Logo_admins/editLogo/<?php echo $data[0]['item_id']; ?>" method="POST" enctype="multipart/form-data">
     <div class="container">
         <div class="col-md-6">
             <div class="form-group">
@@ -18,34 +18,21 @@
                     <input type="text" class="form-control" readonly>
                 </div>
                 <!-- gasaswrorebeli suratis ar shecvlis shemtxvevashi image name aris carieli -->
-                <img src="<?php echo URLROOT_ADMIN ?>/public/img/<?php echo $data['img_name'] ?? '' ?>" id='img-upload' />
+                <img src="<?php echo URLROOT_ADMIN ?>/public/img/<?php echo $data[0]['img_name'] ?>" id='img-upload' />
             </div>
-
+            <?php $i = 0; foreach(LANG_ARR as $lang => $language) : ?>
             <div class="form-group">
-                <label for="title">Image English Title:</label>
-                <textarea class="form-control" rows="1" name="en_title"><?php echo $data['en_title']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Image English Subtitle:</label>
-                <textarea class="form-control" rows="1" name="en_subtitle"><?php echo $data['en_subtitle']; ?></textarea>
+                <label for="title">Image <?php echo $language;?> Title:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_title"><?php echo $data[$i]["$lang".'_title']?></textarea>
             </div>
             <div class="form-group">
-                <label for="title">Image Georgian Title:</label>
-                <textarea class="form-control" rows="1" name="ge_title"><?php echo $data['ge_title']; ?></textarea>
+                <label for="subtitle">Image <?php echo $language;?> Subtitle:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_subtitle"><?php echo $data[$i]["$lang".'_subtitle'];?></textarea>
             </div>
-            <div class="form-group">
-                <label for="title">Image Georgian Subtitle:</label>
-                <textarea class="form-control" rows="1" name="ge_subtitle"><?php echo $data['ge_subtitle']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Image Russian Title:</label>
-                <textarea class="form-control" rows="1" name="ru_title"><?php echo $data['ru_title']; ?></textarea>
-            </div>
-            <div class="form-group">
-                <label for="title">Image Russian Subtitle:</label>
-                <textarea class="form-control" rows="1" name="ru_subtitle"><?php echo $data['ru_subtitle']; ?></textarea>
-            </div>
-            <!-- <input type="hidden" name="page" value="menu"> -->
+            
+            <input type="hidden" name="<?php echo $lang;?>_id" value="<?php echo $data[$i]["$lang".'_id'];?>">    
+            <?php $i++; endforeach;?>
+            
             <!-- gasasworebelia editis dros selectshi shi unda gamochndes ra page ic iyo archeuli -->
             <label for="cars">Choose a page:</label>
             <select name="page" id="page">

@@ -11,10 +11,13 @@ class Logo{
         $this->db->query("SELECT
                             logos.id as logo_id,
                             logos.img_name as logo_image_name, 
-                            logos.".LANG."_title as logos_title,
-                            logos.".LANG."_subtitle as logos_subtitle    
+                            logos.title as logo_title,
+                            logos.subtitle as logo_subtitle    
                             FROM logos 
-                            WHERE page = 'menu'");
+                            WHERE page = :page and language = :language");
+        $this->db->bind(':language', LANG);
+        $this->db->bind(':page', $page);
+
         $result = $this->db->resultSet();
         return $result;
     }

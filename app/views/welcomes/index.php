@@ -1,5 +1,4 @@
 <!-- homes page -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="<?php echo URLROOT;?>/public/css/style.css">
   <title>Qvevri Wine</title>
 </head>
 
@@ -27,37 +26,26 @@
     <div class="dark-bg">
       <div class="container">
         <div class="row text-center logorow">
+        <?php foreach ($data['logos'] as $logo) :?>
           <div class="col-lg-3 col-sm-6 mobile block1">
-            <img class="logo logo1 logoblock1" src="../qvevri/img/LOGO_ge.png" alt="logo">
-            <h1 class="text-light header1 text-capitalize">Twins Wine Cellar</h1>
-            <p class="text-capitalize"><span>Kakheti-Everything</span><span>in One Space</span></p>
+            <img class="logo logo1 logoblock1" src="<?php echo URLROOT;?>/img/<?php echo $logo->logo_image_name;?>" alt="logo">
+            <h1 class="text-light header1 text-capitalize"><?php echo $logo->logo_title;?></h1>
+            <!-- gasasworebeli span ebi -->
+            <p class="text-capitalize"><span><?php echo $logo->logo_subtitle;?></span><span></span></p>
           </div>
-          <div class="col-lg-3 col-sm-6 mobile block2">
-            <img class="logo logo2 logoblock2" src="../qvevri/img/logohistory.png" alt="logo">
-            <h1 class="text-light header2 text-capitalize">Our History</h1>
-            <p class="text-capitalize"><span>Family of</span><span>Gamtkitsulashvili</span></p>
-          </div>
-          <div class="col-lg-3 col-sm-6 mobile block3">
-            <img class="logo logo2 logoblock3" src="../qvevri/img/logo2.png" alt="logo">
-            <h1 class="text-light header2 text-capitalize">Blog</h1>
-            <p class="text-capitalize"><span>Qvevri</span><span>And Qvevri Wine</span></p>
-          </div>
-          <div class="col-lg-3 col-sm-6 mobile block4">
-            <img class="logo logo1 logoblock4" src="../qvevri/img/LOGO1.png" alt="logo">
-            <h1 class="text-light header1 text-capitalize">Twins Wine House</h1>
-            <p class="text-capitalize"><span>Ancient Art</span><span>of Wine Making</span></p>
-          </div>
+        <?php endforeach;?>
+          
         </div>
       </div>
       <ul class="nav nav-pills nav-language fixed-bottom justify-content-center text-center">
         <li class="nav-item">
-          <a href="#" class="nav-link">GE</a>
+          <a href="<?php echo URLROOT.'/ge/';?>" class="nav-link">GE</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">EN</a>
+          <a href="<?php echo URLROOT.'/en/';?>" class="nav-link">EN</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">RU</a>
+          <a href="<?php echo URLROOT.'/ru/';?>" class="nav-link">RU</a>
         </li>
       </ul>
       <ul class="nav nav-media fixed-bottom justify-content-center icon-list">
@@ -88,7 +76,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
     integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-  <script src="../qvevri/js/carousel.js"></script>
+  <script src="<?php echo URLROOT;?>/public/js/carousel.js"></script>
 
 </body>
 

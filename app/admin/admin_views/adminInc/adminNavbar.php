@@ -19,7 +19,7 @@
 	              <a href="<?php echo URLROOT_ADMIN;?>/News_admins">Blogs/News</a>
 	            </li>
               <li>
-	              <a href="<?php echo URLROOT_ADMIN;?>/Index_admins">Index</a>
+	              <a href="<?php echo URLROOT_ADMIN;?>/Product_admins">Product</a>
 	            </li>
 	          <li class="active">
               <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -73,7 +73,7 @@
           </li>
       </ul>
           <div class="container-fluid">
-
+          
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fa fa-bars"></i>
               <span class="sr-only">Toggle Menu</span>
@@ -81,7 +81,12 @@
             <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-
+            <!-- LANGUAGE  -->
+            <?php if(isset($_GET["page"])) $separator='?page=' . $_GET["page"] . '&'; else $separator='?'; ?>
+            <a href="<?php echo $separator;?>lang=en">EN</a><br />
+            <a href="<?php echo $separator;?>lang=ge">GE</a><br />
+            <a href="<?php echo $separator;?>lang=ru">RU</a><br />
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">

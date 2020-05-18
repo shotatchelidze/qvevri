@@ -56,7 +56,7 @@ body {
 .searchlan {
   position: absolute;
   right: 1.21%;
-  top: -6%;
+  top: -6.2%;
 }
 .searchlan-list {
   list-style: none;
@@ -194,7 +194,7 @@ body {
 }
 .twinshotel {
   height: 457px;
-  background-image: url("../img/DSC_1315.png");
+  background-image: url("../img/DSC_1376.png");
   background-position: left;
   background-repeat: no-repeat;
   background-size: 652px 457px;
@@ -717,74 +717,74 @@ body {
 .header-news-text {
   font-size: 30px;
   font-family: "Ubuntu", sans-serif;
-  color: #fdb95d;
+  color: #fff;
   text-align: center;
 }
-.news-ge-newssection {
+.news-newssection {
   border-bottom: #e6ab66 7px solid;
 }
-.news-ge-newssection-main {
+.news-newssection-main {
   height: 46px;
   background-color: #fff;
 }
-.news-ge-newssection-main-text {
+.news-newssection-main-text {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   padding-top: 11px;
 }
-.news-ge-newssection-main-textmain {
+.news-newssection-main-textmain {
   color: #fdb95d;
   padding-right: 10px;
 }
-.news-ge-newssection-main-next {
+.news-newssection-main-next {
   padding-right: 10px;
 }
-.news-ge-newssection-main-textsub {
+.news-newssection-main-textsub {
   color: #000;
 }
-.news-ge-newssection-news {
+.news-newssection-news {
   background-color: #f2f2f2;
   padding-top: 54px;
   padding-bottom: 82px;
 }
-.news-ge-newssection-news .container .row:not(:last-child) {
+.news-newssection-news .container .row:not(:last-child) {
   padding-bottom: 54px;
 }
-.news-ge-newssection-news .container .row .col-md-4 .news-card {
+.news-newssection-news .container .row .col-md-4 .news-card {
   background-color: #f2f2f2;
 }
-.news-ge-newssection-pagination {
+.news-newssection-pagination {
   height: 138px;
   background-color: #fff;
 }
-.news-ge-pagination {
+.news-pagination {
   list-style: none;
   margin-top: 32px;
   margin-bottom: 0;
   padding-left: 0;
 }
-.news-ge-pagination-item {
+.news-pagination-item {
   display: inline-block;
   width: 49px;
   height: 49px;
   background-color: #f2f2f2;
 }
-.news-ge-pagination-item {
+.news-pagination-item {
   margin-right: -4px;
   text-align: center;
   font-size: 16px;
   padding-top: 14px;
 }
-.news-ge-pagination-item:not(:last-child) {
+.news-pagination-item:not(:last-child) {
   border-right: 1px solid #d2d2d2;
 }
-.news-ge-pagination-item-active {
+.news-pagination-item-active {
   background-color: #e6ab66;
 }
-.news-ge-pagination-link {
+.news-pagination-link {
   color: #999999;
 }
-.news-ge-pagination-link-active {
+.news-pagination-link-active {
   color: #fff;
 }
 .header-single-news {
@@ -795,50 +795,50 @@ body {
   background-size: cover;
   border-bottom: #e6ab66 7px solid;
 }
-.single-news-ge-newssection {
+.single-news-newssection {
   border-bottom: #e6ab66 7px solid;
 }
-.single-news-ge-newssection-main {
+.single-news-newssection-main {
   height: 46px;
   background-color: #fff;
 }
-.single-news-ge-newssection-main-text {
+.single-news-newssection-main-text {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   padding-top: 11px;
 }
-.single-news-ge-newssection-main-textmain {
+.single-news-newssection-main-textmain {
   color: #e6ab66;
   padding-right: 10px;
 }
-.single-news-ge-newssection-main-next {
+.single-news-newssection-main-next {
   padding-right: 10px;
 }
-.single-news-ge-newssection-main-textsub {
+.single-news-newssection-main-textsub {
   color: #e6ab66;
   padding-right: 10px;
 }
-.single-news-ge-newssection-main-textsub-sub {
+.single-news-newssection-main-textsub-sub {
   color: #000;
 }
-.single-news-ge-newssection-news {
+.single-news-newssection-news {
   background-color: #f2f2f2;
   padding-top: 44px;
   padding-bottom: 73px;
 }
-.single-news-ge-article {
+.single-news-article {
   margin-top: 46px;
   margin-bottom: 77px;
 }
-.single-news-ge-article-text {
+.single-news-article-text {
   color: #000;
   font-size: 16px;
   font-family: "Ubuntu", sans-serif;
 }
-.single-news-ge-article-text span {
+.single-news-article-text span {
   display: block;
 }
-.single-news-ge-article-text span:not(:first-child) {
+.single-news-article-text span:not(:first-child) {
   margin-top: 30px;
 }
 .news-picture-col {
@@ -848,16 +848,16 @@ body {
   width: 100%;
   height: 100%;
 }
-.single-news-ge-newssection-sub {
+.single-news-newssection-sub {
   height: 116px;
 }
-.single-news-ge-newssection-sub-text {
+.single-news-newssection-sub-text {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   padding-top: 40px;
   color: #e6ab66;
 }
-.single-news-ge-newssection-sub-text span {
+.single-news-newssection-sub-text span {
   margin-right: 10px;
 }
 .single-news-card {
@@ -881,6 +881,380 @@ body {
   padding-top: 10px;
   padding-left: 40px;
   padding-right: 20px;
+}
+.header-contact {
+  min-height: 365px;
+  background-image: url("../img/home2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.header-contact-dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 358px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header-contact-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 200px;
+}
+.header-contact-text {
+  font-size: 30px;
+  padding-top: 30px;
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.contact-contactsection {
+  border-bottom: #e6ab66 7px solid;
+}
+.contact-contactsection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.contact-contactsection-main-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  padding-top: 11px;
+}
+.contact-contactsection-main-textmain {
+  color: #fdb95d;
+  padding-right: 10px;
+}
+.contact-contactsection-main-next {
+  padding-right: 10px;
+}
+.contact-contactsection-main-textsub {
+  color: #000;
+}
+.contact-contactsection-contact {
+  background-color: #f2f2f2;
+  padding-top: 33px;
+  padding-bottom: 155px;
+}
+.frame {
+  height: 400px;
+  width: 100%;
+  border: 1px solid #d6d6d6;
+}
+.contact-info {
+  margin-top: 75px;
+}
+.form-group-contact-name,
+.form-group-contact-email,
+.form-group-contact-phone,
+.form-group-contact-text,
+.form-group-contact-textarea,
+.form-group-contact-code {
+  margin-bottom: 26px;
+}
+.form-control-contact {
+  padding: 0 0 0 15px;
+  height: 50px;
+}
+.form-control-contact-2 {
+  padding: 0 0 120px 15px;
+  height: 170px;
+}
+.form-control::-webkit-input-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #656565;
+}
+.form-control:-ms-input-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #656565;
+}
+.form-control:-moz-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #656565;
+}
+.form-control::-moz-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #656565;
+}
+.contactbtn {
+  border-radius: 0;
+  background-color: #e6ab66;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  padding: 6px 0 0 0;
+  height: 40px;
+  display: block;
+  border: none;
+  margin-bottom: 0;
+}
+.contact-info-tbilisi .divider-one,
+.contact-info-tbilisi .divider-two {
+  margin-top: 0;
+  margin-left: 40px;
+}
+.contact-info-tbilisi .divider-one {
+  margin-bottom: 12px;
+}
+.contact-info-tbilisi .divider-two {
+  margin-bottom: 27px;
+}
+.contact-info-napareuli .divider-one {
+  margin-top: 77px;
+  margin-left: 40px;
+}
+.contact-info-napareuli .divider-one {
+  margin-bottom: 12px;
+}
+.contact-info-napareuli .divider-two {
+  margin-top: 0;
+  margin-bottom: 27px;
+  margin-left: 40px;
+}
+.contact-info-header {
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 40px;
+  font-size: 20px;
+  color: #3a3a3a;
+}
+.contact-info-tbilisi-list,
+.contact-info-napareuli-list {
+  list-style: none;
+}
+.contact-info-tbilisi-list-item:not(:last-child),
+.contact-info-napareuli-list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.contact-info-tbilisi-list-item span,
+.contact-info-napareuli-list-item span {
+  color: #e6ab66;
+  margin-right: 23px;
+  margin-top: 4px;
+}
+.contact-info-tbilisi-list-item p,
+.contact-info-napareuli-list-item p {
+  color: #656565;
+  font-size: 16px;
+}
+.contact-info-tbilisi-list-text-1,
+.contact-info-tbilisi-list-text-2,
+.contact-info-napareuli-list-text-1,
+.contact-info-napareuli-list-text-2 {
+  font-family: "Ubuntu", sans-serif;
+}
+.contact-info-tbilisi-list-text-3,
+.contact-info-napareuli-list-text-3 {
+  font-family: "Ubuntu", sans-serif;
+}
+.header-productlist {
+  min-height: 365px;
+  background-image: url("../img/Dark-red-wine.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: #e6ab66 7px solid;
+}
+.header-productlist-dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 358px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.header-productlist-logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 175px;
+}
+.header-productlist-text {
+  font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+}
+.productlist-productsection {
+  border-bottom: #e6ab66 7px solid;
+}
+.productlist-productsection-main {
+  height: 46px;
+  background-color: #fff;
+}
+.productlist-productsection-main-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  padding-top: 11px;
+}
+.productlist-productsection-main-textmain {
+  color: #fdb95d;
+  padding-right: 10px;
+}
+.productlist-productsection-main-next {
+  padding-right: 10px;
+}
+.productlist-productsection-main-textsub {
+  color: #000;
+}
+.productlist-productsection-products {
+  padding-top: 47px;
+  background-color: #f2f2f2;
+  padding-bottom: 69px;
+}
+.productlist-productsection-introduction {
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  color: #404040;
+  margin-bottom: 40px;
+  padding-right: 15px;
+}
+.productlist-productsection-introduction span {
+  display: block;
+}
+.productlist-productsection-introduction span:last-child {
+  margin-top: 8px;
+}
+.productlist-productsection-list {
+  margin-bottom: 0;
+}
+.productlist-productsection-list .container .row {
+  margin-bottom: 49px;
+}
+.productlist-productsection-list .container .row:last-child {
+  margin-bottom: 0;
+}
+.productlist-item-imagediv {
+  overflow: hidden;
+  height: 359px;
+  padding-left: 0;
+  border: 1px solid #e4e4e4;
+}
+.productlist-item-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.productlist-item-descriptiondiv {
+  padding-right: 0;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .productlist-item-imagediv {
+  background: linear-gradient(to bottom, #dadae2 0%, #fbfbfd 100%);
+}
+.productlist-productsection-list .container .row:nth-child(even) .productlist-item-imagediv {
+  background-color: #f5f3f3;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .productlist-item-descriptiondiv {
+  background-color: #e6ab66;
+  background-image: url("../img/LOGO_ge\ copy.png");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+}
+.productlist-productsection-list .container .row:nth-child(even) .productlist-item-descriptiondiv {
+  background-color: #ffffff;
+  background-image: url("../img/LOGO_ge\ copy\ 3.png");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+}
+.productlist-productsection-list .container .row .col-lg-9 {
+  background-position-x: 483px;
+  background-position-y: 10px;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .col-lg-9 .productlist-item-description h1 {
+  color: #ffffff;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .col-lg-9 .productlist-item-description p {
+  color: #000000;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .col-lg-9 .productlist-item-description button {
+  color: #ffffff;
+}
+.productlist-productsection-list .container .row:nth-child(odd) .col-lg-9 .productlist-item-description button:hover {
+  color: #f8f5f5;
+}
+.productlist-productsection-list .container .row:nth-child(even) .col-lg-9 .productlist-item-description h1 {
+  color: #000000;
+}
+.productlist-productsection-list .container .row:nth-child(even) .col-lg-9 .productlist-item-description p {
+  color: #888888;
+}
+.productlist-productsection-list .container .row:nth-child(even) .col-lg-9 .productlist-item-description button {
+  color: #000000;
+}
+.productlist-productsection-list .container .row:nth-child(even) .col-lg-9 .productlist-item-description button:hover {
+  color: #f8f5f5;
+}
+.productlist-item-description-header {
+  margin-left: 33px;
+  margin-top: 40px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+.productlist-item-description-subtext {
+  margin-left: 33px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+}
+.productlist-item-description-subtext span {
+  display: block;
+}
+.description-subtext-main {
+  margin-top: 27px;
+}
+.description-subtext-subone {
+  margin-top: 10px;
+}
+.description-subtext-subtwo {
+  margin-top: 10px;
+}
+.addtocartbtn {
+  margin-left: 33px;
+  margin-top: 24px;
+  width: 160px;
+  height: 50px;
+  border: 3px solid #fdb95d;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+.productlist-productsection-pagination {
+  height: 90px;
+  background-color: #fff;
+}
+.productlist-pagination {
+  list-style: none;
+  margin-top: 32px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.productlist-pagination-item {
+  display: inline-block;
+  width: 49px;
+  height: 49px;
+  background-color: #f2f2f2;
+}
+.productlist-pagination-item {
+  margin-right: -4px;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 14px;
+}
+.productlist-pagination-item:not(:last-child) {
+  border-right: 1px solid #d2d2d2;
+}
+.productlist-pagination-item-active {
+  background-color: #e6ab66;
+}
+.productlist-pagination-link {
+  color: #999999;
+}
+.productlist-pagination-link-active {
+  color: #fff;
 }
 @media only screen and (min-width: 1200px) {
   .container {
@@ -935,6 +1309,7 @@ body {
   }
   .searchlan {
     right: 1.5%;
+    top: -6.5%;
   }
   .home-section {
     min-height: 710px;
@@ -1097,6 +1472,82 @@ body {
     margin-right: 14px;
     margin-left: 14px;
   }
+  .productlist-productsection-products {
+    padding-top: 42px;
+    padding-bottom: 62px;
+  }
+  .productlist-productsection-introduction {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+  .productlist-item-imagediv {
+    height: 289px;
+  }
+  .productlist-item-image {
+    height: 289px;
+  }
+  .productlist-productsection-list .container .row .col-lg-9 {
+    background-position-x: 400px;
+    background-size: 285px 269px;
+  }
+  .productlist-item-description-header {
+    margin-left: 15px;
+    margin-top: 18px;
+    font-size: 17px;
+  }
+  .productlist-item-description-subtext {
+    margin-left: 15px;
+  }
+  .description-subtext-main {
+    margin-top: 12px;
+  }
+  .description-subtext-subone {
+    margin-top: 2px;
+  }
+  .description-subtext-subtwo {
+    margin-top: 2px;
+  }
+  .addtocartbtn {
+    margin-left: 15px;
+    margin-top: 6px;
+    height: 40px;
+    font-size: 18px;
+    padding: 2px;
+  }
+  .productlist-productsection-pagination {
+    height: 90px;
+    background-color: #fff;
+  }
+  .productlist-pagination {
+    list-style: none;
+    margin-top: 32px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .productlist-pagination-item {
+    display: inline-block;
+    width: 49px;
+    height: 49px;
+    background-color: #f2f2f2;
+  }
+  .productlist-pagination-item {
+    margin-right: -4px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 14px;
+  }
+  .productlist-pagination-item:not(:last-child) {
+    border-right: 1px solid #d2d2d2;
+  }
+  .productlist-pagination-item-active {
+    background-color: #e6ab66;
+  }
+  .productlist-pagination-link {
+    color: #999999;
+  }
+  .productlist-pagination-link-active {
+    color: #fff;
+  }
 }
 @media only screen and (max-width: 991px) {
   .nav-items {
@@ -1127,13 +1578,13 @@ body {
   }
   .searchlan {
     right: 2.1%;
-    top: -24.5%;
+    top: -25.5%;
   }
   .search-hover {
-    height: 45px;
+    height: 46px;
   }
   .lanbtn {
-    height: 45px;
+    height: 46px;
   }
   .home-section {
     min-height: 650px;
@@ -1291,11 +1742,103 @@ body {
   .news-picture-col {
     margin-bottom: 20px;
   }
+  .contact-info-tbilisi .divider-one {
+    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .contact-info-tbilisi .divider-two {
+    margin-bottom: 27px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .contact-info-napareuli .divider-one {
+    margin-top: 77px;
+    margin-left: 0;
+  }
+  .contact-info-napareuli .divider-one {
+    margin-bottom: 12px;
+  }
+  .contact-info-napareuli .divider-two {
+    margin-top: 0;
+    margin-bottom: 27px;
+    margin-left: 0;
+  }
+  .contact-info-header {
+    margin-left: 0;
+    font-size: 20px;
+    color: #3a3a3a;
+  }
+  .contact-info-tbilisi ul,
+  .contact-info-napareuli ul {
+    padding-left: 0;
+  }
+  .productlist-productsection-products {
+    padding-top: 35px;
+    padding-bottom: 58px;
+  }
+  .productlist-productsection-introduction {
+    font-size: 14.5px;
+  }
+  .productlist-productsection-list .container .row .col-lg-9 {
+    background-size: 0 0;
+  }
+  .productlist-item-description-subtext {
+    line-height: 1.3;
+  }
+  .productlist-item-description-subtext span {
+    display: block;
+  }
+  .productlist-item-description-subtext span:nth-child(2),
+  .productlist-item-description-subtext span:nth-child(3) {
+    display: none;
+  }
+  .addtocartbtn {
+    width: 190px;
+    height: 40px;
+    font-size: 17px;
+  }
+  .productlist-productsection-pagination {
+    height: 90px;
+    background-color: #fff;
+  }
+  .productlist-pagination {
+    list-style: none;
+    margin-top: 32px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .productlist-item-imagediv {
+    margin-right: 0;
+  }
+  .productlist-pagination-item {
+    display: inline-block;
+    width: 49px;
+    height: 49px;
+    background-color: #f2f2f2;
+  }
+  .productlist-pagination-item {
+    margin-right: -4px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 14px;
+  }
+  .productlist-pagination-item:not(:last-child) {
+    border-right: 1px solid #d2d2d2;
+  }
+  .productlist-pagination-item-active {
+    background-color: #e6ab66;
+  }
+  .productlist-pagination-link {
+    color: #999999;
+  }
+  .productlist-pagination-link-active {
+    color: #fff;
+  }
 }
 @media only screen and (max-width: 768px) {
   .searchlan {
     right: 2.6%;
-    top: -24.5%;
   }
   .home-section {
     min-height: 600px;
@@ -1325,7 +1868,7 @@ body {
     padding: 0 70px 0 70px;
   }
   .restaurant-media-body > button {
-    margin-top: 20px;
+    margin-top: 25px;
   }
   .activity {
     background-image: none;
@@ -1352,9 +1895,10 @@ body {
     font-size: 16px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 10px;
   }
   .napareuli-media-body > button {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .news-card {
     margin-bottom: 30px;
@@ -1387,5 +1931,66 @@ body {
   }
   .single-news-card-text {
     padding-bottom: 20px;
+  }
+  .productlist-productsection-products {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .productlist-productsection-introduction {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .productlist-item-imagediv {
+    height: 450px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .productlist-item-image {
+    width: auto;
+    height: 430px;
+  }
+  .productlist-item-descriptiondiv {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .productlist-productsection-list .container .row .col-lg-9 {
+    background-position-x: center;
+    background-position-y: 10px;
+    background-size: 280px 263px;
+  }
+  .productlist-item-description-header {
+    margin-left: 33px;
+    margin-top: 40px;
+    font-family: "BPG Excelsior Caps DejaVu 2010";
+    font-size: 18px;
+  }
+  .productlist-item-description-subtext {
+    margin-left: 33px;
+    font-size: 14px;
+    padding-right: 10px;
+  }
+  .productlist-item-description-subtext span {
+    display: block;
+  }
+  .productlist-item-description-subtext span:nth-child(2),
+  .productlist-item-description-subtext span:nth-child(3) {
+    display: block;
+  }
+  .description-subtext-main {
+    margin-top: 27px;
+  }
+  .description-subtext-subone {
+    margin-top: 10px;
+  }
+  .description-subtext-subtwo {
+    margin-top: 10px;
+  }
+  .addtocartbtn {
+    margin-left: 33px;
+    margin-top: 32px;
+    width: 210px;
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }

@@ -10,14 +10,15 @@
 
 <?php flash('image_delete_success'); ?>
 <?php flash('image_delete_fail'); ?>
-
+<!-- pagination -->
 <?php for ($page = 1; $page <= $data['number_of_pages']; $page++) : ?>
     <a href="<?php echo URLROOT_ADMIN; ?>/News_admins?page=<?php echo $page; ?>"><?php echo $page; ?></a>
 <?php endfor; ?>
-<label for="cars">Choose a result for per pages:</label>
+<label for="page">pages:</label>
 
 <form action="<?php echo URLROOT_ADMIN; ?>/News_admins/index" method="POST">
     <select name="result_per_page">
+        <option value="<?php echo $data['result_per_page']; ?>"><?php echo $data['result_per_page']; ?></option>
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -26,46 +27,16 @@
     </select>
     <button type="submit" class="btn btn-success">Save</button>
 </form>
-<?php if(isset($_GET["page"])) $separator='?page=' . $_GET["page"] . '&'; else $separator='?'; ?>
-<a href="<?php echo $separator;?>language=en">EN</a><br />
-<a href="<?php echo $separator;?>language=ge">GE</a><br />
-<a href="<?php echo $separator;?>language=ru">RU</a><br />
-
 
 <!-- start for -->
-<?php for ($i = 0; $i < $data['news_count']; $i++) : ?>
-
-
-    <a class="button btn btn-secondary" href="<?php echo URLROOT_ADMIN; ?>/News_admins/add_news_imgs?news_id=<?php echo $data['news'][$i]->id; ?>">Add Image</a>
-
+<?php foreach ($data['news'] as $news) : ?>
 
     <!-- add news imgs -->
-    <form action="<?php echo URLROOT_ADMIN; ?>/News_admins/addNewsImage" method="POST" enctype="multipart/form-data">
-        <div class="col-md-2">
-            <div class="form-group">
-                <label>Choose Image</label>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <span class="btn btn-default btn-file">
-                            Browse… <input type="file" name="image" id="imgInp">
-                        </span>
-                    </span>
-                    <input type="text" class="form-control" readonly>
-                </div>
-                <img id='img-upload' />
-            </div>
-            <button type="submit" class="btn btn-success">Upload Image</button>
-        </div>
-        <input type="hidden" name="news_id" value="<?php echo $data['news'][$i]->id; ?>" />
-    </form>
-
-
-    
-
+    <a class="button btn btn-secondary" href="<?php echo URLROOT_ADMIN; ?>/News_admins/add_news_imgs?news_id=<?php echo $news->item_id; ?>">Add Image</a>
 
     <div class="card" style="width: 18rem;">
-        <?php if($data['news'][$i]->news_img_name != '') : ?>
-        <img class="card-img-top" src="<?php echo URLROOT_ADMIN ?>/public/img/<?php echo $data['news'][$i]->news_img_name; ?>" alt="News">
+        <?php if ($news->news_img_name != '') : ?>
+            <img class="card-img-top" src="<?php echo URLROOT_ADMIN ?>/public/img/<?php echo $news->news_img_name; ?>" alt="News">
         <?php endif; ?>
     </div>
 
@@ -73,68 +44,46 @@
     <div class="card-group">
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                <p>Created : <?php echo multilanguage_date($data['news'][$i]->created_at); ?></p>
+                <p>Created : <?php echo multilanguage_date($news->created_at); ?></p>
                 Blogs/News English Description
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?php echo $data['news'][$i]->en_title;  ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->en_subtitle; ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->en_text; ?></li>
-
-            </ul>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Blogs/News Georgian Description
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?php echo $data['news'][$i]->ge_title; ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->ge_subtitle; ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->ge_text; ?></li>
-            </ul>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Blogs/News Russian Description
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?php echo $data['news'][$i]->ru_title; ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->ru_subtitle; ?></li>
-                <li class="list-group-item"><?php echo $data['news'][$i]->ru_text; ?></li>
+                <li class="list-group-item"><?php echo $news->title;  ?></li>
+                <li class="list-group-item"><?php echo $news->subtitle; ?></li>
+                <li class="list-group-item"><?php echo $news->text; ?></li>
             </ul>
         </div>
     </div>
-    <!-- shesascorebeli -->
-    <a href="<?php echo URLROOT_ADMIN; ?>/News_admins/editNews/<?php echo $data['news'][$i]->id; ?>" type="button" class="btn btn-secondary">Edit</a>
-    <!-- shesascorebeli -->
+
+    <!-- edit news -->
+    <a href="<?php echo URLROOT_ADMIN; ?>/News_admins/editNews/<?php echo $news->item_id; ?>" type="button" class="btn btn-secondary">Edit</a>
+
 
     <!-- Delete news  -->
-    <form action="<?php echo URLROOT; ?>/News_admins/deleteNews/<?php echo $data['news'][$i]->id; ?>" method="POST">
-        <input type="hidden" name="delete_image" value="<?php echo $data['news'][$i]->news_img_name; ?>">
+    <form action="<?php echo URLROOT; ?>/News_admins/deleteNews/<?php echo $news->item_id; ?>" method="POST">
+        <input type="hidden" name="delete_image" value="<?php echo $news->news_img_name; ?>">
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 
-    <!-- სხვანაირად როგორ შეიძლება ბაზიდან წამოღების დროს reference table(მშობელ table)_ში ჩაიწეროს indexed table(შვილი table) _ ის მონაცემები დაკავშირებული id ებით -->
-    <!-- მაგალითად წამოვიღო ბაზიდან news table_ის ერთი ჩანაწერი და news_imgs table იდან მიებას ის ჩანაწერები რომლის user_id იქნება ტოლი id_ის -->
     <!-- news_imgs images -->
-    <?php foreach ( $data['news'][$i]->images as $image) : ?>
-            <div class="card-group col-md-2">
-                <div class="card " style="width: 18rem;">
-                    <img class="card-img-top" src="<?php echo URLROOT_ADMIN; ?>/public/img/<?php echo $image->img_name; ?>" alt="Card image cap">
-                    <div class="card-body">
-                        <form action="<?php echo URLROOT_ADMIN; ?>/news_admins/deleteNewsImgs/<?php echo $image->id; ?>" method="POST">
-                            <input type="hidden" name="delete_image" value="<?php echo $image->img_name; ?>">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
+    <?php foreach ($news->images as $image) : ?>
+        <div class="card-group col-md-2">
+            <div class="card " style="width: 18rem;">
+                <img class="card-img-top" src="<?php echo URLROOT_ADMIN; ?>/public/img/<?php echo $image->img_name; ?>" alt="Card image cap">
+                <div class="card-body">
+                    <form action="<?php echo URLROOT_ADMIN; ?>/news_admins/deleteNewsImgs/<?php echo $image->id; ?>" method="POST">
+                        <input type="hidden" name="delete_image" value="<?php echo $image->img_name; ?>">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
+        </div>
     <?php endforeach; ?>
 
 
 
     <!-- end for -->
-<?php endfor; ?>
+<?php endforeach; ?>
 
 
 

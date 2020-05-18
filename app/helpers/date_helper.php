@@ -36,7 +36,7 @@ function multilanguage_date($date)
     $month = date('M', strtotime($date));
     $language_month = $month;
 
-    // switch_ში არ მუშაობს isset ი აბრუნებს underfined $_GET['lang']_ს
+    // switch_ში არ მუშაობს isset_ი, აბრუნებს underfined $_GET['lang']_ს
     if (isset($_GET['lang'])) {
 
         switch (true) {

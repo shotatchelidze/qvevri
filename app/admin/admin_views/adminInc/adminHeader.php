@@ -24,5 +24,7 @@
 
   </head>
   <body>
+  <!-- call language -->
+  
 <?php require APPROOT . '/admin/admin_views/adminInc/adminNavbar.php'; ?>
   

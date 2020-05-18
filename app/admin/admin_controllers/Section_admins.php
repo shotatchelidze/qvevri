@@ -6,18 +6,22 @@ class Section_admins extends Controller
         if (!isLoggedIn()) {
             redirect_admin('admins');
         }
+        // ენის განსაზღვრა
+        getAdminLanguage();
+        getLanguage();
 
         $this->sectionAdminModel = $this->model('Section_admin');
     }
 
     public function index()
     {
+        // ენა რადგან არის კონსტანტა გადაცემის მაგივრად პირდაპირ query ში ვწერ
         $sections = $this->sectionAdminModel->getSections();
 
         $data = [
             'sections' => $sections
         ];
-
+        
         $this->view('Section_admins/index', $data);
     }
     // Add
@@ -27,19 +31,11 @@ class Section_admins extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'img_name' => $_FILES['image']['name'],
-                'bg_img_name' => $_FILES['bg_image']['name'],
-                'icon_img_name' => $_FILES['icon']['name'],
-                'en_title' => trim($_POST['en_title']),
-                'en_text' => trim($_POST['en_text']),
-                'ge_title' => trim($_POST['ge_title']),
-                'ge_text' => trim($_POST['ge_text']),
-                'ru_title' => trim($_POST['ru_title']),
-                'ru_text' => trim($_POST['ru_text'])
-            ];
-
+            $data = array_map('trim', $_POST);
+            $data['img_name'] = $_FILES['image']['name'];
+            $data['bg_img_name'] = $_FILES['bg_image']['name'];
+            $data['icon_img_name'] =  $_FILES['icon']['name'];
+            
             $data_err = [
                 'img_fake_err' => '',
                 'img_exist_err' => '',
@@ -64,7 +60,6 @@ class Section_admins extends Controller
                 $image = add_image($target_file, $temp_name, "1200");
                 // If image error exist
                 if ($image !== true) {
-
                     $data_err['img_fake_err'] = $image['img_fake_err'];
                     $data_err['img_exist_err'] = $image['img_exist_err'];
                     $data_err['img_ext_err'] = $image['img_ext_err'];
@@ -114,46 +109,37 @@ class Section_admins extends Controller
             }
             // Get Request     
         } else {
-            $data = [
-                'img_name' => '',
-                'bg_img_name' => '',
-                'icon_img_name' => '',
-                'en_title' => '',
-                'en_text' => '',
-                'ge_title' => '',
-                'ge_text' => '',
-                'ru_title' => '',
-                'ru_text' => ''
-            ];
-
-            $this->view('Section_admins/addSection', $data);
+            $this->view('Section_admins/addSection');
         }
     }
 
     // Edit
-    public function editSection($id)
+    public function editSection($item_id)
     {
+        
         // Check id is actual number
-        if (!is_numeric($id)) {
+        if (!is_numeric($item_id)) {
             redirect_admin('Section_admins');
         }
 
         // Post Request
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+            
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-            $data = [
-                'img_name' => $_FILES['image']['name'],
-                'bg_img_name' => $_FILES['bg_image']['name'],
-                'icon_img_name' => $_FILES['icon']['name'],
-                'en_title' => trim($_POST['en_title']),
-                'en_text' => trim($_POST['en_text']),
-                'ge_title' => trim($_POST['ge_title']),
-                'ge_text' => trim($_POST['ge_text']),
-                'ru_title' => trim($_POST['ru_title']),
-                'ru_text' => trim($_POST['ru_text'])
-            ];
+            
+            foreach(LANG_ARR as $lang => $language){
+                $post_data = [
+                    'img_name' => $_FILES['image']['name'],
+                    'bg_img_name' => $_FILES['bg_image']['name'],
+                    'icon_img_name' => $_FILES['icon']['name'],
+                    "$lang".'_title' => trim($_POST["$lang".'_title']),
+                    "$lang".'_text' => trim($_POST["$lang".'_text']),
+                    "$lang".'_id' => $_POST["$lang".'_id'],
+                    'item_id' => $item_id
+                ];
+                // ახალ მასივში შეინახოს მონაცემები რადგან, შეცდომის დაბრუნების დროს გადაეცეს ზუსტად ის data რასაც get request_ის დროს გადაეცემა views
+                $data[] = $post_data;    
+            }
 
             $data_err = [
                 'img_fake_err' => '',
@@ -169,56 +155,36 @@ class Section_admins extends Controller
                 'bg_image_ext_err' => ''
             ];
 
-            // Image Folder path
+            
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            // First, delete existing image from folder
-            // Get existing images name from DB
-            $image_name_obj = $this->sectionAdminModel->getSectionImageNamesById($id);
-            // Check id is correct or not
-            if ($image_name_obj === false) {
-                die('images does not exist reload page delete section');
-            }
-            // Check images empty or not
-            if ($image_name_obj->img_name !== '') {
-                $image_name = $target_dir . $image_name_obj->img_name;
-                if (file_exists($image_name)) {
-                    if (!(unlink($image_name))) {
-                        die('Something went wrong reload page');
-                    }
-                }else {die('image does not exist');}
-            }
-            if ($image_name_obj->bg_img_name !== '') {
-                $bg_img_name = $target_dir . $image_name_obj->bg_img_name;
-                if (file_exists($bg_img_name)) {
-                    if (!(unlink($bg_img_name))) {
-                        die('Something went wrong reload page');
-                    }
-                }else {die('image does not exist');}
-            }
-            if ($image_name_obj->icon_img_name !== '') {
-                $icon_img_name = $target_dir . $image_name_obj->icon_img_name;
-                if (file_exists($icon_img_name)) {
-                    if (!(unlink($icon_img_name))) {
-                        die('Something went wrong reload page');
-                    }
-                }else {die('image does not exist');}
-            }
+            $image_name_obj = $this->sectionAdminModel->getSectionImageNamesById($item_id);
+            
             // Check if set image
-            if (!empty($data['img_name'])) {
+            if (!empty($data[0]['img_name'])) {
                 // Image
                 $target_file = $target_dir . basename($_FILES["image"]["name"]);
                 $temp_name = $_FILES['image']['tmp_name'];
                 $image = add_image($target_file, $temp_name, "1200");
+                
                 // If image error exist
                 if ($image !== true) {
-
                     $data_err['img_fake_err'] = $image['img_fake_err'];
                     $data_err['img_exist_err'] = $image['img_exist_err'];
                     $data_err['img_ext_err'] = $image['img_ext_err'];
+                    // თუ ახალი სურთი წარმატებით აიტვირთა folder ში წაიშალოს ძველი
+                } else {
+                    if($image_name_obj->img_name !== ''){
+                        $image_name = $target_dir . $image_name_obj->img_name;
+                        if (file_exists($image_name)) {
+                            if (!(unlink($image_name))) {
+                                die('Something went wrong reload page');
+                            }
+                        }else {die('image does not exist');}
+                    }
                 }
             }
             // Check if set icon
-            if (!empty($data['icon_img_name'])) {
+            if (!empty($data[0]['icon_img_name'])) {
                 // Icon
                 $target_file = $target_dir . basename($_FILES["icon"]["name"]);
                 $temp_name = $_FILES['icon']['tmp_name'];
@@ -228,10 +194,20 @@ class Section_admins extends Controller
                     $data_err['icon_fake_err'] = $icon['img_fake_err'];
                     $data_err['icon_exist_err'] = $icon['img_exist_err'];
                     $data_err['icon_ext_err'] = $icon['img_ext_err'];
+                    // თუ ახალი სურთი წარმატებით აიტვირთა folder ში წაიშალოს ძველი
+                } else {
+                    if ($image_name_obj->icon_img_name !== '') {
+                        $icon_img_name = $target_dir . $image_name_obj->icon_img_name;
+                        if (file_exists($icon_img_name)) {
+                            if (!(unlink($icon_img_name))) {
+                                die('Something went wrong reload page');
+                            }
+                        }else {die('image does not exist');}
+                    }        
                 }
             }
             // Check if set background image 
-            if (!empty($data['bg_img_name'])) {
+            if (!empty($data[0]['bg_img_name'])) {
                 // Background image
                 $target_file = $target_dir . basename($_FILES["bg_image"]["name"]);
                 $temp_name = $_FILES['bg_image']['tmp_name'];
@@ -241,52 +217,61 @@ class Section_admins extends Controller
                     $data_err['bg_image_fake_err'] = $bg_image['img_fake_err'];
                     $data_err['bg_image_exist_err'] = $bg_image['img_exist_err'];
                     $data_err['bg_image_ext_err'] = $bg_image['img_ext_err'];
+                    // თუ ახალი სურთი წარმატებით აიტვირთა folder ში წაიშალოს ძველი
+                } else {
+                    if ($image_name_obj->bg_img_name !== '') {
+                        $bg_img_name = $target_dir . $image_name_obj->bg_img_name;
+                        if (file_exists($bg_img_name)) {
+                            if (!(unlink($bg_img_name))) {
+                                die('Something went wrong reload page');
+                            }
+                        }else {die('image does not exist');}
+                    }
                 }
             }
             // Chech errors 
             if (!array_filter($data_err)) {
                 // Try add
-                if ($this->sectionAdminModel->editSection($data)) {
-                    flash('Section_updated_success', 'Section  Updated Successfuly');
-                    redirect_admin('Section_admins/editSection', $id);
+                if ($this->sectionAdminModel->updateSection($data)) {
+                    flash('Section_updated_success', 'Section Updated Successfuly');
+                    redirect_admin('Section_admins/editSection', $item_id);
                 } else {
                     flash('Section_updated_fail', 'Fail update Section', 'alert alert-danger');
-                    redirect_admin('Section_admins/editSection', $id);
+                    redirect_admin('Section_admins/editSection', $item_id);
                 }
-                // Load page with errors    
+                // ჩაიტვირთოს გვერდი შეყვანილი ინფორმაციით და შეცდომებით
             } else {
                 $data = array_merge($data, $data_err);
-
                 $this->view('Section_admins/editSection', $data);
             }
             // Get Request     
         } else {
-            
-            // Get section from db
-            $section = $this->sectionAdminModel->getSectionById($id);
-
-            if ($section === false) {
-                redirect_admin('Section_admins');
+            // item_id ის მიხედვით წამოვიღოთ ყველა ენა
+            $section_arr = $this->sectionAdminModel->getSectionById($item_id);
+            // თუ მითითებულ item_id_ით, არ არსებობს ჩანაწერი ესეიგი item_id_ის გადაცემის დროს მოხდა შეცდომა და გადამისამართდეს index გვერძე
+            if (empty($section_arr)) {
+                flash('section_get_fail','section does not exist reload page','alert alert-danger'); 
+                redirect_admin('Section_admins/index');
             }
-
-            $data = [
-                'id' => $id,
-                'img_name' => $section->img_name ?? '',
-                'bg_img_name' => $section->bg_img_name ?? '',
-                'icon_img_name' => $section->icon_img_name ?? '',
-                'en_title' => $section->en_title ?? '',
-                'en_text' => $section->en_text ?? '',
-                'ge_title' => $section->ge_title ?? '',
-                'ge_text' => $section->ge_text ?? '',
-                'ru_title' => $section->ru_title ?? '',
-                'ru_text' => $section->ru_text ?? ''
-            ];
-
+            $i=0;
+            foreach(LANG_ARR as $lang => $language){
+                $set_data = [
+                    "$lang" . '_id' => $section_arr[$i]->id,
+                    "item_id" => $section_arr[$i]->item_id,
+                    'img_name' => $section_arr[$i]->img_name,
+                    'bg_img_name' => $section_arr[$i]->bg_img_name,
+                    'icon_img_name' => $section_arr[$i]->icon_img_name,
+                    "$lang".'_title' => $section_arr[$i]->title,
+                    "$lang".'_text' => $section_arr[$i]->text
+                ];
+                $data[] = $set_data;
+                $i++;
+            }
             $this->view('Section_admins/editSection', $data);
         }
     }
     // Delete
-    public function deleteSection($id){
+    public function deleteSection($item_id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
             
@@ -304,7 +289,7 @@ class Section_admins extends Controller
                 }
             }
 
-            if($this->sectionAdminModel->deleteSection($id)){
+            if($this->sectionAdminModel->deleteSection($item_id)){
                 flash('section_deleted','section successfuly deleted');
                 redirect_admin('Section_admins');
             } else {

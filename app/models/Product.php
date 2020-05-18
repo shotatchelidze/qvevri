@@ -1,5 +1,5 @@
 <?php
-class Menu{
+class Product{
     private $db;
 
     public function __construct()
@@ -7,12 +7,13 @@ class Menu{
         $this->db = new Database;
     }
 
-    public function getMenus(){
-        $this->db->query("SELECT *
-                            FROM menus 
+    public function getProducts(){
+        $this->db->query("SELECT
+                            products.id as product_id    
+                            FROM products 
                             WHERE language = :language");
         $this->db->bind(':language', LANG);
-
+        
         $result = $this->db->resultSet();
         return $result;
     }

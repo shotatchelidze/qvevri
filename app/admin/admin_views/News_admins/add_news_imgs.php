@@ -19,7 +19,6 @@
                 </div>
                 <img id='img-upload' />
             </div>
-            <!-- <input type="hidden" name="news_id" value="<?php //echo $data['news_id'] ?>"> -->
             <button type="submit" class="btn btn-success">submit</button>
         </div>
     </div>
@@ -30,9 +29,7 @@
 <?php endforeach; ?>
 
 <?php foreach ($data['img_exist_err'] as $img_exist_err) : ?>
-    
     <span class="text-danger"><?php echo $img_exist_err ?? '' ?></span><br>
-    
 <?php endforeach; ?>
 
 <?php foreach ($data['img_ext_err'] as $img_ext_err) : ?>

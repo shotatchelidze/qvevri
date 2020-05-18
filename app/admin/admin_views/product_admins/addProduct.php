@@ -1,10 +1,10 @@
 <?php require APPROOT . '/admin/admin_views/adminInc/adminHeader.php'; ?>
 
-<h2>Add News/Blogs</h2>
-<?php flash('news_added_success') ?>
-<?php flash('news_added_fail') ?>
+<h2>Add Product</h2>
+<?php flash('product_added_success') ?>
+<?php flash('product_added_fail') ?>
 
-<form action="<?php echo URLROOT_ADMIN; ?>/News_admins/addNews" method="POST" enctype="multipart/form-data">
+<form action="<?php echo URLROOT_ADMIN; ?>/Product_admins/addProduct" method="POST" enctype="multipart/form-data">
     <div class="container">
         <div class="col-md-6">
             <div class="form-group">
@@ -19,14 +19,22 @@
                 </div>
                 <img id='img-upload' />
             </div>
-            <?php $i = 0; foreach(LANG_ARR as $lang => $language):?>
-                <div class="form-group">
-                <label for="title"><?php echo $language;?> Title:</label>
-                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_title"><?php echo $data[$i]["$lang".'_title'] ?? ''?></textarea>
+            <div class="form-group">
+                <label for="serial_number">Serial Number:</label>
+                <textarea class="form-control" rows="1" name="serial_number"><?php echo $data['serial_number'] ?? ''?></textarea>
             </div>
             <div class="form-group">
-                <label for="title"><?php echo $language;?> Subtitle:</label>
-                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_subtitle"><?php echo $data[$i]["$lang".'_subtitle'] ?? ''?></textarea>
+                <label for="quantity">Quantity:</label>
+                <textarea class="form-control" rows="1" name="quantity"><?php echo $data['quantity'] ?? ''?></textarea>
+            </div>
+            <?php $i = 0; foreach(LANG_ARR as $lang => $language):?>
+            <div class="form-group">
+                <label for="<?php echo $lang;?>_product_name"><?php echo $language;?> Product Name:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_product_name"><?php echo $data[$i]["$lang".'_product_name'] ?? ''?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="title"><?php echo $language;?> Title:</label>
+                <textarea class="form-control" rows="1" name="<?php echo $lang;?>_title"><?php echo $data[$i]["$lang".'_title'] ?? ''?></textarea>
             </div>
             <div class="form-group">
                 <label for="title"> <?php echo $language;?> Text:</label>
@@ -34,12 +42,6 @@
             </div>
             <?php $i++; endforeach;?> 
             
-            <!-- <label for="cars">Choose a page:</label>
-            <select name="page" id="cars">
-                <option value="menu">menu</option>
-                <option value="index">index</option>
-            </select> -->
-
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>

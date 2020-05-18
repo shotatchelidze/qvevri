@@ -7,12 +7,13 @@ class News_admin
     {
         $this->db = new Database();
     }
-    
 
-    public function getNews($this_page_first_result, $results_per_page, $language='en')
+    // public function getNews($this_page_first_result, $results_per_page, $language='en')
+    public function getNews($this_page_first_result, $results_per_page)
     {
         $this->db->query("SELECT *
                         FROM news
+                        -- where language=:language
                         where language=:language
                         ORDER BY news.created_at DESC
                         LIMIT :this_page_first_result, :results_per_page
@@ -20,12 +21,11 @@ class News_admin
 
         $this->db->bind(':this_page_first_result', $this_page_first_result);
         $this->db->bind(':results_per_page', $results_per_page);
-        $this->db->bind(':language', $language);
-        // $this->db->execute();
+        $this->db->bind(':language', LANG);
 
         $result = $this->db->resultSet();
 
-        foreach($result as $r) :
+        foreach ($result as $r) :
             $this->db->query("SELECT *
             from news_imgs where news_id = :news_id");
             $this->db->bind(':news_id', $r->id);
@@ -33,92 +33,96 @@ class News_admin
             $r->images = $img_result;
         endforeach;
 
-        // var_dump($result); die();
         return $result;
     }
 
 
-    public function getNewsById($id)
+    public function getNewsById($item_id)
     {
-        $this->db->query('SELECT * FROM news WHERE id = :id');
+        $this->db->query('SELECT * FROM news WHERE item_id = :item_id');
         // Bind value
-        $this->db->bind(':id', $id);
+        $this->db->bind(':item_id', $item_id);
 
-        $row = $this->db->single();
-
-        return $row;
+        $results = $this->db->resultSet();
+        return $results;
     }
 
-    // public function newsCount(){
-    //     $this->db->query('SELECT count(*) FROM news');
-
-    //     $count = $this->db->columnCount();
-    //     return $count;
-    // }
-
-    public function newsCount()
+    public function getImageName($item_id)
     {
-        $this->db->query('SELECT news.id FROM news');
-        $this->db->resultSet();
-
-        $count = $this->db->rowCount();
-        return $count;
+        $this->db->query('SELECT news_img_name FROM news WHERE item_id = :item_id');
+        $this->db->bind(':item_id', $item_id);
+        $result = $this->db->single();
+        return $result;
+    }
+    
+    public function findNewsById($item_id){
+        $this->db->query('SELECT news.item_id FROM news WHERE item_id = :item_id');
+        $this->db->bind(':item_id', $item_id);
+        $this->db->single();
+        if($this->db->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function addNews($data)
     {
-        $arr = implode(",", array_keys($data));
-        $ArrVal = (':' . implode(", :", array_keys($data)));
+          
+        $insertOk = true;
+        $i = 0;
+        foreach (LANG_ARR as $lang => $language) {
+            $this->db->query("INSERT INTO news (news_img_name,title,subtitle,text,language) VALUES (:news_img_name,:title,:subtitle,:text,:language)");
 
-        $this->db->query("INSERT INTO news ($arr) VALUES ($ArrVal)");
-
-        foreach ($data as $key => $value) {
-            $this->db->bind(":$key", $value);
+            $this->db->bind(':news_img_name', $data['news_img_name']);
+            $this->db->bind(':title', $data["$lang" . '_title']);
+            $this->db->bind(':subtitle', $data["$lang" . '_subtitle']);
+            $this->db->bind(':text', $data["$lang" . '_text']);
+            $this->db->bind(':language', $lang);
+            if (!$this->db->execute()) {
+                $insertOk = false;
+                break;
+            }
+            $this->db->query('SELECT max(id) FROM news');
+            $result = $this->db->singleColumn();
+            // $result is last added news id, and $result-$i is item_id in news table.
+            $this->db->query("UPDATE news SET item_id = $result-$i WHERE id = $result");
+            if (!$this->db->execute()) {
+                $insertOk = false;
+                break;
+            }
+            $i++;
         }
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $insertOk;
     }
 
-    public function editNews($data)
+    public function updateNews($data)
     {
-        $this->db->query('UPDATE news SET 
-                            news_img_name = :news_img_name, 
-                            en_title = :en_title, en_subtitle = :en_subtitle, en_text = :en_text,
-                            ge_title = :ge_title, ge_subtitle = :ge_subtitle, ge_text = :ge_text,
-                            ru_title = :ru_title, ru_subtitle = :ru_subtitle, ru_text = :ru_text
-                            WHERE id = :id');
-        // bind value
-        $this->db->bind(':id', $data['id']);
-        $this->db->bind(':news_img_name', $data['news_img_name']);
+        $updateOk = true;
+        $i = 0;
+        foreach (LANG_ARR as $lang => $language) {
+            $this->db->query('UPDATE news SET news_img_name = :news_img_name, title = :title, subtitle = :subtitle, text = :text WHERE id = :id');
 
-        $this->db->bind(':en_title', $data['en_title']);
-        $this->db->bind(':en_subtitle', $data['en_subtitle']);
-        $this->db->bind(':en_text', $data['en_text']);
+            $this->db->bind(':news_img_name', $data[$i]['news_img_name']);
+            $this->db->bind(':title',$data[$i]["$lang".'_title']);
+            $this->db->bind(':subtitle', $data[$i]["$lang".'_subtitle']);
+            $this->db->bind(':text',$data[$i]["$lang".'_text']);
+            $this->db->bind(':id',$data[$i]["$lang".'_id']);
 
-        $this->db->bind(':ge_title', $data['ge_title']);
-        $this->db->bind(':ge_subtitle', $data['ge_subtitle']);
-        $this->db->bind(':ge_text', $data['ge_text']);
-
-        $this->db->bind(':ru_title', $data['ru_title']);
-        $this->db->bind(':ru_subtitle', $data['ru_subtitle']);
-        $this->db->bind(':ru_text', $data['ru_text']);
-        // Execute
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
+            if(!$this->db->execute()){
+                $updateOk = false;
+            break;
+            }
+            $i++;
         }
+        return $updateOk;
     }
 
-    public function deleteNews($id)
+    public function deleteNews($item_id)
     {
-        $this->db->query('DELETE FROM news WHERE id = :id');
+        $this->db->query('DELETE FROM news WHERE item_id = :item_id');
         // Bind value
-        $this->db->bind(':id', $id);
+        $this->db->bind(':item_id', $item_id);
         // Execute
         if ($this->db->execute()) {
             return true;
