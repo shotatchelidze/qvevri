@@ -57,7 +57,7 @@
                 <h1 class="text-capitalize">museum</h1>
                 <p>Brothers, Gia and Gela Gamtkitsulashvili founded a unique museum of ''Qvevri and Qvevri Wine'' in
                   2014.
-                  The complex of the museum consists of 8 meters long pitcher statue and several halls, where the whole
+                  The complex of the museum consists of 8 meters long pitcher statueasdasdasddsa and several halls, where the whole
                   process of producing pitchers and making pitcher wine is described.</p>
                 <button class="mediabtn btn btn-link">View more <span><img src="../qvevri/img/next.png"
                       alt=""></span></button>

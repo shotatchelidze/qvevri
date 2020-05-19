@@ -19,7 +19,7 @@
                     <span>This indicates the uniqueness of this method and is sent to the whole world that the wine is
                         ancient Georgian Is an integral part of culture. It is located on the territory of the
                         "Twin Wine Cellar" complex Wine A shop where pitcher wines produced by the Twins Wine House are
-                        presented A variety of choices. Buy the wines presented in the store to anyone can.
+                        presented A variety of choices. Buy the wines presented in the store to anyone can.s
                     </span>
                 
                 </p>
