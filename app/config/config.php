@@ -12,6 +12,6 @@
   // admin URL Root
   define('URLROOT_ADMIN', 'http://localhost:8012/qvevri');
   // Site Name
-  define('SITENAME', 'Qvevri');
+  define('SITENAME', 'Qvevri'); 
   // App Version
   define('APPVERSION', '7.4.2');
