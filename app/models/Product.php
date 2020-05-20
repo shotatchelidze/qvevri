@@ -9,7 +9,7 @@ class Product{
 
     public function getProducts(){
         $this->db->query("SELECT
-                            products.id as product_id    
+                            *    
                             FROM products 
                             WHERE language = :language");
         $this->db->bind(':language', LANG);
