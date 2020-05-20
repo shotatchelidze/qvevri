@@ -1,7 +1,7 @@
 ﻿/vendor
 /node_modules
 #public folderistvis
-/public/storage
+#/public/storage
 Homestead.yaml
 Homestead.json
 .vscode

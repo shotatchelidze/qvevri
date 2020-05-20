@@ -21,6 +21,7 @@ class Products extends Controller
       'products' => $products,
       'menu' => $menu
     ];
+    // var_dump($data);die();
     
     $this->view('products/index', $data);
   }
