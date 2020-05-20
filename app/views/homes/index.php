@@ -10,7 +10,7 @@
           <div class="col-lg-7 col-md-8">
             <div class="card home-card text-light">
               <div class="card-body">
-                <h1 class="card-title home-title text-uppercase">hello & welcome!</h1>
+                <h1 class="card-title home-title text-uppercase">hessssssllo & welcome!</h1>
                 <p class="card-text home-text">Please have a sit, our wine will be served!</p>
                 <button class="homebtn btn btn-link">View more <span><img src="<?php echo URLROOT;?>/img/<?php echo $data['imageBgs']->image_name ?? '';?>"
                       alt=""></span></button>
