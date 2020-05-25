@@ -21,7 +21,7 @@ html {
   background-attachment: fixed;
   background-size: cover;
 }
-.item-one {
+/* .item-one {
   background-image: url("../img/Dark-red-wine.png");
 }
 .item-two {
@@ -29,7 +29,7 @@ html {
 }
 .item-three {
   background-image: url("../img/DSC_1342.png");
-}
+} */
 .dark-bg {
   position: absolute;
   top: 0;

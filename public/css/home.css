@@ -149,7 +149,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.item-one {
+/* .item-one {
   background-image: url("../img/Dark-red-wine.png");
 }
 .item-two {
@@ -157,7 +157,7 @@ body {
 }
 .item-three {
   background-image: url("../img/DSC_1342.png");
-}
+} */
 .home-inner {
   bottom: 210px;
 }
@@ -195,7 +195,7 @@ body {
 }
 .twinshotel {
   height: 457px;
-  background-image: url("../img/DSC_1376.png");
+  /* background-image: url("../img/DSC_1376.png"); */
   background-position: left;
   background-repeat: no-repeat;
   background-size: 652px 457px;
@@ -204,7 +204,7 @@ body {
   margin-top: 30px;
   height: 398px;
   background: #fff;
-  background-image: url("../img/LOGO_ge\ copy\ 2.png");
+  /* background-image: url("../img/LOGO_ge\ copy\ 2.png"); */
 }
 .media-body > h1 {
   margin-left: 24px;
@@ -263,7 +263,7 @@ body {
 }
 .restaurant {
   height: 510px;
-  background-image: url("../img/3.png");
+  /* background-image: url("../img/3.png"); */
   background-position: left;
   background-repeat: repeat-x;
 }
@@ -271,7 +271,7 @@ body {
   margin-top: -26px;
   height: 562px;
   background: #e6ab66;
-  background-image: url("../img/LOGO_ge\ copy.png");
+  /* background-image: url("../img/LOGO_ge\ copy.png"); */
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: 57px;
@@ -790,7 +790,7 @@ body {
 }
 .header-single-news {
   min-height: 365px;
-  background-image: url("../img/DSC_1342.png");
+  /* background-image: url("../img/DSC_1342.png"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

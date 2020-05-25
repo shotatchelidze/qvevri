@@ -11,4 +11,6 @@ class ImageBg{
         $result = $this->db->resultSet();
         return $result;
     }
+
+    
 }

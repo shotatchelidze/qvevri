@@ -86,33 +86,34 @@ class Logo_admins extends Controller
             }
             
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
-            // სურათის ატვირთვა folder_ში
-            $image = true;
-            if (!empty($_FILES["image"]["name"])) {
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                $temp_name = $_FILES['image']['tmp_name'];
-                $image = add_image($target_file, $temp_name, "1200");
-            } 
-            // შემოწდეს აიტვირთა თუ არა სურათი folder_ში
-            if ($image === true) { 
-                // წაიშალოს ძველი სურათი folder_დან, თუ არსებობს
-                $image_name_obj = $this->logoAdminModel->getLogoImageNameById($item_id);
-                if($image_name_obj->img_name !== ''){
-                    $image_name = $target_dir . $image_name_obj->img_name;
-                    if (file_exists($image_name)) {
-                        if (!(unlink($image_name))) {
-                            die('Something went wrong reload page');
-                        }
-                    } else {
+            // წაიშალოს ძველი სურათი folder_დან, თუ არსებობს
+            $image_name_obj = $this->logoAdminModel->getLogoImageNameById($item_id);
+            if($image_name_obj->img_name !== ''){
+                $image_name = $target_dir . $image_name_obj->img_name;
+                if (file_exists($image_name)) {
+                    if (!(unlink($image_name))) {
                         die('Something went wrong reload page');
                     }
+                } else {
+                    die('Something went wrong reload page');
                 }
+            }
+            // სურათის ატვირთვა folder_ში
+            $image = true;
+            if (!empty($_FILES['image']['name'])) {
+                $target_file = $target_dir . basename($_FILES['image']['name']);
+                $temp_name = $_FILES['image']['tmp_name'];
+                $image = add_image($target_file, $temp_name, "1200");
+            }
+
+            // შემოწდეს აიტვირთა თუ არა სურათი folder_ში
+            if ($image === true) { 
                 // განახლდეს ლოგოს მონაცემები ბაზაში
                 if ($this->logoAdminModel->updateLogo($data)) {
-                    flash('logo_added_success', 'Logo Updated Successfuly');
+                    flash('logo_updated_success', 'Logo Updated Successfuly');
                     redirect_admin('Logo_admins/editLogo', $item_id);
                 } else {
-                    flash('logo_added_fail', 'Fail Update Logo', 'alert alert-danger');
+                    flash('logo_updated_fail', 'Fail Update Logo', 'alert alert-danger');
                     redirect_admin('Logo_admins/editLogo', $item_id);
                 }
                 // ჩაიტვირთოს გვერდი error_ებთან ერთად
@@ -126,7 +127,8 @@ class Logo_admins extends Controller
             $logo_arr = $this->logoAdminModel->getLogoById($item_id);
             // თუ მითითებულ item_id_ით, არ არსებობს ჩანაწერი ესეიგი item_id_ის გადაცემის დროს მოხდა შეცდომა და გადამისამართდეს index გვერძე
             if (empty($logo_arr)) {
-                flash('logo_added_fail','logo does not exist reload page','alert alert-danger'); 
+                die(var_dump($logo_arr));
+                flash('logo_updated_fail','logo does not exist reload page','alert alert-danger'); 
                 redirect_admin('Logo_admins/index');
             }
             $i = 0;

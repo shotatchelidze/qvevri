@@ -9,16 +9,36 @@ class Logo{
 
     public function getLogos($page){
         $this->db->query("SELECT
-                            logos.id as logo_id,
-                            logos.img_name as logo_image_name, 
-                            logos.title as logo_title,
-                            logos.subtitle as logo_subtitle    
+                            *    
                             FROM logos 
                             WHERE page = :page and language = :language");
         $this->db->bind(':language', LANG);
         $this->db->bind(':page', $page);
 
         $result = $this->db->resultSet();
+        return $result;
+    }
+
+    public function getSingleLogo($page){
+        $this->db->query("SELECT
+                            *    
+                            FROM logos 
+                            WHERE page = :page and language = :language");
+        $this->db->bind(':language', LANG);
+        $this->db->bind(':page', $page);
+
+        $result = $this->db->single();
+        return $result;
+    }
+
+    public function getLogosForMenu(){
+        $this->db->query("SELECT
+                            *    
+                            FROM logos 
+                            WHERE page = 'menu' AND language = :language");
+        $this->db->bind(':language', LANG);
+
+        $result = $this->db->single();
         return $result;
     }
 }

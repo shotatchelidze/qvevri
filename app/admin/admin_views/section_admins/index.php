@@ -6,6 +6,16 @@
 <?php flash('section_deleted'); ?>
 <?php flash('section_delete_fail'); ?>
 
+<!-- carouselshi teqstistvis -->
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><?php echo $data['description']->title;?></li>
+  <li class="list-group-item"><?php echo $data['description']->subtitle;?></li>
+  <li class="list-group-item"><?php echo $data['description']->text;?></li>
+</ul>
+<a href="<?php echo URLROOT_ADMIN; ?>/Section_admins/editDescription/<?php echo $data['description']->item_id;?>" type="button" class="btn btn-secondary">Edit</a>
+
+
 <?php foreach ($data['sections'] as $section) : ?>
     <!-- Section -->
     <div class="card-group">

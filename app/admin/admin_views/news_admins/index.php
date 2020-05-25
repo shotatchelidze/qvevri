@@ -18,7 +18,7 @@
 
 <form action="<?php echo URLROOT_ADMIN; ?>/News_admins/index" method="POST">
     <select name="result_per_page">
-        <option value="<?php echo $data['result_per_page']; ?>"><?php echo $data['result_per_page']; ?></option>
+        <option value="<?php echo $data['result_per_page']; ?>"></option>
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>

@@ -52,7 +52,7 @@ class ImageBg_admin
         }
     }
 
-    public function editImageBg($data){
+    public function updateImageBg($data){
         $this->db->query('UPDATE imagebgs SET image_name = :image_name, page_name = :page_name WHERE id = :id');
         // Bind value
         $this->db->bind(':id',$data['id']);

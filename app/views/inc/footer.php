@@ -12,23 +12,25 @@
         </div>
         <div class="col-lg-6">
           <h1 class="text-uppercase text-center about-header your-request-header">your request</h1>
+          <!-- form start -->
+          <form action="<?php echo URLROOT;?>/Homes/sendEmail" method="POST" enctype="multipart/form-data">
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
                 <label class="request-label-text" for="name">Name</label>
-                <input class="form-control request-input" type="text">
+                <input class="form-control request-input" name="name" type="text">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label class="request-label-text" for="email">E-mail</label>
-                <input class="form-control request-input" type="text">
+                <input class="form-control request-input" name="email" type="text">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label class="request-label-text" for="phone">Phone</label>
-                <input class="form-control request-input" type="tel">
+                <input class="form-control request-input" name="phone" type="tel">
               </div>
             </div>
           </div>
@@ -36,15 +38,17 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label class="request-label-text" for="requests">Requests</label>
-                <input class="form-control requests-input" type="text">
+                <input class="form-control requests-input" name="requests" type="text">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <button class="btn btn-warning text-uppercase requestbtn text-light">send your request</button>
+              <button type="submit" class="btn btn-warning text-uppercase requestbtn text-light">send your request</button>
             </div>
           </div>
+          <!-- form end -->
+          </form>
           <hr>
           <div class="row pt-4">
             <div class="col-md-12">

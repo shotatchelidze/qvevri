@@ -4,7 +4,7 @@
 <?php flash('ImageBg_added_success') ?>
 <?php flash('ImageBg_added_fail') ?>
 
-<form action="<?php echo URLROOT; ?>/ImageBg_admins/addImageBg" method="POST" enctype="multipart/form-data">
+<form action="<?php echo URLROOT_ADMIN; ?>/ImageBg_admins/addImageBg" method="POST" enctype="multipart/form-data">
     <div class="container">
         <div class="col-md-6">
             <div class="form-group">
@@ -22,9 +22,11 @@
 
             <label for="cars">Choose a page:</label>
             <select name="page" id="cars">
-                <option value="index">index</option>
+                <option value="welcome">welcome</option>
                 <option value="home">home</option>
-                <option value="news">news</option>    
+                <option value="news">news</option>
+                <option value="singleNews">singleNews</option>    
+
             </select>
 
             <button type="submit" class="btn btn-success">Submit</button>

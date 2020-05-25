@@ -3,6 +3,9 @@
 
 <?php flash('logo_added_success'); ?>
 <?php flash('logo_added_fail');?>
+<?php flash('logo_updated_success'); ?>
+<?php flash('logo_updated_fail'); ?>
+
 
 <form action="<?php echo URLROOT; ?>/Logo_admins/editLogo/<?php echo $data[0]['item_id']; ?>" method="POST" enctype="multipart/form-data">
     <div class="container">
@@ -37,7 +40,13 @@
             <label for="cars">Choose a page:</label>
             <select name="page" id="page">
                 <option value="menu">menu</option>
-                <option value="index">index</option>
+                <option value="welcome">welcome</option>
+                <option value="home">home</option>
+                <option value="news">news</option>
+                <option value="singleNews">singleNews</option>
+
+
+
             </select>
 
             <button type="submit" class="btn btn-success">Submit</button>

@@ -91,8 +91,22 @@ class Product_admins extends Controller{
 
                 $data[] = $post_data;
             }
-            
             $target_dir = dirname(__FILE__, 4) . "/public/img/";
+
+            $image_name_obj = $this->productAdminModel->getImageName($item_id);
+            // შემოწმდეს თუ არსებობდა სურათი და წაიშალოს fodler_იდან
+            if ($image_name_obj->img_name !== '') {
+                $image_name = $target_dir . $image_name_obj->img_name;
+                if (file_exists($image_name)) {
+                    if (!(unlink($image_name))) {
+                        die('Something went wrong reload page');
+                    }
+                    else {
+                        die('image does not exist');
+                    }
+                }
+            }
+
             $image = true;
             if (!empty($_FILES['image']['news_img_name'])) {
                 $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -101,18 +115,6 @@ class Product_admins extends Controller{
             }
             // Make sure image_error are empty
             if ($image === true) {
-                $image_name_obj = $this->productAdminModel->getImageName($item_id);
-                // შემოწმდეს თუ არსებობდა სურათი და წაიშალოს fodler_იდან
-                if ($image_name_obj->img_name !== '') {
-                    $image_name = $target_dir . $image_name_obj->img_name;
-                    if (file_exists($image_name)) {
-                        if (!(unlink($image_name))) {
-                    die('Something went wrong reload page');
-                        }
-                    } else {
-                        die('image does not exist');
-                    }
-                }
                 // Update product
                 if ($this->productAdminModel->updateProduct($data)) {
                     flash('product_updated_success', 'Product Updated Successfuly');

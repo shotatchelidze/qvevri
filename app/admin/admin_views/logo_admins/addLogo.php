@@ -35,6 +35,12 @@
             <select name="page" id="cars">
                 <option value="menu">menu</option>
                 <option value="welcome">welcome</option>
+                <option value="home">home</option>
+                <option value="news">news</option>
+                <option value="singleNews">singleNews</option>
+
+
+
             </select>
 
             <button type="submit" class="btn btn-success">Submit</button>

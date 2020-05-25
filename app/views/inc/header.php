@@ -11,7 +11,7 @@
   
 
   <?php switch(true){
-    case LANG == 'en' :?>
+    case LANG == 'en':?>
     <link rel="stylesheet" href="<?php echo URLROOT;?>/css/home.css">
     <?php break;
     case LANG == 'ge' :?>

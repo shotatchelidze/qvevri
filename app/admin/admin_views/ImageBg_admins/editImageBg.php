@@ -23,9 +23,11 @@
             <!-- gasasworebeli rom select shi chandes is value rac aris minichebuli -->
             <label for="cars">Choose a page:</label>
             <select name="page" id="cars">
-                <option value="index">index</option>
+                <option value="welcome">welcome</option>
                 <option value="home">home</option>
-                <option value="news">news</option>    
+                <option value="news">news</option>
+                <option value="singleNews">singleNews</option>    
+
             </select>
 
             <button type="submit" class="btn btn-success">Submit</button>
