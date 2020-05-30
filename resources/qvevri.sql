@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2020 at 05:22 PM
+-- Generation Time: May 30, 2020 at 06:59 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -43,6 +43,31 @@ INSERT INTO `admins` (`email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `descriptions`
+--
+
+CREATE TABLE `descriptions` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `subtitle` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `page_name` varchar(10) NOT NULL,
+  `language` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `descriptions`
+--
+
+INSERT INTO `descriptions` (`id`, `item_id`, `title`, `subtitle`, `text`, `page_name`, `language`) VALUES
+(1, 1, 'HELLO & WELCOME!', 'Please have a sit, our wine will be served!', '', 'home', 'en'),
+(2, 1, 'კეთილი იყოს თქვენი მობრძანება!', 'დაბრძანდით! დააგემოვნეთ ჩვენი ღვინო!', '', 'home', 'ge'),
+(3, 1, '', '', '', 'home', 'ru');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `imagebgs`
 --
 
@@ -57,8 +82,13 @@ CREATE TABLE `imagebgs` (
 --
 
 INSERT INTO `imagebgs` (`id`, `image_name`, `page_name`) VALUES
-(2, 'eso1907a.jpg', 'index'),
-(3, 'download.jpg', 'news');
+(2, 'Dark-red-wine1.png', 'welcome'),
+(3, 'download.jpg', 'news'),
+(4, 'DSC_1315-1.png', 'welcome'),
+(5, 'DSC_1342-1.png', 'welcome'),
+(6, 'Dark-red-wine1 - HOME.png', 'home'),
+(7, 'DSC_1315-1 - HOME.png', 'home'),
+(8, 'DSC_1342-1 - HOME.png', 'home');
 
 -- --------------------------------------------------------
 
@@ -81,7 +111,7 @@ CREATE TABLE `logos` (
 --
 
 INSERT INTO `logos` (`id`, `item_id`, `img_name`, `title`, `subtitle`, `page`, `language`) VALUES
-(54, 54, 'LOGO_ge.png', 'Twins Wine Cellar', 'Kakheti-Everything\r\nIn One Space', 'welcome', 'en'),
+(54, 54, 'LOGO_ge.png', 'Twins Wine \r\n\r\n\r\n\r\nCellar', 'Kakheti-Everything\r\nIn One Space', 'welcome', 'en'),
 (55, 54, 'LOGO_ge.png', 'ტყუპების ღვინის მარანი', 'კახეთი-ყველაფერი\r\nერთ სივრცეში', 'welcome', 'ge'),
 (56, 54, 'LOGO_ge.png', 'Винный погреб Твинс', 'Кахетия-все\r\nВ одном пространстве', 'welcome', 'ru'),
 (57, 57, 'logohistory.png', 'Our History', 'Family Of\r\nGamtkitsulashvili', 'welcome', 'en'),
@@ -92,7 +122,16 @@ INSERT INTO `logos` (`id`, `item_id`, `img_name`, `title`, `subtitle`, `page`, `
 (62, 60, 'logo2.png', 'Блог', 'Qvevri\r\nИ вино квеври', 'welcome', 'ru'),
 (63, 63, 'LOGO1.png', 'Twins Wine House', 'Ancient Art\r\nOf Wine Making', 'welcome', 'en'),
 (64, 63, 'LOGO1.png', 'ტყუპების ღვინის სახლი', 'უძველესი ხელოვნება\r\nღვინის წარმოების', 'welcome', 'ge'),
-(65, 63, 'LOGO1.png', 'Винный Дом Близнецов', 'Древнее искусство\r\nВиноделия', 'welcome', 'ru');
+(65, 63, 'LOGO1.png', 'Винный Дом Близнецов', 'Древнее искусство\r\nВиноделия', 'welcome', 'ru'),
+(66, 66, 'logo2 Home.png', 'blogs / news', '', 'home', 'en'),
+(67, 66, 'logo2 Home.png', 'ბლოგები და სიახლეები', '', 'home', 'ge'),
+(68, 66, 'logo2 Home.png', '', '', 'home', 'ru'),
+(69, 69, 'LOGO_geMENU.png', 'TWINS OLD CELLAR', '', 'menu', 'en'),
+(70, 69, 'LOGO_geMENU.png', 'ტყუპების ძველი მარანი', '', 'menu', 'ge'),
+(71, 69, 'LOGO_geMENU.png', 'Старый погреб близнецов', '', 'menu', 'ru'),
+(72, 72, 'NEWSlogo.png', 'Blogs / News', '', 'news', 'en'),
+(73, 72, 'NEWSlogo.png', 'ბლოგი / სიახლეები', '', 'news', 'ge'),
+(74, 72, 'NEWSlogo.png', '', '', 'news', 'ru');
 
 -- --------------------------------------------------------
 
@@ -159,12 +198,15 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `item_id`, `news_img_name`, `title`, `subtitle`, `text`, `created_at`, `language`) VALUES
-(14, 14, '', 'English Title:', 'English Subtitle:', 'English Text:', '2020-05-10 23:44:16', 'en'),
-(15, 14, '', 'Georgian Title:', 'Georgian Subtitle:', 'Georgian Text:', '2020-05-10 23:44:16', 'ge'),
-(16, 14, '', 'Russian Title:', 'Russian Subtitle:', 'Russian Text:', '2020-05-10 23:44:16', 'ru'),
-(17, 17, '', 'English Title:2', 'English Subtitle:2', 'English Text:2', '2020-05-10 23:45:28', 'en'),
-(18, 17, '', 'Georgian Title:2', 'Georgian Subtitle:2', 'Georgian Text:2', '2020-05-10 23:45:28', 'ge'),
-(19, 17, '', 'Russian Title:2', 'Russian Subtitle:2', 'Russian Text:2', '2020-05-10 23:45:28', 'ru');
+(26, 26, 'news1.png', 'Museum “Qvevri and Qvevri wine', 'Hotel &#34;qvevri&#34; has a spa center in the pool area Where high-class specialists will serve you', 'Brothers Gia and Gela Gamtkitsulashvili in the world The unique ;Qvevri and Qvevri Wine Museum&; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique ;pitcher and pitcher wine museum; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique ;pitcher and pitcher Wine Museum ;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique ;Qvevri and Qvevri Wine Museum; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique ;pitcher and pitcher wine museum; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique ;pitcher and pitcher Wine Museum ;was founded in 2014.\r\nBrothers Gia and Gela Gamtkitsulashvili The world;s unique ;Qvevri and Qvevri Wine Museum; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvili in the world unique ;Qvevri and Qvevri Wine Museum; in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique ;pitcher and pitcher Wine Museum &#34;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Pitcher and Pitcher Wine Museum&#34; was founded in 2014.', '2020-05-21 18:54:44', 'en'),
+(27, 26, 'news1.png', 'მუზეუმი &#34;ქვევრი&#34;', '', 'ძმებმა გია და გელა გამტკიცულაშვილებმა მსოფლიოში უნიკალური &#34;ქვევრისა და ქვევრის ღვინის მუზეუმი&#34; 2014 წელს დააფუძნეს', '2020-05-21 18:54:44', 'ge'),
+(28, 26, 'news1.png', '', '', '', '2020-05-21 18:54:44', 'ru'),
+(29, 29, 'news2.png', 'Twins Hotel and hotel rooms', 'Hotel &#34;qvevri&#34; has a spa center in the pool area Where high-class specialists will serve you', 'Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique &#34;pitcher and pitcher wine museum&#34; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique &#34;pitcher and pitcher wine museum&#34; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014.\r\nBrothers Gia and Gela Gamtkitsulashvili The world&#39;s unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;Qvevri and Qvevri Wine Museum&#34; in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Pitcher and Pitcher Wine Museum&#34; was founded in 2014.', '2020-05-21 18:55:42', 'en'),
+(30, 29, 'news2.png', 'მუზეუმი &#34;ქვევრი&#34;', 'მუზეუმი &#34;ქვევრი&#34;', 'მებმა გია და გელა გამტკიცულაშვილებმა მსოფლიოში უნიკალური &#34;ქვევრისა და ქვევრის ღვინის მუზეუმი&#34; 2014 წელს დააფუძნეს.', '2020-05-21 18:55:42', 'ge'),
+(31, 29, 'news2.png', '', '', '', '2020-05-21 18:55:42', 'ru'),
+(32, 32, 'news3.png', 'wins Restaurant exclusive meniu', 'Hotel &#34;qvevri&#34; has a spa center in the pool area Where high-class specialists will serve you', 'Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique &#34;pitcher and pitcher wine museum&#34; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvilis have a unique &#34;pitcher and pitcher wine museum&#34; in the world in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014.\r\nBrothers Gia and Gela Gamtkitsulashvili The world&#39;s unique &#34;Qvevri and Qvevri Wine Museum&#34; was founded in 2014. The brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;Qvevri and Qvevri Wine Museum&#34; in 2014 Founded by the brothers Gia and Gela Gamtkitsulashvili in the world unique &#34;pitcher and pitcher Wine Museum &#34;was founded in 2014. Brothers Gia and Gela Gamtkitsulashvili in the world The unique &#34;Pitcher and Pitcher Wine Museum&#34; was founded in 2014.', '2020-05-21 18:57:01', 'en'),
+(33, 32, 'news3.png', 'რესტორნის ექსკლუზიური მენ', 'ძმებმა გია და გელა გამტკიცულაშვილებმა მსოფლიოში უნიკალური &#34;ქვევრისა და ქვევრის ღვინის მუზე', 'სასტუმრო და სასტუმროს ოთახები\r\nძმებმა გია და გელა გამტკიცულაშვილებმა მსოფლიოში უნიკალური &#34;ქვევრისა და ქვევრის ღვინის მუზეუმი&#34; 2014 წელს დააფუძნეს...', '2020-05-21 18:57:02', 'ge'),
+(34, 32, 'news3.png', '', '', '', '2020-05-21 18:57:02', 'ru');
 
 -- --------------------------------------------------------
 
@@ -177,6 +219,16 @@ CREATE TABLE `news_imgs` (
   `news_id` int(11) NOT NULL,
   `img_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news_imgs`
+--
+
+INSERT INTO `news_imgs` (`id`, `news_id`, `img_name`) VALUES
+(16, 32, 'SINGLENEws1.png'),
+(17, 32, 'singlenews2.png'),
+(18, 32, 'singlenews3.png'),
+(19, 32, 'singleNews4.png');
 
 -- --------------------------------------------------------
 
@@ -275,6 +327,12 @@ INSERT INTO `sections` (`id`, `item_id`, `img_name`, `bg_img_name`, `icon_img_na
 --
 
 --
+-- Indexes for table `descriptions`
+--
+ALTER TABLE `descriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `imagebgs`
 --
 ALTER TABLE `imagebgs`
@@ -328,16 +386,22 @@ ALTER TABLE `sections`
 --
 
 --
+-- AUTO_INCREMENT for table `descriptions`
+--
+ALTER TABLE `descriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `imagebgs`
 --
 ALTER TABLE `imagebgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -349,13 +413,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `news_imgs`
 --
 ALTER TABLE `news_imgs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `paginations`
